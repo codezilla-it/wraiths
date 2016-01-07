@@ -44,7 +44,7 @@
   "devDependencies": {},
   "overrides": {},
   "install": {
-    "base": "wraith",
+    "base": "wraiths",
     "path": "vendor",
     "sources": {},
     "ignore": [
