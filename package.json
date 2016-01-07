@@ -1,6 +1,6 @@
 {
   "name": "wraiths",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "BEMIT framework",
   "author": "Fabio Cencetti <hey@kreo.me>",
   "contributors": [
@@ -12,7 +12,11 @@
   "bin": {},
   "files": [
     "LICENSE",
-    "Readme.md"
+    "Readme.md",
+    "package.json",
+    "bower.json",
+    "wratihs",
+    "_dist"
   ],
   "scripts": {},
   "sass": "./wraiths/styles/app.scss",
