@@ -1,6 +1,6 @@
 {
   "name": "wraiths",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "BEMIT framework",
   "author": "Fabio Cencetti <hey@kreo.me>",
   "contributors": [
@@ -9,9 +9,7 @@
       "email": "rabbagliettiandrea@gmail.com"
     }
   ],
-  "bin": {
-    "module-name": "./wraiths"
-  },
+  "bin": {},
   "files": [
     "LICENSE",
     "Readme.md"
