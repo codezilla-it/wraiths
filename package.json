@@ -19,22 +19,22 @@
     "_dist"
   ],
   "scripts": {},
-  "main": "wraiths.index.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/codezilla-it/wraith.git"
+    "url": "https://github.com/codezilla-it/wraiths.git"
   },
   "bugs": {
-    "url": "https://github.com/codezilla-it/wraith/issues"
+    "url": "https://github.com/codezilla-it/wraiths/issues"
   },
   "keywords": [
-    "gulp",
+    "BEMIT",
     "modular",
-    "tasks",
+    "framework",
     "common",
     "global",
     "project",
-    "doom"
+    "wraiths"
   ],
   "dependencies": {},
   "devDependencies": {},
