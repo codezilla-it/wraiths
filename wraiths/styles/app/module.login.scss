@@ -1,0 +1,70 @@
+//------------------------------------
+//  $Login
+//------------------------------------
+
+$name: 'login';
+$prefix: map-get($class-prefix, 'module');
+$class: #{$prefix}#{$name};
+
+.#{$class} {
+  width: auto;
+  max-width: 700px;
+  border: none;
+  @include position(relative, 0);
+  @include margin(0 auto);
+  @include padding(0);
+  @include border-radius(.25em);
+
+  @at-root {
+    #{&}__header {
+      border-bottom: 1px solid;
+      @include padding(10px 20px);
+      @include margin(0);
+      @include border-radius(4px 4px 0 0);
+
+      > * {
+        line-height: 1.2;
+        @include padding(0);
+        @include margin(0);
+        @include font(map-get($fonts, 'primary'), 24px, null, bold);
+        @include max-screen(map-get($mq, 'md')) {
+          font-size: 17px;
+        }
+      }
+    }
+
+    #{&}__content {
+      @include padding(4% 2.5%);
+      @include border-radius(.25em);
+
+      .o--form__item:last-child {
+        @include margin(null null (0 !important) null);
+      }
+
+      @include max-screen(map-get($mq, 'sm')) {
+        .o--divider {
+          @include margin(0);
+        }
+      }
+    }
+
+    .o--form {
+      border: none;
+      @include padding(0);
+    }
+
+    .o--heading__subtitle {
+      font-size: 18px;
+      line-height: 1.3;
+      text-align: center;
+      @include margin(null null 30px null);
+      @include max-screen(map-get($mq, 'md')) {
+        @include margin(null null 10px null);
+      }
+    }
+
+    .o--form__btn + .o--form__btn {
+      @include margin(0 null null null);
+    }
+  }
+}

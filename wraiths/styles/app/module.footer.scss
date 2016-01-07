@@ -1,0 +1,64 @@
+//------------------------------------
+//  $Footer
+//------------------------------------
+
+$name: 'footer';
+$prefix: map-get($class-prefix, 'module');
+$class: #{$prefix}#{$name};
+
+.#{$class} {
+  width: 100%;
+  font-size: 14px;
+  @include position(relative, 0);
+  @include padding(40px 0 90px 0);
+
+  a {
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    @include padding(null null 5px null);
+  }
+
+  @at-root {
+    #{&}__nav {
+      text-align: center;
+
+      ul {
+        list-style: none;
+        vertical-align: top;
+      }
+
+      li {
+        width: 100%;
+        @include padding(8px 0);
+      }
+
+      @include min-screen(map-get($mq, 'sm')) {
+        text-align: left;
+      }
+    }
+
+    #{&}__copy {
+      display: block;
+      width: 100%;
+      text-align: center;
+      @include padding(15px 0);
+      @include min-screen(map-get($mq, 'md')) {
+        @include position(absolute, null null 0 0);
+      }
+    }
+
+    .o--brand {
+      @include margin(40px auto);
+      @include min-screen(map-get($mq, 'sm')) {
+        @include margin(null 0);
+      }
+      @include min-screen(map-get($mq, 'md')) {
+        @include margin(0);
+      }
+
+      &:hover {
+        border-width: 0;
+      }
+    }
+  }
+}

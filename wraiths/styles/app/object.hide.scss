@@ -1,0 +1,10 @@
+//------------------------------------
+//  $Hide
+//------------------------------------
+
+$name: 'hide';
+$prefix: map-get($class-prefix, 'object');
+$class: #{$prefix}#{$name};
+
+@include generate-display($name, $class);
+

@@ -1,0 +1,45 @@
+//------------------------------------
+//  $Col
+//------------------------------------
+
+$name: 'col';
+$prefix: map-get($class-prefix, 'object');
+$class: #{$prefix}#{$name};
+$gutter: map-get($layout, 'gutter');
+
+.#{$class} {
+  float: left;
+  width: 100%;
+  min-height: 1px;
+  @include position(relative, 0);
+  @include padding(null #{$gutter});
+
+  @at-root {
+    #{&} + #{&} {
+      &--end {
+        float: left;
+      }
+    }
+
+    #{&}--equal {
+      @include equal-height();
+    }
+
+    #{&}--centered {
+      float: none !important;
+      @include margin(null auto);
+
+      > * {
+        @include margin(null auto);
+      }
+    }
+
+    #{&}--right {
+      float: right !important;
+      right: 0 !important;
+      @include margin(0);
+    }
+  }
+}
+
+

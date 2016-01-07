@@ -1,0 +1,10 @@
+// @generate-space
+//------------------------------------
+@mixin generate-space($name, $class) {
+  @each $sk, $sv in $sizes {
+    .#{$class}--#{$sk} {
+      height: $sv;
+      @include clearfix();
+    }
+  }
+}

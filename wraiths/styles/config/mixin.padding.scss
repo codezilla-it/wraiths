@@ -1,0 +1,47 @@
+// @set-padding
+//------------------------------------
+@mixin set-padding($top, $right, $bottom, $left) {
+  @if ($top and $right and $bottom and $left) != null {
+    padding: $top $right $bottom $left !important;
+  } @else if ($top and $bottom) != null {
+    padding-top: $top !important;
+    padding-bottom: $bottom !important;
+  } @else if ($right and $left) != null {
+    padding-right: $right !important;
+    padding-left: $left !important;
+  } @else if $top != null {
+    padding-top: $top !important;
+  } @else if $right != null {
+    padding-right: $right !important;
+  } @else if $bottom != null {
+    padding-bottom: $bottom !important;
+  } @else if $left != null {
+    padding-left: $left !important;
+  }
+}
+
+// @generate-padding
+//------------------------------------
+@mixin generate-padding($name, $class) {
+  @each $dk, $dv in $directions {
+    @each $sk, $sv in $sizes {
+      .#{$class}--#{$dv}--#{$sk} {
+        @if $dk == all {
+          @include set-padding($sv, $sv, $sv, $sv);
+        } @else if $dk == vertical {
+          @include set-padding($sv, null, $sv, null);
+        } @else if $dk == horizontal {
+          @include set-padding(null, $sv, null, $sv);
+        } @else if $dk == top {
+          @include set-padding($sv, null, null, null);
+        } @else if $dk == right {
+          @include set-padding(null, $sv, null, null);
+        } @else if $dk == bottom {
+          @include set-padding(null, null, $sv, null);
+        } @else if $dk == left {
+          @include set-padding(null, null, null, $sv);
+        }
+      }
+    }
+  }
+}

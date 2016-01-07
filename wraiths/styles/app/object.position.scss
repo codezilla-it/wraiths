@@ -1,0 +1,21 @@
+//------------------------------------
+//    $Position
+//------------------------------------
+
+$name: 'position';
+$prefix: map-get($class-prefix, 'object');
+$class: #{$prefix}#{$name};
+
+.#{$class} {
+  @at-root {
+    #{&}--l {
+      float: left !important;
+      left: 0 !important;
+    }
+
+    #{&}--r {
+      float: right !important;
+      right: 0 !important;
+    }
+  }
+}

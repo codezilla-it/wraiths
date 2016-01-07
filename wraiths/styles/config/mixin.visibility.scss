@@ -1,0 +1,21 @@
+// @generate-visibility
+//------------------------------------
+@mixin generate-visibility($name, $class) {
+
+  $display: null;
+
+  @if ($name == invisible) {
+    $visibility: hidden !important;
+  } @else if ($name == visible) {
+    $visibility: visible !important;
+  }
+
+  @each $mk, $mv in $mq {
+    @include min-screen(map-get($mq, $mk)) {
+      .#{$class}\@#{$mk},
+      [class*='#{$class}'].#{$class}\@#{$mk} {
+        visibility: $visibility;
+      }
+    }
+  }
+}

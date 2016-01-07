@@ -1,0 +1,9 @@
+//------------------------------------
+//  $Visible
+//------------------------------------
+
+$name: 'visible';
+$prefix: map-get($class-prefix, 'object');
+$class: #{$prefix}#{$name};
+
+@include generate-visibility($name, $class);

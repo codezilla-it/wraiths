@@ -1,0 +1,41 @@
+// Rhythm ($font-size, $line-height, $scale)
+
+body {
+  @include rhythm(0);
+  @include font-family(map-get($fonts, 'primary'));
+}
+
+p, ul, ol, pre, table, blockquote {
+  font-size: 16px;
+  line-height: 26px;
+  margin-bottom: 26px;
+}
+
+.o--heading {
+  @include font-family(map-get($fonts, 'secondary'));
+}
+
+h1 {
+  @include rhythm(4, 1, 1);
+}
+
+h2 {
+  @include rhythm(3, 1, 0.75);
+}
+
+h3 {
+  @include rhythm(2, 1, 0.6);
+}
+
+h4 {
+  @include rhythm(1, 1, 0.5);
+}
+
+h5 {
+  @include rhythm(0.75, 1, 0.35);
+}
+
+h6 {
+  @include rhythm(0.5, 1, 0.25);
+}
+

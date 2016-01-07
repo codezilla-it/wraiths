@@ -1,2 +1,1 @@
-# wraiths
-BEMIT Framework
+# wraith

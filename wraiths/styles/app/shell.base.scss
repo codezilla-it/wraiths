@@ -1,0 +1,64 @@
+//------------------------------------
+//    $Config
+//------------------------------------
+
+html, body {
+	height: 100%;
+	font-size: 100%;
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+*:focus {
+	outline: none;
+}
+
+body {
+	line-height: 1.42857143;
+	cursor: auto;
+	@include position(relative, 0);
+	@include z-index('z-index', '0');
+	@include margin(0);
+	@include padding(0);
+	@include font(map-get($fonts, 'primary'), null);
+}
+
+a {
+	&:hover {
+		cursor: pointer;
+		text-decoration: none;
+	}
+
+	&:focus {
+		outline: 5px auto -webkit-focus-ring-color;
+		outline-offset: -2px;
+	}
+}
+
+img {
+	// Grid defaults to get images and embeds to work properly
+	max-width: 100%;
+	height: auto;
+	-ms-interpolation-mode: bicubic;
+
+	// Get rid of gap under images by making them display: inline-block; by default
+	display: inline-block;
+	vertical-align: middle;
+}
+
+ul,
+ol,
+dl {
+	@include margin(0);
+}
+
+nav {
+	list-style: none;
+	@include padding(null null null 0);
+	@include margin(null null 0 null);
+}

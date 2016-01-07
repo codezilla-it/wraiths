@@ -1,0 +1,395 @@
+//------------------------------------
+//  Functions
+//------------------------------------
+
+@function grid-width($n) {
+  @return $n * $grid-width + ($n - 1) * $gutter-width;
+}
+
+@function parse-int($n) {
+  @return $n / ($n * 0 + 1);
+}
+
+@function palette($palette, $tone:'base') {
+  @return map-get(map-get($palettes, $palette), $tone);
+}
+
+@function get-path($path) {
+  @return $path;
+}
+
+/// Fetch nested keys
+/// @param {Map} $map - Map
+/// @param {Arglist} $keys - Keys to fetch
+/// @return {*}
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+
+  @return $map;
+}
+
+/// Update a key deeply nested
+/// @author Hugo Giraudel
+/// @param {Map} $map - Map to update
+/// @param {Arglist} $keys - Keys to access to value to update
+/// @param {*} $value - New value (last member of `$keys`)
+/// @return {Map} - Updated map
+@function map-deep-set($map, $keys...) {
+  $map-list: ($map,);
+  $result: null;
+
+  @if length($keys) == 2 {
+    @return map-merge($map, (nth($keys, 1): nth($keys, -1)));
+  }
+
+  @for $i from 1 through length($keys) - 2 {
+    $map-list: append($map-list, map-get(nth($map-list, -1), nth($keys, $i)));
+  }
+
+  @for $i from length($map-list) through 1 {
+    $result: map-merge(nth($map-list, $i), (nth($keys, $i): if($i == length($map-list), nth($keys, -1), $result)));
+  }
+
+  @return $result;
+}
+
+/// Update a key deeply nested
+/// @author Hugo Giraudel
+/// @param {Map} $map - Map to update
+/// @param {Arglist} $keys - Keys to access to value to update
+/// @param {*} $value - New value (last member of `$keys`)
+/// @return {Map} - Updated map
+@function map-deep-set($map, $keys...) {
+  $map-list: ($map,);
+  $result: null;
+
+  @if length($keys) == 2 {
+    @return map-merge($map, (nth($keys, 1): nth($keys, -1)));
+  }
+
+  @for $i from 1 through length($keys) - 2 {
+    $map-list: append($map-list, map-get(nth($map-list, -1), nth($keys, $i)));
+  }
+
+  @for $i from length($map-list) through 1 {
+    $result: map-merge(nth($map-list, $i), (nth($keys, $i): if($i == length($map-list), nth($keys, -1), $result)));
+  }
+
+  @return $result;
+}
+
+/// Update a key deeply nested
+/// @author Hugo Giraudel
+/// @param {Map} $map - Map to update
+/// @param {Arglist} $keys - Keys to access to value to update
+/// @param {*} $value - New value (last member of `$keys`)
+/// @return {Map} - Updated map
+@function map-deep-set($map, $keys...) {
+  $map-list: ($map,);
+  $result: null;
+
+  @if length($keys) == 2 {
+    @return map-merge($map, (nth($keys, 1): nth($keys, -1)));
+  }
+
+  @for $i from 1 through length($keys) - 2 {
+    $map-list: append($map-list, map-get(nth($map-list, -1), nth($keys, $i)));
+  }
+
+  @for $i from length($map-list) through 1 {
+    $result: map-merge(nth($map-list, $i), (nth($keys, $i): if($i == length($map-list), nth($keys, -1), $result)));
+  }
+
+  @return $result;
+}
+
+/// Update a key deeply nested
+/// @author Hugo Giraudel
+/// @param {Map} $map - Map to update
+/// @param {Arglist} $keys - Keys to access to value to update
+/// @param {*} $value - New value (last member of `$keys`)
+/// @return {Map} - Updated map
+@function map-deep-set($map, $keys...) {
+  $map-list: ($map,);
+  $result: null;
+
+  @if length($keys) == 2 {
+    @return map-merge($map, (nth($keys, 1): nth($keys, -1)));
+  }
+
+  @for $i from 1 through length($keys) - 2 {
+    $map-list: append($map-list, map-get(nth($map-list, -1), nth($keys, $i)));
+  }
+
+  @for $i from length($map-list) through 1 {
+    $result: map-merge(nth($map-list, $i), (nth($keys, $i): if($i == length($map-list), nth($keys, -1), $result)));
+  }
+
+  @return $result;
+}
+
+/// An equivalent of `zip` function but for maps.
+/// Takes two lists, the first for keys, second for values.
+/// @param {List} $keys - Keys for map
+/// @param {List} $values - Values for map
+/// @return {Map} Freshly created map
+/// @see http://sass-lang.com/documentation/Sass/Script/Functions.html#zip-instance_method
+@function map-zip($keys, $values) {
+  $l-keys: length($keys);
+  $l-values: length($values);
+  $min: min($l-keys, $l-values);
+  $map: ();
+
+  @if $l-keys != $l-values {
+    @warn "There are #{$l-keys} key(s) for #{$l-values} value(s) in the map for `map-zip`. "
+        + "Resulting map will only have #{$min} pairs.";
+  }
+
+  @if $min == 0 {
+    @return $map;
+  }
+
+  @for $i from 1 through $min {
+    $map: map-merge($map, (nth($keys, $i): nth($values, $i)));
+  }
+
+  @return $map;
+}
+
+/// jQuery-style extend function
+/// About `map-merge()`:
+/// * only takes 2 arguments
+/// * is not recursive
+/// @param {Map} $map - first map
+/// @param {ArgList} $maps - other maps
+/// @param {Bool} $deep - recursive mode
+/// @return {Map}
+@function map-extend($map, $maps...) {
+  $last: nth($maps, -1);
+  $deep: $last == true;
+  $max: if($deep, length($maps) - 1, length($maps));
+
+  // Loop through all maps in $maps...
+  @for $i from 1 through $max {
+    // Store current map
+    $current: nth($maps, $i);
+
+    // If not in deep mode, simply merge current map with map
+    @if not $deep {
+      $map: map-merge($map, $current);
+    } @else {
+      // If in deep mode, loop through all tuples in current map
+      @each $key, $value in $current {
+
+        // If value is a nested map and same key from map is a nested map as well
+        @if type-of($value) == "map" and type-of(map-get($map, $key)) == "map" {
+          // Recursive extend
+          $value: map-extend(map-get($map, $key), $value, true);
+        }
+
+        // Merge current tuple with map
+        $map: map-merge($map, ($key: $value));
+      }
+    }
+  }
+
+  @return $map;
+}
+
+/// Convert angle
+/// @author Chris Eppstein
+/// @param {Number} $value - Value to convert
+/// @param {String} $unit - Unit to convert to
+/// @return {Number} Converted angle
+@function convert-angle($value, $unit) {
+  $convertable-units: deg grad turn rad;
+  $conversion-factors: 1 (10grad/9deg) (1turn/360deg) (3.1415926rad/180deg);
+  @if index($convertable-units, unit($value)) and index($convertable-units, $unit) {
+    @return $value
+             / nth($conversion-factors, index($convertable-units, unit($value)))
+             * nth($conversion-factors, index($convertable-units, $unit));
+  }
+
+  @warn "Cannot convert `#{unit($value)}` to `#{$unit}`.";
+}
+
+/// Test if `$value` is an angle
+/// @param {*} $value - Value to test
+/// @return {Bool}
+@function is-direction($value) {
+  $is-direction: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $value);
+  $is-angle: type-of($value) == 'number' and index('deg' 'grad' 'turn' 'rad', unit($value));
+
+  @return $is-direction or $is-angle;
+}
+
+/// Convert a direction to legacy syntax
+/// @param {Keyword | Angle} $value - Value to convert
+/// @require {function} is-direction
+/// @require {function} convert-angle
+@function legacy-direction($value) {
+  @if is-direction($value) == false {
+    @warn "Cannot convert `#{$value}` to legacy syntax because it doesn't seem to be an angle or a direction";
+  }
+
+  $conversion-map: (
+          to top : bottom,
+          to top right : bottom left,
+          to right top : left bottom,
+          to right : left,
+          to bottom right : top left,
+          to right bottom : left top,
+          to bottom : top,
+          to bottom left : top right,
+          to left bottom : right top,
+          to left : right,
+          to left top : right bottom,
+          to top left : bottom right
+  );
+
+  @if map-has-key($conversion-map, $value) {
+    @return map-get($conversion-map, $value);
+  }
+
+  @return 90deg - convert-angle($value, 'deg');
+}
+
+/// Type scale set text rythm
+// EXPONENT
+// @see https://github.com/Team-Sass/Sassy-math.
+
+@function exponent($base, $exponent) {
+  @if pow(2, 2) == 4 {
+    @return pow($base, $exponent);
+  }
+
+  $value: $base;
+
+  @if $exponent > 1 {
+    @for $i from 2 through $exponent {
+      $value: $value * $base;
+    }
+  }
+
+  @if $exponent < 1 {
+    @for $i from 0 through -$exponent {
+      $value: $value / $base;
+    }
+  }
+
+  @return $value;
+}
+
+// CASTING A STRING TO A NUMBER
+// @see http://hugogiraudel.com/2014/01/15/sass-string-to-number/
+
+@function _length($number, $unit) {
+  $strings: 'px' 'cm' 'mm' '%' 'ch' 'pica' 'in' 'em' 'rem' 'pt' 'pc' 'ex' 'vw' 'vh' 'vmin' 'vmax';
+  $units: 1px 1cm 1mm 1% 1ch 1 pica 1in 1em 1rem 1pt 1pc 1ex 1vw 1vh 1vmin 1vmax;
+  $index: index($strings, $unit);
+
+  @if not $index {
+    @warn "Invalid unit `#{$unit}`.";
+    @return false;
+  }
+
+  @return $number * nth($units, $index);
+}
+
+@function number($string) {
+  // Matrices
+  $strings: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9';
+  $numbers: 0 1 2 3 4 5 6 7 8 9;
+
+  // Result
+  $result: 0;
+  $divider: 0;
+  $minus: false;
+
+  // Looping through all characters
+  @for $i from 1 through str-length($string) {
+    $character: str-slice($string, $i, $i);
+    $index: index($strings, $character);
+
+    @if $character == '-' {
+      $minus: true;
+    } @else if $character == '.' {
+      $divider: 1;
+    } @else {
+      @if not $index {
+        $result: if($minus, $result * -1, $result);
+        @return _length($result, str-slice($string, $i));
+      }
+
+      $number: nth($numbers, $index);
+
+      @if $divider == 0 {
+        $result: $result * 10;
+      } @else {
+        // Move the decimal dot to the left
+        $divider: $divider * 10;
+        $number: $number / $divider;
+      }
+
+      $result: $result + $number;
+    }
+  }
+
+  @return if($minus, $result * -1, $result);
+}
+
+// UNIT MANAGER
+// @see https://github.com/zurb/foundation/blob/master/scss/foundation/_functions.scss
+
+@function _strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function _convert($unit, $value, $base-value: $SGL_DEFAULT_FONT_SIZE) {
+  $value: _strip-unit($value) / _strip-unit($base-value) * number(1 + $unit);
+
+  @if ($value == (0 + $unit)) {
+    $value: 0;
+  }
+
+  @return $value;
+}
+
+@function em-calc($value, $base-value: $SGL_DEFAULT_FONT_SIZE) {
+  @return _convert("em", $value, $base-value);
+}
+
+@function rem-calc($value, $base-value: $SGL_DEFAULT_FONT_SIZE) {
+  @return _convert("rem", $value, $base-value);
+}
+
+/// Returns the opposite direction of each direction in a list
+/// @author Hugo Giraudel
+/// @param {List} $directions - List of initial directions
+/// @return {List} - List of opposite directions
+@function opposite-direction($directions) {
+  $opposite-directions: ();
+  $direction-map: (
+          'top': 'bottom',
+          'right': 'left',
+          'bottom': 'top',
+          'left': 'right',
+          'center': 'center',
+          'ltr': 'rtl',
+          'rtl': 'ltr'
+  );
+
+  @each $direction in $directions {
+    $direction: to-lower-case($direction);
+
+    @if map-has-key($direction-map, $direction) {
+      $opposite-directions: append($opposite-directions, unquote(map-get($direction-map, $direction)));
+    } @else {
+      @warn "No opposite direction can be found for `#{$direction}`. Direction omitted.";
+    }
+  }
+
+  @return $opposite-directions;
+}

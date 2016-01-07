@@ -1,0 +1,49 @@
+// @calc-dynamic-width
+//------------------------------------
+@mixin calc-dynamic-width($property, $expression) {
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
+// @set-dynamic-width
+//------------------------------------
+@mixin set-dynamic-width($size-list) {
+  @each $size in $size-list {
+    .dynamic-width#{$size} {
+      width: $size * 1px;
+    }
+  }
+}
+
+// @size
+//------------------------------------
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+// @set-width
+//------------------------------------
+@mixin set-width($width, $mq_level) {
+  @include min-screen(map-get($mq, $mq_level)) {
+    width: $width !important;
+  }
+}
+
+// @generate-width
+//------------------------------------
+@mixin generate-width($name, $class) {
+  @each $mk, $mv in $mq {
+    @include min-screen(map-get($mq, $mk)) {
+      @for $i from 1 through $cols {
+        $cols_width: 100 / $cols * $i * 1% !important;
+
+        .#{$class}\@#{$mk}--#{$i},
+        [class*='#{$class}'].#{$class}\@#{$mk}--#{$i} {
+          width: $cols_width;
+        }
+      }
+    }
+  }
+}
+

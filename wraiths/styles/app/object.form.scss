@@ -1,0 +1,402 @@
+//------------------------------------
+//  $Form
+//------------------------------------
+
+$name: 'form';
+$prefix: map-get($class-prefix, 'object');
+$class: #{$prefix}#{$name};
+
+.#{$class} {
+  @include margin(0);
+  @include padding(15px 0 0 0);
+  @include border-radius(4px);
+
+  ::-webkit-input-placeholder {
+    opacity: 1;
+    @include rem(font-size, 1rem);
+  }
+
+  :-moz-placeholder,
+  ::-moz-placeholder {
+    opacity: 1;
+    @include rem(font-size, 1rem);
+  }
+
+  :-ms-input-placeholder {
+    opacity: 1;
+    @include rem(font-size, 1rem);
+  }
+
+  :focus {
+    outline: none;
+  }
+
+  p {
+    @include margin(0 null null null);
+  }
+
+  @at-root {
+    #{&}__input {
+      &:not(.o--btn) {
+        display: block;
+        width: 100%;
+        height: 36px;
+        line-height: 1.42857143;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 3px;
+        transition: all 0.2s linear;
+        @include padding(6px 12px);
+        @include rem(font-size, 1rem);
+      }
+
+      &:focus {
+        outline: none;
+        border-width: 1px;
+        border-style: solid;
+      }
+    }
+
+    select#{&}__input {
+      width: 100%;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      @include padding(0 15px);
+    }
+
+    textarea#{&}__input {
+      height: auto;
+      min-height: 200px;
+      @include max-screen(map-get($mq, 'md')) {
+        @include margin(null null 15px null);
+      }
+    }
+
+    #{&}__item {
+      @include margin(null null (12px !important) null);
+      @include max-screen(map-get($mq, 'md')) {
+        @include margin(null null (5px !important) null);
+      }
+    }
+
+    #{&}__upload {
+      display: block;
+      width: 100%;
+      line-height: 1.42857143;
+      line-height: 20px;
+      height: 45px;
+      @include clearfix();
+      @include position(relative, 0);
+      @include border-radius(3px);
+      @include padding(10px 15px);
+      @include max-screen(map-get($mq, 'md')) {
+        @include margin(null null 8px null);
+      }
+      @include max-screen(map-get($mq, 'xs')) {
+        height: auto;
+        @include padding(0)
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &--label {
+        display: block;
+        float: left;
+        width: 20%;
+        height: 45px;
+        line-height: 25px;
+        background: #596B84;
+        color: #fff;
+        text-shadow: none;
+        text-align: center;
+
+        @include position(absolute, -1px null null -1px);
+        @include z('global', 'middle');
+        @include padding(10px 30px);
+        @include border-radius(4px 0 0 4px);
+        @include max-screen(map-get($mq, 'sm')) {
+          display: none;
+        }
+      }
+
+      .#{$class}__fake-input {
+        float: left;
+        width: 70%;
+        height: 45px;
+        background-color: transparent !important;
+        border: 1px solid;
+        @include position(absolute, -1px null null 0);
+        @include padding(null null null 21%);
+        @include border-radius(3px);
+        @include max-screen(map-get($mq, 'sm')) {
+          width: 60%;
+          @include padding(0);
+        }
+        @include max-screen(map-get($mq, 'xs')) {
+          float: none;
+          width: 100%;
+          @include position(static, 0);
+          @include margin(null null 15px null);
+        }
+
+        .o--text {
+          display: block;
+          height: 100%;
+          font-size: 16px;
+          line-height: 40px;
+          @include padding(0 15px)
+        }
+      }
+
+      .#{$class}__field {
+        opacity: 0;
+        float: left;
+        width: 70%;
+        height: 40px;
+        background-color: transparent !important;
+        @include position(absolute, 1px null null 1px);
+        @include z('global', 'top');
+        @include max-screen(map-get($mq, 'sm')) {
+          width: 60%;
+        }
+
+        .#{$class}__input {
+          height: 40px;
+          background-color: transparent !important;
+          border-color: transparent !important;
+          box-shadow: none !important;
+          line-height: 1;
+          opacity: 0;
+          cursor: pointer;
+          @include padding(10px);
+
+          &:focus, &:active, &:hover {
+            outline: none !important;
+            box-shadow: none !important;
+            border-color: transparent !important;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .#{$class}__btn {
+        float: right;
+        width: 30%;
+        @include position(absolute, -1px -1px null null);
+        @include max-screen(map-get($mq, 'sm')) {
+          width: 40%;
+        }
+
+        @include max-screen(map-get($mq, 'xs')) {
+          float: none;
+          width: 100%;
+          @include position(static, 0);
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        .o--btn {
+          height: 45px;
+          @include border-radius(0 4px 4px 0);
+          @include max-screen(map-get($mq, 'sm')) {
+            @include margin(0);
+          }
+          @include max-screen(map-get($mq, 'xs')) {
+            @include border-radius(4px);
+          }
+        }
+      }
+    }
+
+    #{&}__fake-errors {
+      @include margin(5px 0);
+    }
+
+    #{&}__label {
+      line-height: 36px;
+      vertical-align: middle;
+      font-size: 16px;
+      @include margin(0);
+      @include max-screen(map-get($mq, 'md')) {
+        line-height: 20px;
+      }
+
+      label {
+        font-size: 15px;
+      }
+
+      &--helper {
+        line-height: 1.2em;
+        @include margin(null null 10px null);
+
+        label {
+          line-height: 1em;
+        }
+
+        .#{$class}__helper {
+          opacity: .65;
+          line-height: 1em;
+          font-size: 12px;
+          @include max-screen(map-get($mq, 'md')) {
+            @include margin(null null 10px null);
+          }
+        }
+      }
+    }
+
+    #{&}__title {
+      text-shadow: none;
+      line-height: 1.8em;
+      @include margin(null null 10px null);
+      @include rem(font-size, 2.1rem);
+    }
+
+    #{&}__group {
+      @include position(relative, 0);
+    }
+
+    #{&}__helper {
+      display: block;
+      font-weight: 600;
+      @include margin(0);
+    }
+
+    .s--feedback {
+      font-size: 15px;
+      @include position(relative, 0 (15px !important) null null);
+
+      .o--icon {
+        display: none;
+      }
+
+      @at-root {
+        #{&}--error,
+        #{&}--warning,
+        #{&}--success {
+          .#{$class}__input {
+            @include padding(null 36px null null);
+          }
+
+          .o--icon {
+            display: block;
+            font-size: 16px;
+            @include position(absolute, 9px 32px null null);
+            @include margin(0);
+            @include padding(0);
+
+            &:before {
+              font-family: 'themify';
+              font-style: normal;
+              font-weight: normal;
+              font-variant: normal;
+              text-transform: none;
+              line-height: 1;
+              //speak: none;
+
+              // Better Font Rendering
+              @include font-smoothing();
+            }
+          }
+        }
+
+        #{&}--error, #{&}--warning {
+          .o--icon:before {
+            content: "\e6c5";
+          }
+        }
+
+        #{&}--success {
+          .o--icon:before {
+            content: "\e64c";
+          }
+        }
+      }
+    }
+
+    #{&}__field {
+      .errors {
+        display: block;
+        list-style: none;
+        @include margin(5px 0);
+        @include padding(0);
+      }
+    }
+
+    #{&}__errors {
+      text-align: center;
+      border: 1px solid;
+      @include margin(null null 20px null);
+      @include padding(8px);
+      @include border-radius(4px);
+      @include rem(font-size, 1.6rem);
+
+      &:empty {
+        display: none;
+      }
+
+      ul {
+        list-style: none;
+        @include margin(0);
+        @include padding(0);
+      }
+
+      li {
+        @include margin(3px 0);
+      }
+    }
+
+    #{&}__btn {
+      @include margin(null null 5px null);
+
+      .o--btn {
+        display: block;
+        width: 100%;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-align: center;
+        @include font(map-get($fonts, 'secondary'), 0.95rem);
+        @include max-screen(map-get($mq, 'sm')) {
+          width: 100% !important;
+          @include margin(0);
+        }
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      & + & {
+        @include margin(15px null null null);
+      }
+    }
+
+    #{&}__header {
+      background: #fafbfc;
+      @include padding(15px);
+
+      h1, h2, h3, h4, h5, h6 {
+        @include margin(0 null null null);
+      }
+    }
+
+    #{&}__icon-select {
+      color: #0081D4;
+      border-left: 1px solid #DADADA;
+      @include position(absolute, 1px 15px 1px null);
+      @include padding(7px);
+
+      & + .o--icon {
+        padding-right: 20px !important;
+      }
+
+      [class*="g--"] {
+        font-weight: bold;
+      }
+    }
+  }
+}
+

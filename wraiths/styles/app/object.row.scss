@@ -1,0 +1,35 @@
+//------------------------------------
+//  $Row
+//------------------------------------
+
+$name: 'row';
+$prefix: map-get($class-prefix, 'object');
+$class: #{$prefix}#{$name};
+$gutter: map-get($layout, 'gutter');
+
+.#{$class} {
+  width: map-get($layout, 'width');
+  @include margin(0 auto);
+  @include clearfix();
+
+  .#{$class} {
+    width: auto;
+    max-width: none;
+    @include margin(null #{-$gutter});
+    @include clearfix();
+
+    &--collapse {
+      @include clearfix();
+    }
+  }
+
+  &--collapse {
+    .#{$class} {
+      @include margin(null 0);
+    }
+
+    > .o--col {
+      @include margin(null 0);
+    }
+  }
+}

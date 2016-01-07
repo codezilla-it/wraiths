@@ -1,0 +1,9 @@
+//------------------------------------
+//  $Invisible
+//------------------------------------
+
+$name: 'invisible';
+$prefix: map-get($class-prefix, 'object');
+$class: #{$prefix}#{$name};
+
+@include generate-visibility($name, $class);

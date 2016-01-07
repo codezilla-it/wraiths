@@ -1,0 +1,11 @@
+//------------------------------------
+//  $Icon
+//------------------------------------
+
+$name: 'icon';
+$prefix: map-get($class-prefix, 'object');
+$class: #{$prefix}#{$name};
+
+.#{$class} {
+  font-size: 64px;
+}

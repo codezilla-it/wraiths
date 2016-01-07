@@ -1,0 +1,12 @@
+//------------------------------------
+//  $Loader
+//------------------------------------
+
+$name: 'loader';
+$prefix: map-get($class-prefix, 'object');
+$class: #{$prefix}#{$name};
+
+.#{$class} {
+  display: none;
+  @include padding(20px null);
+}

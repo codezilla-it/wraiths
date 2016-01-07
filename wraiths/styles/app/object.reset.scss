@@ -1,0 +1,20 @@
+//------------------------------------
+//    $Reset
+//------------------------------------
+
+$name: 'reset';
+$prefix: map-get($class-prefix, 'object');
+$class: #{$prefix}#{$name};
+
+.#{$class} {
+  &:before {
+    content: "";
+    display: table;
+  }
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

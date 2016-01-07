@@ -1,0 +1,30 @@
+// @boxed layout
+//------------------------------------
+@mixin boxed() {
+  & {
+    max-width: $layout_max_width;
+    @include margin(0 auto);
+  }
+}
+
+// @unboxed layout
+//------------------------------------
+@mixin unboxed() {
+  & {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+// @full-width layout
+//------------------------------------
+@mixin full-width() {
+  & {
+    width: 100%;
+    max-width: 100%;
+
+    .o--container--fluid {
+      max-width: 100% !important;
+    }
+  }
+}

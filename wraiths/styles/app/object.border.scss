@@ -1,0 +1,11 @@
+//------------------------------------
+//  $Border
+//------------------------------------
+
+$name: 'border';
+$prefix: map-get($class-prefix, 'object');
+$class: #{$prefix}#{$name};
+
+.#{$class} {
+
+}

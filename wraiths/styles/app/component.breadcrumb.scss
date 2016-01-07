@@ -1,0 +1,55 @@
+//------------------------------------
+//  $Breadcrumb
+//------------------------------------
+
+$name: 'breadcrumb';
+$prefix: map-get($class-prefix, 'component');
+$class: #{$prefix}#{$name};
+
+.#{$class} {
+  @include padding(15px 0);
+
+  ul {
+    list-style: none;
+    border: 1px solid #DADBE0;
+    background: #fff;
+    @include clearfix();
+    @include margin(0);
+    @include padding(10px 10px 5px 10px);
+    @include border-radius(4px);
+  }
+
+  @at-root {
+    #{&}__leaf {
+      float: left;
+      display: inline-block;
+      @include margin(0 5px 5px 0);
+
+      [class*='g--'] {
+        font-size: 12px;
+        color: #aaa;
+      }
+
+      @at-root {
+        #{&}--first,
+        #{&}--last {
+
+        }
+
+        #{&}.s--active {
+          .#{$class}__decorator {
+            color: #f5930f;
+            border-color: #f5930f;
+            @include margin(0 5px 0 0);
+          }
+        }
+      }
+    }
+
+    #{&}__decorator {
+      border: 1px solid transparent;
+      @include padding(0 6px);
+      @include border-radius(5px);
+    }
+  }
+}

@@ -1,0 +1,29 @@
+//------------------------------------
+//    $No
+//------------------------------------
+
+$name: 'no';
+$prefix: map-get($class-prefix, 'object');
+$class: #{$prefix}#{$name};
+
+.#{$class} {
+  @at-root {
+    #{&}--fill {
+      background: transparent !important;
+      text-shadow: none !important;
+
+      > * {
+        background: transparent !important;
+        text-shadow: none !important;
+      }
+    }
+
+    #{&}--border {
+      border: none !important;
+
+      &:hover {
+        border: none !important;
+      }
+    }
+  }
+}

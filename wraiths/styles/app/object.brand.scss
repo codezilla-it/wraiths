@@ -1,0 +1,15 @@
+//------------------------------------
+//  $Brand
+//------------------------------------
+
+$name: 'brand';
+$prefix: map-get($class-prefix, 'object');
+$class: #{$prefix}#{$name};
+
+.#{$class} {
+  display: block;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-indent: -9999em;
+}

@@ -1,0 +1,9 @@
+//------------------------------------
+//    $Padding
+//------------------------------------
+
+$name: 'padding';
+$prefix: map-get($class-prefix, 'object');
+$class: #{$prefix}#{$name};
+
+@include generate-padding($name, $class);

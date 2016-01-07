@@ -1,0 +1,9 @@
+//------------------------------------
+//  $Margin
+//------------------------------------
+
+$name: 'margin';
+$prefix: map-get($class-prefix, 'object');
+$class: #{$prefix}#{$name};
+
+@include generate-margin($name, $class);

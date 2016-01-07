@@ -1,0 +1,15 @@
+//------------------------------------
+//  $Wrap
+//------------------------------------
+
+$name: 'wrap';
+$prefix: map-get($class-prefix, 'object');
+$class: #{$prefix}#{$name};
+
+.#{$class} {
+  display: block;
+  width: map-get($layout, 'width');
+  min-width: map-get($layout, 'min-width');
+  height: auto;
+  border: none !important;
+}

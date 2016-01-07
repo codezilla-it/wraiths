@@ -1,0 +1,19 @@
+//------------------------------------
+//  $Font
+//------------------------------------
+
+$name: 'font';
+$prefix: map-get($class-prefix, 'object');
+$class: #{$prefix}#{$name};
+
+.#{$class} {
+  @at-root {
+    #{&}--smoothing--on {
+      @include font-smoothing(on);
+    }
+
+    #{&}--smoothing--off {
+      @include font-smoothing(off);
+    }
+  }
+}

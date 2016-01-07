@@ -1,0 +1,20 @@
+//------------------------------------
+//  $Content
+//------------------------------------
+
+$name: 'content';
+$prefix: map-get($class-prefix, 'module');
+$class: #{$prefix}#{$name};
+
+.#{$class} {
+
+  @include min-screen(map-get($mq, 'sm')) {
+    min-height: map-get($content, 'min-height');
+  }
+
+  @at-root {
+    #{&}__inner {
+      @include padding(0 20px);
+    }
+  }
+}

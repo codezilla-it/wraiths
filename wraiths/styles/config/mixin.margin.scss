@@ -1,0 +1,47 @@
+// @set-margin
+//------------------------------------
+@mixin set-margin($top, $right, $bottom, $left) {
+  @if ($top and $right and $bottom and $left) != null {
+    margin: $top $right $bottom $left !important;
+  } @else if ($top and $bottom) != null {
+    margin-top: $top !important;
+    margin-bottom: $bottom !important;
+  } @else if ($right and $left) != null {
+    margin-right: $right !important;
+    margin-left: $left !important;
+  } @else if $top != null {
+    margin-top: $top !important;
+  } @else if $right != null {
+    margin-right: $right !important;
+  } @else if $bottom != null {
+    margin-bottom: $bottom !important;
+  } @else if $left != null {
+    margin-left: $left !important;
+  }
+}
+
+// @generate-margin
+//------------------------------------
+@mixin generate-margin($name, $class) {
+  @each $dk, $dv in $directions {
+    @each $sk, $sv in $sizes {
+      .#{$class}--#{$dv}--#{$sk} {
+        @if $dk == all {
+          @include set-margin($sv, $sv, $sv, $sv);
+        } @else if $dk == vertical {
+          @include set-margin($sv, null, $sv, null);
+        } @else if $dk == horizontal {
+          @include set-margin(null, $sv, null, $sv);
+        } @else if $dk == top {
+          @include set-margin($sv, null, null, null);
+        } @else if $dk == right {
+          @include set-margin(null, $sv, null, null);
+        } @else if $dk == bottom {
+          @include set-margin(null, null, $sv, null);
+        } @else if $dk == left {
+          @include set-margin(null, null, null, $sv);
+        }
+      }
+    }
+  }
+}

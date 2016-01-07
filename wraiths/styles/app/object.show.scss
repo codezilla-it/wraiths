@@ -1,0 +1,9 @@
+//------------------------------------
+//  $Show
+//------------------------------------
+
+$name: 'show';
+$prefix: map-get($class-prefix, 'object');
+$class: #{$prefix}#{$name};
+
+@include generate-display($name, $class);

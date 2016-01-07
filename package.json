@@ -1,0 +1,45 @@
+{
+  "name": "doom.wraith",
+  "version": "1.0.2",
+  "description": "BEMIT framework",
+  "author": "Fabio Cencetti <hey@kreo.me>",
+  "contributors": [
+    {
+      "name": "Andrea Rabbaglietti",
+      "email": "rabbagliettiandrea@gmail.com"
+    }
+  ],
+  "bin": {
+    "module-name": "./wraith"
+  },
+  "files": [
+    "LICENSE",
+    "Readme.md"
+  ],
+  "scripts": {},
+  "sass": "./wraiths/styles/app.scss",
+  "main": "./wraiths/scripts/app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codezilla-it/wraith.git"
+  },
+  "bugs": {
+    "url": "https://github.com/codezilla-it/wraith/issues"
+  },
+  "keywords": [
+    "gulp",
+    "modular",
+    "tasks",
+    "common",
+    "global",
+    "project",
+    "doom"
+  ],
+  "dependencies": {},
+  "devDependencies": {},
+  "preferGlobal": false,
+  "private": false,
+  "publishConfig": {},
+  "analyze": true,
+  "license": "MIT"
+}

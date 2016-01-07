@@ -1,0 +1,43 @@
+//------------------------------------
+// Display
+//------------------------------------
+
+$name: 'display';
+$prefix: map-get($class-prefix, 'object');
+$class: #{$prefix}#{$name};
+
+.#{$class} {
+  @at-root {
+    #{&}--table {
+      display: table !important;
+      width: 100% !important;
+      height: 100% !important;
+
+      &__cell {
+        display: table-cell !important;
+      }
+    }
+
+    #{&}--center {
+      display: block;
+      text-align: center;
+      word-spacing: -1px;
+
+      &:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        @include margin(null -0.25em null null);
+      }
+
+      &__child {
+        display: inline-block;
+        vertical-align: middle;
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+}
