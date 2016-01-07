@@ -1,6 +1,6 @@
 {
-  "name": "doom.wraith",
-  "version": "1.0.2",
+  "name": "wraiths",
+  "version": "1.0.0",
   "description": "BEMIT framework",
   "author": "Fabio Cencetti <hey@kreo.me>",
   "contributors": [
@@ -10,7 +10,7 @@
     }
   ],
   "bin": {
-    "module-name": "./wraith"
+    "module-name": "./wraiths"
   },
   "files": [
     "LICENSE",

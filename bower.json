@@ -1,12 +1,13 @@
 {
-  "name": "wraith",
+  "name": "wraiths",
   "version": "1.0.0",
   "authors": [
     "Fabio Cencetti"
   ],
   "description": "BEMIT framework",
   "main": [
-    "core"
+    "./wraiths/styles/app.scss",
+    "./wraiths/scripts/app.js"
   ],
   "moduleType": [
     "amd"
