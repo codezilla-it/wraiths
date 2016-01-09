@@ -1,5 +1,6 @@
 .*
 !.gitignore
+nbproject
 .idea
 *.py[cod]
 *.eml
