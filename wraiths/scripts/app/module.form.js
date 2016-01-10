@@ -1,21 +1,19 @@
 function validation($input, $errors) {
 
 	function addInputSuccessClass(objectError, elemId, feedback) {
-		$(objectError).removeClass(feedback + '--error');
 		$("#error-" + elemId).hide();
-
-		$(objectError).addClass(feedback + '--success');
+		$(objectError).removeClass(feedback + '--error').addClass(feedback + '--success');
 	}
 
 	function addInputErrorClass(objectError, feedback) {
-		$(objectError).removeClass(feedback + '--success');
-		$(objectError).addClass(feedback + '--error');
+		$(objectError).removeClass(feedback + '--success').addClass(feedback + '--error');
 	}
 
 	function removeInputClass(objectError, elemId, feedback) {
-		$(objectError).removeClass(feedback + '--success');
-		$(objectError).removeClass(feedback + '--error');
+		var class_success = feedback + '--success';
+		var class_error = feedback + '--error';
 		$("#error-" + elemId).hide();
+		$(objectError).removeClass('class_success class_error');
 	}
 
 	var feedback = 's--feedback';
