@@ -1,4 +1,4 @@
-function init(button, main, menu, overlay) {
+function slide_out(button, main, menu, overlay) {
 
 	function nav_open(button, overlay) {
 		$(overlay + ',' + button).addClass('s--active');
@@ -41,5 +41,5 @@ function init(button, main, menu, overlay) {
 }
 
 module.exports = {
-	init: init
+	slide_out: slide_out
 };

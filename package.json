@@ -16,6 +16,8 @@
     "package.json",
     "bower.json",
     "wraiths",
+    "module.form.js",
+    "module.login.js",
     "_dist"
   ],
   "scripts": {},

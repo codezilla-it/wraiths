@@ -50,7 +50,7 @@ function validation($input, $errors) {
 					addInputSuccessClass(objectError, elemId, feedback);
 				} else {
 					addInputErrorClass(objectError, feedback);
-					
+
 					// Aggiungo un Fake Error per gli input di tipo File
 					$el.closest('.o--form__upload').siblings('.o--form__fake-errors').text(errorMess);
 				}

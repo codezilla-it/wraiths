@@ -42,11 +42,13 @@
 @import 'app/component.nav';
 @import 'app/component.panel';
 @import 'app/component.slideout';
+@import 'app/component.carousel';
 // modules
 //------------------------------------
 @import 'app/module.hero';
 @import 'app/module.login';
 @import 'app/module.navbar';
+// sections
 @import 'app/module.content';
 @import 'app/module.footer';
 @import 'app/module.wrap';
