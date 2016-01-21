@@ -42,23 +42,44 @@ function init(target) {
 				// URL
 				map_from_pin,
 				// (width,height)
-				new google.maps.Size( 38, 50 ),
+				new google.maps.Size( 50, 50 ),
 				// The origin point (x,y)
 				new google.maps.Point( 0, 0 ),
 				// The anchor point (x,y)
-				new google.maps.Point( 19, 53 )
+				new google.maps.Point( 25, 50 )
 			),
 			to: new google.maps.MarkerImage(
 				// URL
 				map_to_pin,
 				// (width,height)
-				new google.maps.Size( 38, 50 ),
+				new google.maps.Size( 50, 50 ),
 				// The origin point (x,y)
 				new google.maps.Point( 0, 0 ),
 				// The anchor point (x,y)
-				new google.maps.Point( 19, 53 )
+				new google.maps.Point( 25, 50 )
 			)
 		};
+		if (map_from_pin) {
+			var img_from = document.createElement('img');
+			img_from.src = map_from_pin;
+			img_from.onload = function() {
+				icons.from.size.width = this.width;
+				icons.from.size.height = this.height;
+				icons.from.anchor.x = this.width/2;
+				icons.from.anchor.y = this.height;
+			};
+		}
+		
+		if (map_to_pin) {
+			var img_to = document.createElement('img');
+			img_to.src = map_to_pin;
+			img_to.onload = function() {
+				icons.to.size.width = this.width;
+				icons.to.size.height = this.height;
+				icons.to.anchor.x = this.width/2;
+				icons.to.anchor.y = this.height;
+			};
+		}
 		
         switch (map_type) {
             case 'HYBRID':
