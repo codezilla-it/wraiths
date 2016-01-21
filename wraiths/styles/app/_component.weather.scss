@@ -1,0 +1,168 @@
+//------------------------------------
+//  $Weather
+//------------------------------------
+
+$name: 'weather';
+$prefix: map-get($class-prefix, 'component');
+$class: #{$prefix}#{$name};
+
+.#{$class} {
+
+  @at-root {
+
+    #{&}__item {
+      padding: 0.8em;
+      text-align: left;
+      background-repeat: no-repeat;
+
+      &--odd {
+        background-color: #f4fafe;
+        margin-right: 20px;
+        border: 1px solid #daf0fb;
+        margin-bottom: 15px;
+        padding: 30px 30px 30px 190px;
+      }
+
+      &--sole {
+        background-image: url(http://l.yimg.com/a/i/us/nws/weather/gr/31d.png);
+      }
+
+      &--poco-nuvoloso {
+        background-image: url(http://l.yimg.com/a/i/us/nws/weather/gr/34d.png)
+      }
+
+      &--nuvole-sparse {
+        background-image: url(http://l.yimg.com/a/i/us/nws/weather/gr/30d.png);
+      }
+
+      &--nuvoloso {
+        background-image: url(http://l.yimg.com/a/i/us/nws/weather/gr/26d.png);
+      }
+
+      &--variabile {
+        background-image: url(http://l.yimg.com/a/i/us/nws/weather/gr/48d.png);
+      }
+
+      &--temporali-improvvisi {
+        background-image: url(http://l.yimg.com/a/i/us/nws/weather/gr/38d.png);
+      }
+
+      &--pioggia {
+        background-image: url(http://l.yimg.com/a/i/us/nws/weather/gr/40d.png);
+      }
+
+      &--temporale {
+        background-image: url(http://l.yimg.com/a/i/us/nws/weather/gr/35d.png);
+      }
+
+      &--neve {
+        background-image: url(http://l.yimg.com/a/i/us/nws/weather/gr/42d.png);
+      }
+
+      &--ghiaccio {
+        background-image: url(http://l.yimg.com/a/i/us/nws/weather/gr/25d.png);
+      }
+
+      &--ventoso {
+        background-image: url(http://l.yimg.com/a/i/us/nws/weather/gr/24d.png);
+      }
+
+      &--foschia {
+        background-image: url(http://l.yimg.com/a/i/us/nws/weather/gr/19d.png);
+      }
+    }
+
+    #{&}__city {
+      text-transform: uppercase;
+    }
+
+    #{&}__temp {
+      font-size: 2.8em;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    #{&}__desc,
+    #{&}__city,
+    #{&}__day {
+      font-weight: bold;
+    }
+
+    #{&}__desc {
+      margin-bottom: 0.4em;
+    }
+
+    #{&}__range,
+    #{&}__wind,
+    #{&}__link {
+      font-size: 12px;
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    #{&}__link {
+      margin-bottom: 0.5em;
+      text-align: left;
+
+      a {
+        display: block;
+        clear: both;
+        padding-top: 10px;
+      }
+    }
+
+    #{&}__forecast {
+      float: right;
+      width: 48%;
+
+      &--item {
+        padding: 10px 10px 10px 80px;
+        background-position: left center;
+        width: 100%;
+        font-size: 12px;
+        display: inline-block;
+        text-align: left;
+        margin-right: 10px;
+        margin-bottom: 0.5em;
+        border: 1px solid #ededed;
+        background-color: #fff;
+
+        @include max-screen(map-get($mq, md)) {
+          padding: 10px 10px 10px 72px;
+        }
+      }
+
+      &--day {
+        font-size: 14px;
+        display: inline;
+        margin-right: 5px;
+      }
+
+      &__date,
+      &__text,
+      &__range {
+        display: inline;
+        margin-right: 15px;
+      }
+
+      &__range {
+        @include max-screen(map-get($mq, sm)) {
+          display: block;
+        }
+      }
+
+      @include max-screen(map-get($mq, sm)) {
+        #{&}__item &--odd,
+        #{&}__forecast {
+          float: none;
+          width: 100%;
+        }
+      }
+    }
+
+    #{&}--even {
+      background-color: #d4d4e8;
+    }
+  }
+}
+
