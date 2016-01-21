@@ -97,8 +97,6 @@ function init(target, target_type, custom_options) {
     }
     else {
         options = $.extend(default_options, options);
-
-        console.log($.extend(default_options, options));
     }
 
     target.slick(options);

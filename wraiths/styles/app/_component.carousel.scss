@@ -12,7 +12,7 @@ $class: #{$prefix}#{$name};
 
 .slick-carousel {
   &.slick-multiple {
-    @include margin(0 -15px);
+    @include margin(0 -30px);
 
     .item {
       @include padding(15px);
