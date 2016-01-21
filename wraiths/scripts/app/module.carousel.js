@@ -1,22 +1,32 @@
-function slick(target, target_type, custom_options) {
+function init(target, target_type, custom_options) {
 
     var options = null,
         default_options = {
-            dots: false,
+            dots: true,
             infinite: true,
+            lazy: true,
             lazyLoad: 'ondemand',
-            speed: 300,
+            speed: 200,
             centerMode: false,
             variableWidth: false,
-            adaptiveHeight: false,
+            adaptiveHeight: true,
             autoplay: true,
             autoplaySpeed: 2000,
             slidesToShow: 3,
             slidesToScroll: 1,
-            focusOnSelect: true,
+            focusOnSelect: false,
+            pauseOnHover: true,
+            pauseOnDotsHover: true,
             arrows: true,
             fade: false,
-            cssEase: 'linear'
+            cssEase: 'ease',
+            rows: 1,
+            touchThreshold: 30,
+            waitForAnimate: true,
+            useTransform: true,
+            touchMove: true,
+            swipeToSlide: true,
+            swipe: true,
         };
 
     switch (target_type) {
@@ -40,8 +50,8 @@ function slick(target, target_type, custom_options) {
                 dots: true,
                 slidesToShow: 4,
                 slidesToScroll: 1,
-                centerMode: true,
-                variableWidth: true,
+                arrows: true,
+                rows: 1,
                 responsive: [
                     {
                         breakpoint: 1200,
@@ -87,11 +97,13 @@ function slick(target, target_type, custom_options) {
     }
     else {
         options = $.extend(default_options, options);
+
+        console.log($.extend(default_options, options));
     }
 
     target.slick(options);
 }
 
 module.exports = {
-    slick: slick
+    init: init
 };
