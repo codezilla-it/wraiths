@@ -48,7 +48,7 @@ $class: #{$prefix}#{$name};
         @include linear-gradient(to bottom, #32bf37 0%, #1ba31b 100%);
 
         &:not(.o--no--shadow) {
-          text-shadow: 1px 1px 0 #1ba31b;
+          text-shadow: 1px 1px 4px #158215;
         }
 
         &:not(.o--no--hover):hover {
