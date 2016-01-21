@@ -12,9 +12,11 @@ $class: #{$prefix}#{$name};
 
 .slick-carousel {
   &.slick-multiple {
-    @include margin(0 -15px);
+    @include margin(0 -30px);
+
     .item {
       @include padding(15px);
+
       > a {
         display: block;
         width: 100%;
@@ -22,30 +24,41 @@ $class: #{$prefix}#{$name};
         overflow: hidden;
         @include border-radius(5px);
       }
+
       img {
         border: none;
         display: block;
         width: 100%;
       }
+
+      &:focus, > *:focus{
+        outline: none;
+        box-shadow: none;
+      }
     }
+
     .slick-dots {
       bottom: -38px;
+
       li {
         button {
           &:before {
             font-size: 8px;
             color: #7a848b;
           }
+
           &:hover {
             &:before {
-              color: lighten($color_radical_red, 20%);
+              color: lighten($color_deep_skyblue, 20%);
             }
           }
         }
+
         @include max-screen(map-get($mq, 'sm')) {
           &:nth-child(n+6) {
             display: none;
           }
+
           &:first-child, &:last-child {
             display: inline-block;
           }
@@ -54,19 +67,22 @@ $class: #{$prefix}#{$name};
         &.slick-active {
           button {
             &:before {
-              color: $color_radical_red;
+              color: $color_deep_skyblue;
             }
           }
         }
       }
     }
+
     [class*='youtube'] {
       position: relative;
+
       .overlay {
         background: rgba(79, 84, 92, 0.45);
         opacity: 1;
         @include z('top', 'middle');;
       }
+
       .fa-play {
         font-size: 25px;
         background: #e51518;

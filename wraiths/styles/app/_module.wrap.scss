@@ -3,7 +3,7 @@
 //------------------------------------
 
 $name: 'wrap';
-$prefix: map-get($class-prefix, 'object');
+$prefix: map-get($class-prefix, 'module');
 $class: #{$prefix}#{$name};
 
 .#{$class} {
@@ -12,4 +12,5 @@ $class: #{$prefix}#{$name};
   min-width: map-get($layout, 'min-width');
   height: auto;
   border: none !important;
+  overflow-x: hidden;
 }
