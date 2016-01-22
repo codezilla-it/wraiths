@@ -1,12 +1,16 @@
 
 function init(target) {
+	
+	var google_map;
 
     target.each(function () {
-
+		
         var map = $(this);
         var map_id = map.attr('id');
         var map_type = map.data('map-type');
 		var map_zoom = parseInt(map.data('map-zoom'));
+		var map_draw_shape = map.data('map-draw-shape');
+		var map_shape_coords = map.data('map-shape-coords');
 		
         var map_from_lat = map.data('map-from-lat');
         var map_from_lon = map.data('map-from-lon');
@@ -96,14 +100,39 @@ function init(target) {
                 break;
         }
 
-        map = new google.maps.Map(document.getElementById(map_id), options);
+        google_map = new google.maps.Map(document.getElementById(map_id), options);
+		
+		if (map_draw_shape) {
+			var coords = JSON.parse(atob(map_shape_coords));
+			
+			// Construct the polygon.
+			var shape = new google.maps.Polygon({
+				map: google_map,
+				paths: coords,
+				strokeColor: '#0071D6',
+				strokeOpacity: 0.8,
+				strokeWeight: 2,
+				fillColor: '#0071D6',
+				fillOpacity: 0.35,
+				draggable: false,
+				geodesic: false
+			});
+			
+			pathCoords = shape.getPath();
+			var bounds = new google.maps.LatLngBounds();
+			for (i = 0; i < pathCoords.length; i++) {
+				bounds.extend(pathCoords.getAt(i));
+			}
+			google_map.fitBounds(bounds);
+			google_map.setCenter(bounds.getCenter());
+		}
 		
 		if (map_to_lat && map_to_lon) {
 			var latlng_to = new google.maps.LatLng(map_to_lat, map_to_lon);
 			var directionsService = new google.maps.DirectionsService;
 			var directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true});
 			
-			directionsDisplay.setMap(map);
+			directionsDisplay.setMap(google_map);
 			
 			directionsService.route({
 				origin: latlng_from,
@@ -113,15 +142,15 @@ function init(target) {
 				if (status === google.maps.DirectionsStatus.OK) {
 					directionsDisplay.setDirections(response);
 					if (map_from_pin && map_to_pin) {
-						makeMarker( latlng_from, map, icons.from, map_marker_from_title, map_marker_from_info );
-						makeMarker( latlng_to, map, icons.to, map_marker_to_title, map_marker_to_info );
+						makeMarker( latlng_from, google_map, icons.from, map_marker_from_title, map_marker_from_info );
+						makeMarker( latlng_to, google_map, icons.to, map_marker_to_title, map_marker_to_info );
 					}
 				} else {
 					window.alert('Directions request failed due to ' + status);
 				}
 			});
 		} else if (map_from_pin) {
-			makeMarker( latlng_from, map, icons.from, map_marker_from_title, map_marker_from_info );
+//			makeMarker( latlng_from, map, icons.from, map_marker_from_title, map_marker_from_info );
         }
     });
 }
