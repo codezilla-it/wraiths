@@ -13,7 +13,7 @@ $gutter: map-get($layout, 'gutter');
   min-height: 1px;
   @include position(relative, 0);
   @include padding(null #{$gutter});
-  @include margin(null (0 !important));
+  @include margin(null (0));
 
   @at-root {
     #{&} + #{&} {
