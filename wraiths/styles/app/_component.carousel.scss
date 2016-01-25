@@ -29,6 +29,10 @@ $class: #{$prefix}#{$name};
         border: none;
         display: block;
         width: 100%;
+
+        &.responsive{
+          width: 100% !important;
+        }
       }
 
       &:focus, > *:focus{

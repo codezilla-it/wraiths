@@ -1,6 +1,6 @@
 
 function init(target) {
-	
+
 	var google_map;
 
     target.each(function () {
