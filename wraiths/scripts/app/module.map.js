@@ -104,24 +104,27 @@ function init(target) {
 		
 		if (map_draw_shape) {
 			var coords = JSON.parse(atob(map_shape_coords));
-			
-			// Construct the polygon.
-			var shape = new google.maps.Polygon({
-				map: google_map,
-				paths: coords,
-				strokeColor: '#0071D6',
-				strokeOpacity: 0.8,
-				strokeWeight: 2,
-				fillColor: '#0071D6',
-				fillOpacity: 0.35,
-				draggable: false,
-				geodesic: false
-			});
-			
-			pathCoords = shape.getPath();
 			var bounds = new google.maps.LatLngBounds();
-			for (i = 0; i < pathCoords.length; i++) {
-				bounds.extend(pathCoords.getAt(i));
+			
+			for (var coord in coords) {
+				// Construct the polygon.
+				var shape = new google.maps.Polygon({
+					map: google_map,
+					paths: coords[coord],
+					strokeColor: '#0071D6',
+					strokeOpacity: 0.8,
+					strokeWeight: 2,
+					fillColor: '#0071D6',
+					fillOpacity: 0.35,
+					draggable: false,
+					geodesic: false
+				});
+				
+				pathCoords = shape.getPath();
+				
+				for (j = 0; j < pathCoords.length; j++) {
+					bounds.extend(pathCoords.getAt(j));
+				}
 			}
 			google_map.fitBounds(bounds);
 			google_map.setCenter(bounds.getCenter());
@@ -173,6 +176,14 @@ function makeMarker( position, map, icon, title, info ) {
 		});
 	}
 }
+
+Object.size = function(obj) {
+	var size = 0, key;
+	for (key in obj) {
+		if (obj.hasOwnProperty(key)) size++;
+	}
+	return size;
+};
 
 module.exports = {
     init: init
