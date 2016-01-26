@@ -1,0 +1,20 @@
+//------------------------------------
+//  $List
+//------------------------------------
+
+$name: 'list';
+$prefix: map-get($class-prefix, 'object');
+$class: #{$prefix}#{$name};
+
+.#{$class} {
+
+  #{&}--group {
+    &__item {
+      position: relative;
+      display: inline-block;
+      @include position(relative, 0);
+      @include padding(10px 15px);
+      @include margin(0 auto -1px auto);
+    }
+  }
+}

@@ -56,8 +56,8 @@ function init(target, target_type, custom_options) {
                     {
                         breakpoint: 1200,
                         settings: {
-                            slidesToShow: 4,
-                            slidesToScroll: 4
+                            slidesToShow: 3,
+                            slidesToScroll: 3
                         }
                     },
                     {
