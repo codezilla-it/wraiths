@@ -10,7 +10,7 @@ $class: #{$prefix}#{$name};
   background-color: #f4fafe;
   border: 1px solid #daf0fb;
   border-radius: 5px;
-  @include padding(37px 20px);
+  @include padding(43px 20px);
   @at-root {
 
     #{&}__item {
@@ -55,12 +55,16 @@ $class: #{$prefix}#{$name};
 
     #{&}__city {
       text-transform: uppercase;
+      color: #3DA2D6;
+      display: none;
+      @include margin(0 10px 0 0);
     }
 
     #{&}__temp {
       font-size: 2.8em;
       font-weight: bold;
-      margin: 10px 0;
+      color: #3DA2D6;
+      @include margin(12px 0 20px -4px);
     }
 
     #{&}__desc,
@@ -70,6 +74,8 @@ $class: #{$prefix}#{$name};
     }
 
     #{&}__desc {
+      display: inline-block;
+      color: #63BEEC;
       margin-bottom: 0.4em;
     }
 
