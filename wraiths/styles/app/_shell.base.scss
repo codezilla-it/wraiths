@@ -29,14 +29,26 @@ body {
 }
 
 a {
+	text-decoration: none;
+	cursor: pointer;
+	transition: all 0.1s ease-in;
+
 	&:hover {
 		cursor: pointer;
 		text-decoration: none;
 	}
 
-	&:focus {
-		outline: 5px auto -webkit-focus-ring-color;
-		outline-offset: -2px;
+	&:hover, &:active, &:focus {
+		outline: 0;
+		text-decoration: none;
+	}
+
+	&:before, &:after {
+		transition: all 0.1s ease-in;
+	}
+
+	img {
+		border: none;
 	}
 }
 

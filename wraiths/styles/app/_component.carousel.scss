@@ -15,7 +15,7 @@ $class: #{$prefix}#{$name};
     @include margin(0 -30px);
 
     .item {
-      @include padding(15px);
+      @include padding(0 15px);
 
       > a {
         display: block;
