@@ -15,14 +15,14 @@ $class: #{$prefix}#{$name};
     @include margin(0 -30px);
 
     .item {
-      @include padding(0 15px);
+      @include padding(0 10px);
 
       > a {
         display: block;
         width: 100%;
         height: 100%;
         overflow: hidden;
-        @include border-radius(5px);
+        @include border-radius(0);
       }
 
       img {

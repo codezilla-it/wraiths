@@ -9,20 +9,15 @@ $class: #{$prefix}#{$name};
 .#{$class} {
   background-color: #f4fafe;
   border: 1px solid #daf0fb;
-  border-radius: 5px;
-  @include padding(43px 20px);
+  @include padding(31px 20px);
+  @include border-radius(0);
+
   @at-root {
     #{&}__item {
-      text-align: left;
       background-repeat: no-repeat;
 
       .inner {
-        @include max-screen(map-get($mq, md)) {
-          text-align: center;
-        }
-        @include min-screen(map-get($mq, md)) {
-          text-align: left;
-        }
+        text-align: center;
       }
     }
 
@@ -33,7 +28,7 @@ $class: #{$prefix}#{$name};
       -moz-transform: scale(0.5);
       -moz-transform-origin: 0 0;
       @include margin(25px null null -8px);
-      @include max-screen(map-get($mq, sm)){
+      @include max-screen(map-get($mq, sm)) {
         @include margin(0 auto);
       }
 
@@ -57,8 +52,7 @@ $class: #{$prefix}#{$name};
     }
 
     #{&}__city {
-      text-transform: uppercase;
-      color: #3DA2D6;
+      color: #1DA0DE;
       display: none;
       @include margin(0 10px 0 0);
     }
@@ -66,21 +60,23 @@ $class: #{$prefix}#{$name};
     #{&}__temp {
       font-size: 2.8em;
       font-weight: bold;
-      color: #3DA2D6;
-      @include margin(12px 0 20px -4px);
+      color: #20A9EA;
+      @include margin(18px 0 20px -4px);
+    }
+
+    #{&}__desc {
+      display: inline-block;
+      color: #76C3EA;
+      @include margin(null null 0.4em null);
     }
 
     #{&}__desc,
     #{&}__city,
     #{&}__day {
+      display: block;
+      text-align: center;
       font-weight: bold;
-    }
-
-    #{&}__desc {
-      display: inline-block;
-      color: #63BEEC;
-      text-transform: uppercase;
-      @include margin(null null 0.4em null);
+      text-transform: capitalize;
     }
 
     #{&}__range,
@@ -89,6 +85,7 @@ $class: #{$prefix}#{$name};
       font-size: 12px;
       display: inline-block;
       margin-right: 10px;
+      color: #5F90A9;
     }
 
     #{&}__link {
