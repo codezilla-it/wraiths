@@ -12,7 +12,6 @@ $class: #{$prefix}#{$name};
   border-radius: 5px;
   @include padding(43px 20px);
   @at-root {
-
     #{&}__item {
       text-align: left;
       background-repeat: no-repeat;
