@@ -35,6 +35,10 @@ $class: #{$prefix}#{$name};
     @include margin(0 null null null);
   }
 
+  input + input, select + select{
+
+  }
+
   @at-root {
     #{&}__input {
       &:not(.o--btn) {
@@ -217,12 +221,12 @@ $class: #{$prefix}#{$name};
     }
 
     #{&}__label {
-      line-height: 36px;
+      line-height: 1.5em;
       vertical-align: middle;
       font-size: 16px;
-      @include margin(0);
+      @include margin(0 0 10px 0);
       @include max-screen(map-get($mq, 'md')) {
-        line-height: 20px;
+        @include margin(null null 5px null);
       }
 
       label {
@@ -318,6 +322,8 @@ $class: #{$prefix}#{$name};
     }
 
     #{&}__field {
+      @include position(relative);
+
       .errors {
         display: block;
         list-style: none;
@@ -397,6 +403,10 @@ $class: #{$prefix}#{$name};
         font-weight: bold;
       }
     }
+  }
+
+  .o--col.o--width\@xxs--12 + .o--col.o--width\@xxs--12{
+    margin-bottom: 10px;
   }
 }
 
