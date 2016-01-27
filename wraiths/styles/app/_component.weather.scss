@@ -30,9 +30,13 @@ $class: #{$prefix}#{$name};
     #{&}__icon {
       display: inline-block;
       overflow: hidden;
-      zoom: 0.5;
+      zoom: 0.6;
       -moz-transform: scale(0.5);
       -moz-transform-origin: 0 0;
+      @include margin(25px null null -8px);
+      @include max-screen(map-get($mq, sm)){
+        @include margin(0 auto);
+      }
 
       &--huge {
         zoom: 1;
@@ -76,7 +80,8 @@ $class: #{$prefix}#{$name};
     #{&}__desc {
       display: inline-block;
       color: #63BEEC;
-      margin-bottom: 0.4em;
+      text-transform: uppercase;
+      @include margin(null null 0.4em null);
     }
 
     #{&}__range,
@@ -139,16 +144,11 @@ $class: #{$prefix}#{$name};
       }
 
       @include max-screen(map-get($mq, sm)) {
-        #{&}__item &--odd,
         #{&}__forecast {
           float: none;
           width: 100%;
         }
       }
-    }
-
-    #{&}--even {
-      background-color: #d4d4e8;
     }
   }
 }

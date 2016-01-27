@@ -11,7 +11,7 @@ $class: #{$prefix}#{$name};
 
   ul {
     list-style: none;
-    border: 1px solid #DADBE0;
+    border: 1px solid #E0E1E2;
     background: #fff;
     @include clearfix();
     @include margin(0);

@@ -17,4 +17,10 @@ $class: #{$prefix}#{$name};
       @include margin(0 auto -1px auto);
     }
   }
+
+  #{&}--horizontal{
+    li {
+      display: inline-block;
+    }
+  }
 }
