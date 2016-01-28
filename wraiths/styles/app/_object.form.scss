@@ -35,10 +35,6 @@ $class: #{$prefix}#{$name};
     @include margin(0 null null null);
   }
 
-  input + input, select + select{
-
-  }
-
   @at-root {
     #{&}__input {
       &:not(.o--btn) {
@@ -66,6 +62,10 @@ $class: #{$prefix}#{$name};
       -webkit-appearance: none;
       -moz-appearance: none;
       @include padding(0 15px);
+
+      &:hover{
+        cursor: pointer;
+      }
     }
 
     textarea#{&}__input {
@@ -77,10 +77,7 @@ $class: #{$prefix}#{$name};
     }
 
     #{&}__item {
-      @include margin(null null (12px !important) null);
-      @include max-screen(map-get($mq, 'md')) {
-        @include margin(null null (5px !important) null);
-      }
+      @include margin(null null 0 null);
     }
 
     #{&}__upload {
@@ -288,7 +285,7 @@ $class: #{$prefix}#{$name};
           .o--icon {
             display: block;
             font-size: 16px;
-            @include position(absolute, 9px 32px null null);
+            @include position(absolute, 6px 32px null null);
             @include margin(0);
             @include padding(0);
 
@@ -323,6 +320,7 @@ $class: #{$prefix}#{$name};
 
     #{&}__field {
       @include position(relative);
+      @include margin(0 0 15px 0);
 
       .errors {
         display: block;
@@ -403,10 +401,6 @@ $class: #{$prefix}#{$name};
         font-weight: bold;
       }
     }
-  }
-
-  .o--col.o--width\@xxs--12 + .o--col.o--width\@xxs--12{
-    margin-bottom: 10px;
   }
 }
 
