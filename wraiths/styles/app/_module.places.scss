@@ -8,45 +8,51 @@ $class: #{$prefix}#{$name};
 
 .#{$class} {
 
-	// Elements
-	// ----------
+  // Elements
+  // ----------
 
-	#{&}__item {
+  #{&}__item {
 
-	}
+  }
 
-	#{&}__content {
+  #{&}__content {
 
-	}
+  }
 
-	#{&}__title {
-		text-transform: capitalize;
-		margin-bottom: 10px;
-	}
+  #{&}__title {
+    text-transform: capitalize;
+    margin-bottom: 10px;
+  }
 
-	#{&}__city {
-		text-transform: capitalize;
-		margin-top: 0;
-		margin-bottom: 10px;
-		color: #1B75BB;
-	}
+  #{&}__city {
+    text-transform: capitalize;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #1B75BB;
+  }
 
-	#{&}__desc {
-		max-height: 5.2em;
-	}
+  #{&}__desc {
+    max-height: 5.2em;
+  }
 
-	// Modifiers
-	// ----------
+  // Modifiers
+  // ----------
 
-	#{&}--cards {
+  #{&}--cards {
 
-	}
+  }
 
-	#{&}--list {
+  #{&}--list {
 
-	}
+  }
 
-	.c--weather {
-		padding: 10px;
-	}
+  .c--weather {
+    padding: 10px;
+  }
+
+  .o--flex--center {
+    @include max-screen(map-get($mq, md)) {
+      display: block;
+    }
+  }
 }

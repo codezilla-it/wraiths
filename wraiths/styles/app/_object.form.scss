@@ -70,7 +70,7 @@ $class: #{$prefix}#{$name};
 
     textarea#{&}__input {
       height: auto;
-      min-height: 200px;
+      min-height: 146px;
       @include max-screen(map-get($mq, 'md')) {
         @include margin(null null 15px null);
       }
