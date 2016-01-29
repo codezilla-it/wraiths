@@ -1,0 +1,52 @@
+//------------------------------------
+//  $Places
+//------------------------------------
+
+$name: 'places';
+$prefix: map-get($class-prefix, 'module');
+$class: #{$prefix}#{$name};
+
+.#{$class} {
+
+	// Elements
+	// ----------
+
+	#{&}__item {
+
+	}
+
+	#{&}__content {
+
+	}
+
+	#{&}__title {
+		text-transform: capitalize;
+		margin-bottom: 10px;
+	}
+
+	#{&}__city {
+		text-transform: capitalize;
+		margin-top: 0;
+		margin-bottom: 10px;
+		color: #1B75BB;
+	}
+
+	#{&}__desc {
+		max-height: 5.2em;
+	}
+
+	// Modifiers
+	// ----------
+
+	#{&}--cards {
+
+	}
+
+	#{&}--list {
+
+	}
+
+	.c--weather {
+		padding: 10px;
+	}
+}

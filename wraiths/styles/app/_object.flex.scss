@@ -1,0 +1,25 @@
+//------------------------------------
+// Flex
+//------------------------------------
+
+$name: 'flex';
+$prefix: map-get($class-prefix, 'object');
+$class: #{$prefix}#{$name};
+
+.#{$class} {
+
+  @at-root {
+    #{&}--center {
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      align-items: center;
+      -webkit-align-items: center;
+      justify-content: center;
+      -webkit-justify-content: center;
+      flex-direction: row;
+      -webkit-flex-direction: row;
+    }
+  }
+}

@@ -7,5 +7,33 @@ $prefix: map-get($class-prefix, 'object');
 $class: #{$prefix}#{$name};
 
 .#{$class} {
+  display: inline-block;
   font-size: 64px;
+
+  @at-root {
+
+    #{&}--xxs {
+      font-size: map-get($text, xxs);
+    }
+
+    #{&}--xs {
+      font-size: map-get($text, xs);
+    }
+
+    #{&}--sm {
+      font-size: map-get($text, sm);
+    }
+
+    #{&}--md {
+      font-size: map-get($text, md);
+    }
+
+    #{&}--lg {
+      font-size: map-get($text, lg);
+    }
+
+    #{&}--xl {
+      font-size: map-get($text, xl);
+    }
+  }
 }
