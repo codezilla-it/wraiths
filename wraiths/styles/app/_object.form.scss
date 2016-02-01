@@ -392,6 +392,7 @@ $class: #{$prefix}#{$name};
     }
 
     #{&}__icon-select {
+      max-height: 34px;
       color: #0081D4;
       border-left: 1px solid #DADADA;
       @include position(absolute, 1px 15px 1px null);
