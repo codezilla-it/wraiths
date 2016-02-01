@@ -289,7 +289,7 @@ $class: #{$prefix}#{$name};
           .o--icon {
             display: block;
             font-size: 16px;
-            @include position(absolute, 6px 32px null null);
+            @include position(absolute, 6px 15px null null);
             @include margin(0);
             @include padding(0);
 
@@ -405,7 +405,7 @@ $class: #{$prefix}#{$name};
       @include padding(7px);
 
       & + .o--icon {
-        padding-right: 20px !important;
+        padding-right: 8px !important;
       }
 
       [class*="g--"] {
