@@ -35,6 +35,10 @@ $class: #{$prefix}#{$name};
     @include margin(0 null null null);
   }
 
+  .input-group{
+    width: 100%;
+  }
+
   @at-root {
     #{&}__input {
       &:not(.o--btn) {
