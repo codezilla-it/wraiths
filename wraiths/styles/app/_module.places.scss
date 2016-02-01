@@ -33,6 +33,9 @@ $class: #{$prefix}#{$name};
 
   #{&}__desc {
     max-height: 5.2em;
+    @include min-screen(map-get($mq, md)){
+      min-height: 84px;
+    }
   }
 
   // Modifiers

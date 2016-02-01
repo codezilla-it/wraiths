@@ -35,7 +35,7 @@ $class: #{$prefix}#{$name};
     @include margin(0 null null null);
   }
 
-  .input-group{
+  .input-group {
     width: 100%;
   }
 
@@ -67,7 +67,7 @@ $class: #{$prefix}#{$name};
       -moz-appearance: none;
       @include padding(0 15px);
 
-      &:hover{
+      &:hover {
         cursor: pointer;
       }
     }
@@ -325,6 +325,12 @@ $class: #{$prefix}#{$name};
     #{&}__field {
       @include position(relative);
       @include margin(0 0 15px 0);
+
+      .s--highlight {
+        border-color: #A9C2D2 !important;
+        color: #0081D4 !important;
+        background: #F9FCFF !important;
+      }
 
       .errors {
         display: block;
