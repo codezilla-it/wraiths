@@ -9,7 +9,7 @@ function init() {
     // Handle dynamic content height
     // -----------------------------
 
-    if ($('.m--login').exists()) {
+    if ($('.m--modal').exists()) {
         $(window).on('resize', function () {
             $('body').handle_content_height($('.m--content'), $('.m--navbar'), $('.m--footer'));
         }).resize();
