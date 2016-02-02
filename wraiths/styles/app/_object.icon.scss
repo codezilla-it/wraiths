@@ -35,5 +35,11 @@ $class: #{$prefix}#{$name};
     #{&}--xl {
       font-size: map-get($text, xl);
     }
+
+    #{&}--circle{
+      border: 1px solid rgba(white, .5);
+      @include border-radius(50%);
+      @include padding(12%);
+    }
   }
 }
