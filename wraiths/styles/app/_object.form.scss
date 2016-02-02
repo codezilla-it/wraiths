@@ -401,11 +401,11 @@ $class: #{$prefix}#{$name};
       max-height: 34px;
       color: #0081D4;
       border-left: 1px solid #DADADA;
-      @include position(absolute, 1px 15px 1px null);
+      @include position(absolute, 1px 1px null null);
       @include padding(7px);
 
       & + .o--icon {
-        padding-right: 8px !important;
+        padding-right: 20px !important;
       }
 
       [class*="g--"] {
