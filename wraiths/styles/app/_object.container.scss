@@ -10,4 +10,7 @@ $class: #{$prefix}#{$name};
   max-width: map-get($layout, 'max-width');
   @include margin(0 auto);
   @include padding(0 15px);
+  @include max-screen(map-get($mq, md)){
+    @include padding(null 5px);
+  }
 }
