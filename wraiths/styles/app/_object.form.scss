@@ -418,6 +418,10 @@ $class: #{$prefix}#{$name};
       @include position(absolute, 1px 1px null null);
       @include padding(7px);
 
+      &:hover{
+        cursor: pointer;
+      }
+
       &:after {
         display: block;
         clear: left;
