@@ -355,9 +355,8 @@ $class: #{$prefix}#{$name};
         @include padding(0);
       }
 
-      // @TODO
       &.o--col {
-        #{$class}__icon-select {
+        .#{$class}__icon-select {
           right: 16px;
         }
 
