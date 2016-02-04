@@ -35,11 +35,25 @@ $class: #{$prefix}#{$name};
     @include margin(0 null null null);
   }
 
-  .input-group {
-    width: 100%;
-  }
-
   @at-root {
+
+    .input-group {
+      &.date {
+        width: 100%;
+
+        .input-group-addon {
+          color: #898D90;
+          border-left: none;
+          @include padding(6px 8px);
+          @include border-radius(0 4px 4px 0);
+
+          & ~ .o--icon{
+            right: 41px;
+          }
+        }
+      }
+    }
+
     #{&}__input {
       &:not(.o--btn) {
         display: block;
@@ -241,7 +255,7 @@ $class: #{$prefix}#{$name};
       line-height: 1.5em;
       vertical-align: middle;
       font-size: 16px;
-      @include margin(0 0 10px 0);
+      @include margin(0 0 6px 0);
       @include max-screen(map-get($mq, 'md')) {
         @include margin(null null 5px null);
       }
