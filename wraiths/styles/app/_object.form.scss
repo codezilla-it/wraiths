@@ -59,6 +59,10 @@ $class: #{$prefix}#{$name};
         border-width: 1px;
         border-style: solid;
       }
+
+      & ~ *:not(.help-block) {
+        cursor: pointer;
+      }
     }
 
     select#{&}__input {
@@ -350,6 +354,17 @@ $class: #{$prefix}#{$name};
         @include margin(5px 0);
         @include padding(0);
       }
+
+      // @TODO
+      &.o--col {
+        #{$class}__icon-select {
+          right: 16px;
+        }
+
+        .o--icon {
+          right: 31px;
+        }
+      }
     }
 
     #{&}__errors {
@@ -418,10 +433,6 @@ $class: #{$prefix}#{$name};
       @include position(absolute, 1px 1px null null);
       @include z(top, top);
       @include padding(7px);
-
-      &:hover{
-        cursor: pointer;
-      }
 
       &:after {
         display: block;
