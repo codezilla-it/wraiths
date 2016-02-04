@@ -77,6 +77,23 @@ function init() {
 
 		file_upload.find('.o--form__fake-input .o--text').text(file_path_array[last_path_element]);
 	});
+	
+	function showDropdown(elem) {
+		if (document.createEvent) {
+			var e = document.createEvent("MouseEvents");
+			e.initMouseEvent("mousedown", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+			elem[0].dispatchEvent(e);
+		} else if (elem.fireEvent) {
+			elem[0].fireEvent("onmousedown");
+		}
+	}
+	
+	$(".o--form__icon-select").each(function (idx, el) {
+		$(el).click(function() {
+			var se = $(el).siblings("select");
+			showDropdown(se);
+		});
+	});
 }
 
 module.exports = {
