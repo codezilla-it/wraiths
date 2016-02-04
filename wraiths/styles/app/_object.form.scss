@@ -416,6 +416,7 @@ $class: #{$prefix}#{$name};
       color: #0081D4;
       border-left: 1px solid #DADADA;
       @include position(absolute, 1px 1px null null);
+      @include z(top, top);
       @include padding(7px);
 
       &:hover{
