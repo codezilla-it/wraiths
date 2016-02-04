@@ -11,6 +11,7 @@ $class: #{$prefix}#{$name};
   height: auto;
   line-height: 100%;
   border: 1px solid;
+  white-space: normal;
   @include padding(10px 20px);
   @include border-radius(4px);
   @include rem(font-size, 1.2rem);

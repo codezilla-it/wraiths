@@ -82,6 +82,18 @@ $class: #{$prefix}#{$name};
 
     #{&}__item {
       @include margin(null null 0 null);
+
+      &--checkbox {
+        .#{$class} {
+          &__field {
+            width: 5%;
+          }
+          &__label {
+            width: 88%;
+            @include margin(null 0);
+          }
+        }
+      }
     }
 
     #{&}__upload {
@@ -398,11 +410,29 @@ $class: #{$prefix}#{$name};
     }
 
     #{&}__icon-select {
-      max-height: 34px;
+      height: 100%;
+      width: 30px;
       color: #0081D4;
       border-left: 1px solid #DADADA;
       @include position(absolute, 1px 1px null null);
       @include padding(7px);
+
+      &:after {
+        display: block;
+        clear: left;
+        content: ' ';
+        width: 0;
+        height: 0;
+        border-color: #898D90 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+        border-style: solid;
+        border-width: 5px 5px 0 5px;
+        @include position(absolute, 50% 10px auto auto);
+        @include margin(-3px null null null);
+      }
+
+      &:hover:after {
+        color: #0081D4;
+      }
 
       & + .o--icon {
         padding-right: 20px !important;
