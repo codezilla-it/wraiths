@@ -34,7 +34,7 @@ $class: #{$prefix}#{$name};
     }
 
     #{&}__content {
-      @include padding(20px);
+      @include padding(15px 20px);
     }
   }
 }
