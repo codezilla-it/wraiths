@@ -47,7 +47,7 @@ $class: #{$prefix}#{$name};
           @include padding(6px 8px);
           @include border-radius(0 4px 4px 0);
 
-          & ~ .o--icon{
+          & ~ .o--icon {
             right: 41px;
           }
         }
@@ -196,23 +196,23 @@ $class: #{$prefix}#{$name};
         @include max-screen(map-get($mq, 'sm')) {
           width: 60%;
         }
+      }
 
-        .#{$class}__input {
-          height: 40px;
-          background-color: transparent !important;
-          border-color: transparent !important;
+      .#{$class}__input {
+        height: 40px;
+        background-color: transparent !important;
+        border-color: transparent !important;
+        box-shadow: none !important;
+        line-height: 1;
+        opacity: 0;
+        cursor: pointer;
+        @include padding(10px);
+
+        &:focus, &:active, &:hover {
+          outline: none !important;
           box-shadow: none !important;
-          line-height: 1;
-          opacity: 0;
+          border-color: transparent !important;
           cursor: pointer;
-          @include padding(10px);
-
-          &:focus, &:active, &:hover {
-            outline: none !important;
-            box-shadow: none !important;
-            border-color: transparent !important;
-            cursor: pointer;
-          }
         }
       }
 
