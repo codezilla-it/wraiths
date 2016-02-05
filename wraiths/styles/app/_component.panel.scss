@@ -21,7 +21,7 @@ $class: #{$prefix}#{$name};
       @include padding(6px);
 
       > * {
-        font-size: 24px;
+        font-size: 23px;
         @include margin(0);
         @include padding(0);
         @include max-screen(map-get($mq, 'md')) {
