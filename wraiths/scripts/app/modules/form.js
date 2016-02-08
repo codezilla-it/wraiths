@@ -88,7 +88,7 @@ function init() {
 		}
 	}
 	
-	$(".o--form__icon-select, .o--icon.g--themify").each(function (idx, el) {
+	$(".o--form__icon-select, .o--form__field .o--icon").each(function (idx, el) {
 		$(el).click(function() {
 			var se = $(el).siblings("select");
 			showDropdown(se);
