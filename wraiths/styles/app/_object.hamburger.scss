@@ -17,7 +17,7 @@ $class: #{$prefix}#{$name};
   transition: .2s ease-in-out;
   cursor: pointer;
   @include position(absolute, 0 null null 0);
-  @include margin(18px 0 0 0);
+  @include margin(18px 0 0 10px);
   @include padding(10px);
   @include z('top', 'top');
 

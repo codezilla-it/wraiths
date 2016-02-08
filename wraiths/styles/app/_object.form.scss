@@ -354,7 +354,7 @@ $class: #{$prefix}#{$name};
 
     #{&}__field {
       @include position(relative);
-      @include margin(0 0 15px 0);
+      @include margin(0 0 12px 0);
 
       .s--highlight {
         border-color: #A9C2D2 !important;
@@ -365,8 +365,12 @@ $class: #{$prefix}#{$name};
       .errors {
         display: block;
         list-style: none;
-        @include margin(5px 0);
+        @include margin(7px 0 0 0);
         @include padding(0);
+      }
+
+      .help-block{
+        line-height: 1.4em;
       }
 
       &.o--col {
