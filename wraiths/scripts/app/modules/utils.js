@@ -1,92 +1,114 @@
-function init() {
+// ---------------------------------------------
+// @utils
+// ---------------------------------------------
 
-	$.fn.ajax_submit_form = function (url, options) {
+var Module = (function () {
 
-		if (options === undefined) {
-			options = {};
-		}
+    // Private Methods
+    // ---------------------------------------------
 
-		var data = $(this).serialize();
+    // Public Methods
+    // ---------------------------------------------
 
-		var ajax_options = {
-			type: "POST",
-			url: url,
-			data: data,
-			dataType: 'json'
-		};
+    function init() {
 
-		var jqXHR = $.ajax($.extend(ajax_options, options));
+        $.fn.ajax_submit_form = function (url, options) {
 
-		if (options.done_fun !== undefined) {
-			jqXHR.done(options.done_fun);
-		}
+            if (options === undefined) {
+                options = {};
+            }
 
-		if (options.fail_fun !== undefined) {
-			jqXHR.fail(options.fail_fun);
-		}
-	};
+            var data = $(this).serialize();
 
-	$.fn.exists = function () {
-		return !!this.length;
-	};
+            var ajax_options = {
+                type: "POST",
+                url: url,
+                data: data,
+                dataType: 'json'
+            };
 
-	$.fn.display_block = function () {
+            var jqXHR = $.ajax($.extend(ajax_options, options));
 
-		this.removeClass('o--hide').addClass('o--show');
-	};
+            if (options.done_fun !== undefined) {
+                jqXHR.done(options.done_fun);
+            }
 
-	$.fn.display_none = function () {
+            if (options.fail_fun !== undefined) {
+                jqXHR.fail(options.fail_fun);
+            }
+        };
 
-		this.removeClass('o--show').addClass('o--hide');
-	};
+        $.fn.exists = function () {
+            return !!this.length;
+        };
 
-	$.fn.handle_content_height = function ($content, $header, $footer, options) {
+        $.fn.display_block = function () {
 
-		var params = options || {};
+            this.removeClass('o--hide').addClass('o--show');
+        };
 
-		var window_h = $(window).height();
-		var partials_h = ($header.innerHeight() + $footer.innerHeight());
-		var offset_h = window_h - partials_h;
+        $.fn.display_none = function () {
 
-		if (partials_h <= window_h) {
-			$content.css({
-				'height': offset_h + 'px'
-			});
-		}
-	};
+            this.removeClass('o--show').addClass('o--hide');
+        };
+
+        $.fn.handle_content_height = function ($content, $header, $footer, options) {
+
+            var params = options || {};
+
+            var window_h = $(window).height();
+            var partials_h = ($header.innerHeight() + $footer.innerHeight());
+            var offset_h = window_h - partials_h;
+
+            if (partials_h <= window_h) {
+                $content.css({
+                    'height': offset_h + 'px'
+                });
+            }
+        };
 
 
-	$.fn.remove_class_except = function (val) {
-		return this.each(function (index, el) {
-			var keep = val.split(" "),  // list we'd like to keep
-				reAdd = [],          // ones that should be re-added if found
-				$el = $(el);       // element we're working on
-			// look for which we re-add (based on them already existing)
-			for (var c = 0; c < keep.length; c++) {
-				if ($el.hasClass(keep[c])) reAdd.push(keep[c]);
-			}
+        $.fn.remove_class_except = function (val) {
+            return this.each(function (index, el) {
+                var keep = val.split(" "),  // list we'd like to keep
+                    reAdd = [],          // ones that should be re-added if found
+                    $el = $(el);       // element we're working on
+                // look for which we re-add (based on them already existing)
+                for (var c = 0; c < keep.length; c++) {
+                    if ($el.hasClass(keep[c])) reAdd.push(keep[c]);
+                }
 
-			// drop all, and only add those confirmed as existing
-			$el
-				.removeClass()               // remove existing classes
-				.addClass(reAdd.join(' '));  // re-add the confirmed ones
-		});
-	};
+                // drop all, and only add those confirmed as existing
+                $el
+                    .removeClass()               // remove existing classes
+                    .addClass(reAdd.join(' '));  // re-add the confirmed ones
+            });
+        };
 
-	$.fn.fill_nav = function (li, dest) {
-		$(li).each(function () {
-			var cp = $(this).clone();
-			cp.remove_class_except('s--active').removeAttr('id');
-			cp.appendTo($(dest));
-		});
-	};
+        $.fn.fill_nav = function (li, dest) {
+            $(li).each(function () {
+                var cp = $(this).clone();
+                cp.remove_class_except('s--active').removeAttr('id');
+                cp.appendTo($(dest));
+            });
+        };
 
-	document.querySelector(".m--navbar__toggle")
-		.addEventListener("click", function () {
-			this.classList.toggle("active");
-		});
-}
+        document.querySelector('.m--navbar__toggle')
+            .addEventListener('click', function () {
+                this.classList.toggle('active');
+            });
+    }
 
-module.exports = {
-	init: init
-};
+    // Module API
+    // ---------------------------------------------
+
+    return {
+        init: init
+    };
+
+})();
+
+// Module Export
+// ---------------------------------------------
+
+module.exports = Module;
