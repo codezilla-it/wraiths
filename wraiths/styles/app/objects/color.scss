@@ -11,7 +11,7 @@ $class: #{$prefix}#{$name};
 .#{$class} {
   border: 1px solid;
 
-  &:not(.o--no--text) {
+  &:not(.u--no--text) {
     color: #FFF;
   }
 
@@ -20,11 +20,11 @@ $class: #{$prefix}#{$name};
       background: #32bf37;
       border-color: #219B23;
 
-      &:not(.o--no--hover):hover {
+      &:not(.u--no--hover):hover {
         background: #1ba31b;
       }
 
-      &.o--no--fill {
+      &.u--no--fill {
         border-color: #38B93D !important;
         color: #38B93D !important;
 
@@ -47,11 +47,11 @@ $class: #{$prefix}#{$name};
       &.#{$class}--gradient {
         @include linear-gradient(to bottom, #32bf37 0%, #1ba31b 100%);
 
-        &:not(.o--no--shadow) {
+        &:not(.u--no--shadow) {
           text-shadow: 1px 1px 4px #158215;
         }
 
-        &:not(.o--no--hover):hover {
+        &:not(.u--no--hover):hover {
           @include linear-gradient(to bottom, #1ba31b 0%, #1ba31b 0%, #32bf37 99%);
         }
       }
@@ -61,11 +61,11 @@ $class: #{$prefix}#{$name};
       background: #0071D3;
       border-color: #1B75BB;
 
-      &:not(.o--no--hover):hover {
+      &:not(.u--no--hover):hover {
         background: #2895F1;
       }
 
-      &.o--no--fill {
+      &.u--no--fill {
         border-color: #0071d3 !important;
         color: #0071d3 !important;
 
@@ -88,11 +88,11 @@ $class: #{$prefix}#{$name};
       &.#{$class}--gradient {
         @include linear-gradient(135deg, #0071D3, #0084d2, #0DA4DE);
 
-        &:not(.o--no--shadow) {
+        &:not(.u--no--shadow) {
           text-shadow: 1px 1px 0 #1B75BB;
         }
 
-        &:not(.o--no--hover):hover {
+        &:not(.u--no--hover):hover {
           @include linear-gradient(to bottom, #0DA4DE, #0084d2, #0071D3);
         }
       }
@@ -108,11 +108,11 @@ $class: #{$prefix}#{$name};
       background: #EA3157;
       border-color: #EA3157;
 
-      &:not(.o--no--hover):hover {
+      &:not(.u--no--hover):hover {
         background: #EA3157;
       }
 
-      &.o--no--fill {
+      &.u--no--fill {
         border-color: #EA3157 !important;
         color: #EA3157 !important;
 
@@ -135,11 +135,11 @@ $class: #{$prefix}#{$name};
       &.#{$class}--gradient {
         @include linear-gradient(to bottom, #ff365e 0%, #c12848 100%);
 
-        &:not(.o--no--shadow) {
+        &:not(.u--no--shadow) {
           text-shadow: 1px 1px 0 #c12848;
         }
 
-        &:not(.o--no--hover):hover {
+        &:not(.u--no--hover):hover {
           @include linear-gradient(to bottom, #c12848 0%, #ff365e 100%);
         }
       }

@@ -3,58 +3,18 @@
 @import 'lib';
 // shell
 //------------------------------------
-@import 'app/_shell/base';
-@import 'app/_shell/type';
+@import 'app/_shell/all';
+
+// utils
+//------------------------------------
+@import 'app/utils/all';
+
 // objects
 //------------------------------------
-@import 'app/objects/border';
-@import 'app/objects/brand';
-@import 'app/objects/button';
-@import 'app/objects/col';
-@import 'app/objects/color';
-@import 'app/objects/container';
-@import 'app/objects/display';
-@import 'app/objects/divider';
-@import 'app/objects/flex';
-@import 'app/objects/font';
-@import 'app/objects/form';
-@import 'app/objects/framed';
-@import 'app/objects/hamburger';
-@import 'app/objects/heading';
-@import 'app/objects/hide';
-@import 'app/objects/icon';
-@import 'app/objects/img';
-@import 'app/objects/invisible';
-@import 'app/objects/list';
-@import 'app/objects/loader';
-@import 'app/objects/margin';
-@import 'app/objects/no';
-@import 'app/objects/overlay';
-@import 'app/objects/padding';
-@import 'app/objects/position';
-@import 'app/objects/reset';
-@import 'app/objects/row';
-@import 'app/objects/show';
-@import 'app/objects/space';
-@import 'app/objects/text';
-@import 'app/objects/visible';
-@import 'app/objects/width';
+@import 'app/objects/all';
 // components
 //------------------------------------
-@import 'app/components/breadcrumb';
-@import 'app/components/carousel';
-@import 'app/components/feature';
-@import 'app/components/map';
-@import 'app/components/nav';
-@import 'app/components/panel';
-@import 'app/components/slideout';
-@import 'app/components/weather';
+@import 'app/components/all';
 // modules
 //------------------------------------
-@import 'app/modules/hero';
-@import 'app/modules/modal';
-@import 'app/modules/navbar';
-@import 'app/modules/places';
-@import 'app/modules/content';
-@import 'app/modules/footer';
-@import 'app/modules/wrap';
+@import 'app/modules/all';
