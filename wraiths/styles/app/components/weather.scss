@@ -7,8 +7,6 @@ $prefix: map-get($class-prefix, 'component');
 $class: #{$prefix}#{$name};
 
 .#{$class} {
-  //background-color: #f4fafe;
-  //border: 1px solid #daf0fb;
   @include padding(31px 20px);
   @include border-radius(0);
   @include max-screen(map-get($mq, lg)){

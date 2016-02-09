@@ -306,6 +306,7 @@ $class: #{$prefix}#{$name};
 
       .o--icon {
         display: none;
+        @include z(top, top);
       }
 
       @at-root {
@@ -356,6 +357,24 @@ $class: #{$prefix}#{$name};
       @include position(relative);
       @include margin(0 0 12px 0);
 
+      &--datepicker {
+        .input-group {
+          &.date {
+            display: block;
+
+            input {
+              width: calc(100% - 32px);
+              float: left;
+            }
+
+            .input-group-addon {
+              max-width: 30px;
+              @include padding(9px);
+            }
+          }
+        }
+      }
+
       .s--highlight {
         border-color: #A9C2D2 !important;
         color: #0081D4 !important;
@@ -369,7 +388,7 @@ $class: #{$prefix}#{$name};
         @include padding(0);
       }
 
-      .help-block{
+      .help-block {
         line-height: 1.4em;
       }
 
