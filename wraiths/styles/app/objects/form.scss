@@ -65,7 +65,7 @@ $class: #{$prefix}#{$name};
         border-radius: 3px;
         transition: all 0.2s linear;
         @include padding(6px 12px);
-        @include rem(font-size, 1rem);
+        @include rem(font-size, 0.95rem);
       }
 
       &:focus {
@@ -92,7 +92,7 @@ $class: #{$prefix}#{$name};
 
     textarea#{&}__input {
       height: auto;
-      min-height: 50px;
+      min-height: 62px;
       @include max-screen(map-get($mq, 'md')) {
         @include margin(null null 15px null);
       }
