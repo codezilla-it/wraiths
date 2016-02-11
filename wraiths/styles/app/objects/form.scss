@@ -83,6 +83,7 @@ $class: #{$prefix}#{$name};
       width: 100%;
       -webkit-appearance: none;
       -moz-appearance: none;
+      border: 1px solid #C4CED8;
       @include padding(0 15px);
 
       &:hover {
@@ -465,7 +466,8 @@ $class: #{$prefix}#{$name};
       height: 100%;
       max-height: 34px;
       color: #0081D4;
-      border-left: 1px solid #DADADA;
+      border-left: 1px solid #D8E3EA;
+      background: #F9FBFD;
       @include position(absolute, 1px 1px null null);
       @include z(top, top);
       @include padding(7px);
@@ -476,7 +478,7 @@ $class: #{$prefix}#{$name};
         content: ' ';
         width: 0;
         height: 0;
-        border-color: #898D90 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+        border-color: #9BA4AD transparent transparent transparent;
         border-style: solid;
         border-width: 5px 5px 0 5px;
         @include position(absolute, 50% 10px auto auto);
