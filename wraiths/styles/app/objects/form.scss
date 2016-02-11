@@ -64,8 +64,11 @@ $class: #{$prefix}#{$name};
         border-style: solid;
         border-radius: 3px;
         transition: all 0.2s linear;
-        @include padding(6px 12px);
         @include rem(font-size, 0.95rem);
+
+        &:not(select) {
+          @include padding(6px 12px);
+        }
       }
 
       &:focus {
@@ -318,6 +321,10 @@ $class: #{$prefix}#{$name};
             @include padding(null 36px null null);
           }
 
+          select.#{$class}__input {
+            @include padding(null 60px null null);
+          }
+
           .o--icon {
             display: block;
             font-size: 16px;
@@ -374,6 +381,12 @@ $class: #{$prefix}#{$name};
             }
           }
         }
+      }
+
+      .input-group-addon {
+        color: #9BA4AD;
+        background-color: #F9FBFD;
+        border-color: #C4CED8;
       }
 
       .s--highlight {
@@ -466,12 +479,21 @@ $class: #{$prefix}#{$name};
       height: 100%;
       max-height: 34px;
       color: #0081D4;
-      border-left: 1px solid #D8E3EA;
+      border-left: 1px solid #C4CED8;
       background: #F9FBFD;
       @include position(absolute, 1px 1px null null);
       @include z(top, top);
       @include padding(7px);
       @include border-radius(0 4px 4px 0);
+
+      &:before {
+        display: block;
+        content: ' ';
+        width: 45px;
+        height: 34px;
+        @include position(absolute, 0 null null -46px);
+        @include linear-gradient(to right, transparent, #fff);
+      }
 
       &:after {
         display: block;
