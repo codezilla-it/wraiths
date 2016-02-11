@@ -93,7 +93,7 @@ $class: #{$prefix}#{$name};
 
     textarea#{&}__input {
       height: auto;
-      min-height: 62px;
+      min-height: 120px;
       @include max-screen(map-get($mq, 'md')) {
         @include margin(null null 15px null);
       }
@@ -356,7 +356,7 @@ $class: #{$prefix}#{$name};
 
     #{&}__field {
       @include position(relative);
-      @include margin(0 0 12px 0);
+      @include margin(0 0 15px 0);
 
       &--datepicker {
         .input-group {
