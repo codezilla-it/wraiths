@@ -31,6 +31,14 @@ $class: #{$prefix}#{$name};
     outline: none;
   }
 
+  input:-webkit-autofill,
+  textarea:-webkit-autofill,
+  select:-webkit-autofill {
+    color: #6C7079;
+    background: #FFF;
+    @include linear-gradient(to bottom, #FFF 0%, #fefefe 49%, #fdfdfd 49%, #fefefe 100%);
+  }
+
   p {
     @include margin(0 null null null);
   }
