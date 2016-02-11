@@ -471,6 +471,7 @@ $class: #{$prefix}#{$name};
       @include position(absolute, 1px 1px null null);
       @include z(top, top);
       @include padding(7px);
+      @include border-radius(0 4px 4px 0);
 
       &:after {
         display: block;
