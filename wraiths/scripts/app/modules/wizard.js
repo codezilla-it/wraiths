@@ -4,7 +4,9 @@
 
 require('./bower_components/jquery.steps/build/jquery.steps.min.js');
 
-var Module = (function () {
+var wraiths = process.wraith.modules;
+
+wraiths.wizard = (function () {
 	
 	function init () {
 		console.log("Ho fatto l'init!");
@@ -18,4 +20,4 @@ var Module = (function () {
 // Module Export
 // ---------------------------------------------
 
-module.exports = Module;
+module.exports = wraiths.wizard;
