@@ -97,7 +97,7 @@ var Module = (function () {
                 this.classList.toggle('active');
             });
 
-        window.load_scripts = function (array, callback) {
+        APP.globals.load_scripts = function (array, callback) {
             var loader = function (src, handler) {
                 var script = document.createElement("script");
                 script.src = src;
@@ -115,7 +115,22 @@ var Module = (function () {
                     callback && callback();
                 }
             })();
-        }
+        };
+
+        APP.globals.get_filename = function (path) {
+            return path.split('/').reverse()[0].replace(/\.[^/.]+$/, '');
+        };
+
+        APP.globals.object_chain = function (chains) {
+          var c = Object.prototype;
+
+          while(chains.length) {
+            c = Object.create(c);
+            $.extend(c, chains.pop()); // some function that does mixin
+          }
+
+          return c;
+        };
     }
 
     // Module API
