@@ -2,7 +2,9 @@
 // @utils
 // ---------------------------------------------
 
-var Module = (function () {
+var wraiths = process.wraith.modules;
+
+wraiths.utils = (function () {
 
     // Private Methods
     // ---------------------------------------------
@@ -145,4 +147,4 @@ var Module = (function () {
 // Module Export
 // ---------------------------------------------
 
-module.exports = Module;
+module.exports = wraiths.utils;
