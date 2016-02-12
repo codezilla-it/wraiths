@@ -2,7 +2,9 @@
 // @map
 // ---------------------------------------------
 
-var Module = (function () {
+var wraiths = process.wraith.modules;
+
+wraiths.map = (function () {
 
     Object.size = function (obj) {
         var size = 0, key;
@@ -208,4 +210,4 @@ var Module = (function () {
 // Module Export
 // ---------------------------------------------
 
-module.exports = Module;
+module.exports = wraiths.map;
