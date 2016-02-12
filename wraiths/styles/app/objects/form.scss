@@ -500,7 +500,7 @@ $class: #{$prefix}#{$name};
         width: 45px;
         height: 34px;
         @include position(absolute, 0 null null -46px);
-        @include linear-gradient(to right, rgba(255, 255, 255, 0), #fff);
+        @include linear-gradient(to right, rgba(white, 0), white);
       }
 
       &:after {

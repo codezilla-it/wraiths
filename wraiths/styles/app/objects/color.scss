@@ -45,14 +45,14 @@ $class: #{$prefix}#{$name};
       }
 
       &.#{$class}--gradient {
-        @include linear-gradient(to bottom, #32bf37 0%, #1ba31b 100%);
+        @include linear-gradient(to bottom, #38C53E 0%, #069C06 100%);
 
         &:not(.u--no--shadow) {
           text-shadow: 1px 1px 4px #158215;
         }
 
         &:not(.u--no--hover):hover {
-          @include linear-gradient(to bottom, #1ba31b 0%, #1ba31b 0%, #32bf37 99%);
+          @include linear-gradient(to bottom, #069C06 0%, #1ba31b 0%, #38C53E 99%);
         }
       }
     }
