@@ -97,7 +97,7 @@ var Module = (function () {
                 this.classList.toggle('active');
             });
 
-        function load_scripts(array, callback) {
+        window.load_scripts = function (array, callback) {
             var loader = function (src, handler) {
                 var script = document.createElement("script");
                 script.src = src;
