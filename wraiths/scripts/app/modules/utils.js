@@ -44,12 +44,12 @@ var Module = (function () {
 
         $.fn.display_block = function () {
 
-            this.removeClass('o--hide').addClass('o--show');
+            this.removeClass('u--hide').addClass('u--show');
         };
 
         $.fn.display_none = function () {
 
-            this.removeClass('o--show').addClass('o--hide');
+            this.removeClass('u--show').addClass('u--hide');
         };
 
         $.fn.handle_content_height = function ($content, $header, $footer, options) {
