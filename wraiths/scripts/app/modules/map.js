@@ -15,7 +15,7 @@ var Module = (function () {
     // Private Methods
     // ---------------------------------------------
 
-    var makeMarker = function (position, map, icon, title, info) {
+    function makeMarker (position, map, icon, title, info) {
         var marker = new google.maps.Marker({
             position: position,
             map: map,
@@ -32,12 +32,12 @@ var Module = (function () {
                 infowindow.open(map, marker);
             });
         }
-    };
+    }
 
     // Public Methods
     // ---------------------------------------------
 
-    var init = function (target) {
+    function init (target) {
 
         var google_map;
 
@@ -194,7 +194,7 @@ var Module = (function () {
     //			makeMarker( latlng_from, map, icons.from, map_marker_from_title, map_marker_from_info );
             }
         });
-    };
+    }
 
     // Module API
     // ---------------------------------------------

@@ -17,26 +17,26 @@ var Module = (function () {
         }
     }
 
+    function addInputSuccessClass(objectError, elemId, feedback) {
+        $("#error-" + elemId).hide();
+        $(objectError).removeClass(feedback + '--error').addClass(feedback + '--success');
+    }
+
+    function addInputErrorClass(objectError, feedback) {
+        $(objectError).removeClass(feedback + '--success').addClass(feedback + '--error');
+    }
+
+    function removeInputClass(objectError, elemId, feedback) {
+        var class_success = feedback + '--success';
+        var class_error = feedback + '--error';
+        $("#error-" + elemId).hide();
+        $(objectError).removeClass('class_success class_error');
+    }
+
     // Public Methods
     // ---------------------------------------------
 
-    var validation = function ($input, $errors) {
-
-        function addInputSuccessClass(objectError, elemId, feedback) {
-            $("#error-" + elemId).hide();
-            $(objectError).removeClass(feedback + '--error').addClass(feedback + '--success');
-        }
-
-        function addInputErrorClass(objectError, feedback) {
-            $(objectError).removeClass(feedback + '--success').addClass(feedback + '--error');
-        }
-
-        function removeInputClass(objectError, elemId, feedback) {
-            var class_success = feedback + '--success';
-            var class_error = feedback + '--error';
-            $("#error-" + elemId).hide();
-            $(objectError).removeClass('class_success class_error');
-        }
+    function validation($input, $errors) {
 
         var feedback = 's--feedback';
 
@@ -81,9 +81,9 @@ var Module = (function () {
                 errorMessageClass: 'errors'
             });
         }
-    };
+    }
 
-    var init = function () {
+    function init () {
 
         $('.o--form__upload .o--form__input').on('change', function () {
             var $that = $(this);
@@ -105,7 +105,7 @@ var Module = (function () {
                 open_select($(el).siblings("select"));
             });
         });
-    };
+    }
 
     // Module API
     // ---------------------------------------------

@@ -10,7 +10,7 @@ var Module = (function () {
     // Public Methods
     // ---------------------------------------------
 
-    var fancybox = function (target, target_type, custom_options) {
+    function fancybox (target, target_type, custom_options) {
 
         var options = null,
             default_options = {
@@ -166,9 +166,9 @@ var Module = (function () {
         }
 
         target.fancybox(options);
-    };
+    }
 
-    var magnific_popup = function (target, target_type, custom_options) {
+    function magnific_popup (target, target_type, custom_options) {
 
         var options = null;
 
@@ -389,7 +389,7 @@ var Module = (function () {
             target.magnificPopup(options);
         }
 
-    };
+    }
 
     // Module API
     // ---------------------------------------------

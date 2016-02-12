@@ -67,7 +67,6 @@ var Module = (function () {
             }
         };
 
-
         $.fn.remove_class_except = function (val) {
             return this.each(function (index, el) {
                 var keep = val.split(" "),  // list we'd like to keep
@@ -97,6 +96,26 @@ var Module = (function () {
             .addEventListener('click', function () {
                 this.classList.toggle('active');
             });
+
+        function load_scripts(array, callback) {
+            var loader = function (src, handler) {
+                var script = document.createElement("script");
+                script.src = src;
+                script.onload = script.onreadystatechange = function () {
+                    script.onreadystatechange = script.onload = null;
+                    handler();
+                };
+                var head = document.getElementsByTagName("head")[0];
+                (head || document.body).appendChild(script);
+            };
+            (function () {
+                if (array.length !== 0) {
+                    loader(('https:' === location.protocol ? 'https:' : 'http:') + array.shift(), arguments.callee);
+                } else {
+                    callback && callback();
+                }
+            })();
+        }
     }
 
     // Module API

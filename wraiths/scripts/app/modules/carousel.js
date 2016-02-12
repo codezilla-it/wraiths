@@ -11,7 +11,7 @@ var Module = (function () {
     // Public Methods
     // ---------------------------------------------
 
-    var init = function (target, target_type, custom_options) {
+    function init (target, target_type, custom_options) {
 
         var options = null,
             default_options = {
@@ -113,7 +113,7 @@ var Module = (function () {
         }
 
         target.slick(options);
-    };
+    }
 
     // Module API
     // ---------------------------------------------

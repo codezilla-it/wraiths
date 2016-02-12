@@ -10,7 +10,7 @@ var Module = (function () {
     // Public Methods
     // ---------------------------------------------
 
-    var init = function () {
+    function init () {
 
         // Handle dynamic content height
         // -----------------------------
@@ -21,7 +21,7 @@ var Module = (function () {
             }).resize();
         }
 
-    };
+    }
 
     // Module API
     // ---------------------------------------------
