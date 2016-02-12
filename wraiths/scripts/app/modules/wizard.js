@@ -2,7 +2,7 @@
 // @wizard
 // ---------------------------------------------
 
-require('./bower_components/jquery.steps/build/jquery.steps.min.js');
+//require('./bower_components/jquery.steps/build/jquery.steps.min.js');
 
 var wraiths = process.wraith.modules;
 
