@@ -7,12 +7,6 @@ var Module = (function () {
     // Private Methods
     // ---------------------------------------------
 
-    var form_toggle = function ($target_a, $target_b, text) {
-        $target_a.display_none();
-        $target_b.display_block();
-        $('.m--login__header > *').text(text);
-    };
-
     // Public Methods
     // ---------------------------------------------
 
@@ -27,17 +21,6 @@ var Module = (function () {
             }).resize();
         }
 
-        // -----------------------------
-        // Login
-        // -----------------------------
-
-        $('.js--forgot-password').on('click', function () {
-            form_toggle($('.js--form-login'), $('.js--form-forgot-password'), 'Recupera la tua password');
-        });
-
-        $('.js--got-password').on('click', function () {
-            form_toggle($('.js--form-forgot-password'), $('.js--form-login'), 'Inserisci i tuoi dati di accesso');
-        });
     };
 
     // Module API
