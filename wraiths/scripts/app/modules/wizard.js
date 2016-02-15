@@ -2,14 +2,17 @@
 // @wizard
 // ---------------------------------------------
 
-//require('./bower_components/jquery.steps/build/jquery.steps.min.js');
-
-var wraiths = process.wraith.modules;
-
-wraiths.wizard = (function () {
+var wraith_wizard = (function () {
 	
-	function init () {
-		console.log("Ho fatto l'init!");
+	function init (form_id, option) {
+		
+		var form = $(form_id);
+		
+		var wizard = form.steps({
+			headerTag: option.headerTag,
+			bodyTag: option.bodyTag,
+			transitionEffect: "slideLeft"
+		});
     }
 	
 	return {
@@ -20,4 +23,4 @@ wraiths.wizard = (function () {
 // Module Export
 // ---------------------------------------------
 
-module.exports = wraiths.wizard;
+module.exports = wraith_wizard;
