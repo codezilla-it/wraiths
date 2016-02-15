@@ -8,7 +8,7 @@
       "name": "Andrea Rabbaglietti",
       "email": "rabbagliettiandrea@gmail.com"
     },
-	{
+    {
       "name": "Sergio Pellicani",
       "email": "sergio.pellicani@rhubbit.com"
     }
@@ -20,9 +20,9 @@
     "package.json",
     "bower.json",
     "wraiths",
-    "module.form.js",
-    "module.login.js",
-    "_dist"
+    "index.js",
+    "main/*",
+    "wraiths/scripts/app/modules/*"
   ],
   "scripts": {},
   "main": "index.js",
