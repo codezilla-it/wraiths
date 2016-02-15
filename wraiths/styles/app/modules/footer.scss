@@ -9,8 +9,8 @@ $class: #{$prefix}#{$name};
 .#{$class} {
   width: 100%;
   font-size: 14px;
-  @include position(relative, 0);
-  @include padding(40px 0 90px 0);
+  @include position(relative);
+  @include padding(0);
 
   a {
     text-decoration: none;
@@ -21,6 +21,7 @@ $class: #{$prefix}#{$name};
   @at-root {
     #{&}__nav {
       text-align: center;
+      @include padding(40px 0 90px 0);
 
       ul {
         list-style: none;
