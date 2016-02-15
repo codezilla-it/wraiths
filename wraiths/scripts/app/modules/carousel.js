@@ -2,9 +2,7 @@
 // @carousel
 // ---------------------------------------------
 
-var wraiths = process.wraith.modules;
-
-wraiths.carousel = (function () {
+var wraith_carousel = (function () {
 
     // Private Methods
     // ---------------------------------------------
@@ -129,4 +127,4 @@ wraiths.carousel = (function () {
 // Module Export
 // ---------------------------------------------
 
-module.exports = wraiths.carousel;
+module.exports = wraith_carousel;

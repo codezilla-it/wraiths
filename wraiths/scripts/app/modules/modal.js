@@ -2,9 +2,7 @@
 // @modal
 // ---------------------------------------------
 
-var wraiths = process.wraith.modules;
-
-wraiths.modal = (function () {
+var wraith_modal = (function () {
 
     // Private Methods
     // ---------------------------------------------
@@ -37,4 +35,4 @@ wraiths.modal = (function () {
 // Module Export
 // ---------------------------------------------
 
-module.exports = wraiths.modal;
+module.exports = wraith_modal;

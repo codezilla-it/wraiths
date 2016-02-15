@@ -2,9 +2,7 @@
 // @nav-mobile
 // ---------------------------------------------
 
-var wraiths = process.wraith.modules;
-
-wraiths.nav_mobile = (function () {
+var wraith_nav_mobile = (function () {
 
     // Private Methods
     // ---------------------------------------------
@@ -66,4 +64,4 @@ wraiths.nav_mobile = (function () {
 // Module Export
 // ---------------------------------------------
 
-module.exports = wraiths.nav_mobile;
+module.exports = wraith_nav_mobile;
