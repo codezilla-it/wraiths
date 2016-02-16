@@ -52,18 +52,17 @@ var wraith_utils = (function () {
             this.removeClass('u--show').addClass('u--hide');
         };
 
-        $.fn.handle_content_height = function (options) {
-        
+        $.fn.handle_content_height = function ($content, $header, $footer, options) {
+
             var params = options || {};
-        
+
             var window_h = $(window).height();
-            var footer_h = $('.m--footer').innerHeight();
-			var partials_h = window_h - $('.m--content').innerHeight();
+            var partials_h = ($header.innerHeight() + $footer.innerHeight());
             var offset_h = window_h - partials_h;
-        
-            if ($('main').innerHeight() - footer_h <= window_h) {
-                $('.m--content').css({
-                    height: offset_h + 'px'
+
+            if (partials_h <= window_h) {
+                $content.css({
+                    'height': offset_h + 'px'
                 });
             }
         };
@@ -80,7 +79,7 @@ var wraith_utils = (function () {
 
                 // drop all, and only add those confirmed as existing
                 $el.removeClass()               // remove existing classes
-                    .addClass(reAdd.join(' '));  // re-add the confirmed ones
+                   .addClass(reAdd.join(' '));  // re-add the confirmed ones
             });
         };
 
@@ -122,14 +121,14 @@ var wraith_utils = (function () {
         };
 
         APP.globals.object_chain = function (chains) {
-            var c = Object.prototype;
+          var c = Object.prototype;
 
-            while (chains.length) {
-                c = Object.create(c);
-                $.extend(c, chains.pop()); // some function that does mixin
-            }
+          while(chains.length) {
+            c = Object.create(c);
+            $.extend(c, chains.pop()); // some function that does mixin
+          }
 
-            return c;
+          return c;
         };
     }
 
