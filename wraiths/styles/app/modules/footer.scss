@@ -21,7 +21,7 @@ $class: #{$prefix}#{$name};
   @at-root {
     #{&}__nav {
       text-align: center;
-      @include padding(40px 0 90px 0);
+      @include padding(40px 0);
 
       ul {
         list-style: none;
@@ -44,7 +44,7 @@ $class: #{$prefix}#{$name};
       text-align: center;
       @include padding(15px 0);
       @include min-screen(map-get($mq, 'md')) {
-        @include position(absolute, null null 0 0);
+        @include position(relative);
       }
     }
 
