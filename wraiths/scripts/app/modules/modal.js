@@ -17,7 +17,7 @@ var wraith_modal = (function () {
 
         if ($('.m--modal').exists()) {
             $(window).on('resize', function () {
-                $('body').handle_content_height($('.m--content'), $('.m--navbar'), $('.m--footer'));
+                $('body').handle_content_height();
             }).resize();
         }
 

@@ -52,41 +52,21 @@ var wraith_utils = (function () {
             this.removeClass('u--show').addClass('u--hide');
         };
 
-        $.fn.handle_content_height = function ($content, $main, $footer, options) {
-
+        $.fn.handle_content_height = function (options) {
+        
             var params = options || {};
-
+        
             var window_h = $(window).height();
-            var footer_h = $footer.innerHeight();
-            var partials_h = ($header.innerHeight() + footer_h);
+            var footer_h = $('.m--footer').innerHeight();
+			var partials_h = window_h - $('.m--content').innerHeight();
             var offset_h = window_h - partials_h;
-
-            console.log(window_h);
-            console.log($('main').innerHeight());
-            console.log($footer.innerHeight());
-
+        
             if ($('main').innerHeight() - footer_h <= window_h) {
-                $content.css({
+                $('.m--content').css({
                     height: offset_h + 'px'
                 });
             }
         };
-
-        //$.fn.handle_content_height = function (options) {
-        //
-        //    var params = options || {};
-        //
-        //    var window_h = $(window).height();
-        //    var footer_h = $('.m--footer').innerHeight();
-        //    var partials_h = ($('.m--header').innerHeight() + footer_h);
-        //    var offset_h = window_h - partials_h;
-        //
-        //    if ($('main').innerHeight() - footer_h <= window_h) {
-        //        $('.m--content').css({
-        //            height: offset_h + 'px'
-        //        });
-        //    }
-        //};
 
         $.fn.remove_class_except = function (val) {
             return this.each(function (index, el) {
