@@ -11,7 +11,7 @@ $class: #{$prefix}#{$name};
   max-width: 800px;
   border: none;
   @include position(relative, 0);
-  @include margin(0 auto);
+  @include margin(30px auto);
   @include padding(0);
   @include border-radius(.25em);
 

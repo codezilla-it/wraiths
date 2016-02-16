@@ -53,17 +53,17 @@ var wraith_utils = (function () {
         };
 
         $.fn.handle_content_height = function (options) {
-        
+			
             var params = options || {};
         
             var window_h = $(window).height();
+			var main_h = $('main').innerHeight();
+			var content_h = $('.m--content').innerHeight();
             var footer_h = $('.m--footer').innerHeight();
-			var partials_h = window_h - $('.m--content').innerHeight();
-            var offset_h = window_h - partials_h;
-        
-            if ($('main').innerHeight() - footer_h <= window_h) {
+			
+            if (main_h - footer_h <= (window_h - (main_h - content_h))) {
                 $('.m--content').css({
-                    height: offset_h + 'px'
+                    height: (window_h - (main_h - content_h)) + 'px'
                 });
             }
         };
