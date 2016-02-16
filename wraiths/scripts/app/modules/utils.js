@@ -52,34 +52,35 @@ var wraith_utils = (function () {
             this.removeClass('u--show').addClass('u--hide');
         };
 
-        $.fn.handle_content_height = function ($content, $header, $footer, options) {
+        $.fn.handle_content_height = function (options) {
 
             var params = options || {};
 
             var window_h = $(window).height();
-            var partials_h = ($header.innerHeight() + $footer.innerHeight());
-            var offset_h = window_h - partials_h;
+            var main_h = $('main').innerHeight();
+            var content_h = $('.m--content').innerHeight();
+            var footer_h = $('.m--footer').innerHeight();
 
-            if (partials_h <= window_h) {
-                $content.css({
-                    'height': offset_h + 'px'
+            if (main_h - footer_h <= (window_h - (main_h - content_h))) {
+                $('.m--content').css({
+                    height: (window_h - (main_h - content_h)) + 'px'
                 });
             }
         };
 
         $.fn.remove_class_except = function (val) {
             return this.each(function (index, el) {
-                var keep = val.split(" "),  // list we'd like to keep
-                    reAdd = [],          // ones that should be re-added if found
-                    $el = $(el);       // element we're working on
+                var keep = val.split(" "), // list we'd like to keep
+                    reAdd = [], // ones that should be re-added if found
+                    $el = $(el); // element we're working on
                 // look for which we re-add (based on them already existing)
                 for (var c = 0; c < keep.length; c++) {
                     if ($el.hasClass(keep[c])) reAdd.push(keep[c]);
                 }
 
                 // drop all, and only add those confirmed as existing
-                $el.removeClass()               // remove existing classes
-                   .addClass(reAdd.join(' '));  // re-add the confirmed ones
+                $el.removeClass() // remove existing classes
+                    .addClass(reAdd.join(' ')); // re-add the confirmed ones
             });
         };
 
@@ -121,14 +122,14 @@ var wraith_utils = (function () {
         };
 
         APP.globals.object_chain = function (chains) {
-          var c = Object.prototype;
+            var c = Object.prototype;
 
-          while(chains.length) {
-            c = Object.create(c);
-            $.extend(c, chains.pop()); // some function that does mixin
-          }
+            while (chains.length) {
+                c = Object.create(c);
+                $.extend(c, chains.pop()); // some function that does mixin
+            }
 
-          return c;
+            return c;
         };
     }
 
