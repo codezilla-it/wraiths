@@ -78,9 +78,8 @@ var wraith_utils = (function () {
                 }
 
                 // drop all, and only add those confirmed as existing
-                $el
-                    .removeClass()               // remove existing classes
-                    .addClass(reAdd.join(' '));  // re-add the confirmed ones
+                $el.removeClass()               // remove existing classes
+                   .addClass(reAdd.join(' '));  // re-add the confirmed ones
             });
         };
 

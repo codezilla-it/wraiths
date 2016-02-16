@@ -11,7 +11,8 @@ var wraith_wizard = (function () {
 		var wizard = form.steps({
 			headerTag: option.headerTag,
 			bodyTag: option.bodyTag,
-			transitionEffect: "slideLeft"
+			transitionEffect: 'slideLeft',
+			cssClass: 'm--wizard'
 		});
     }
 	
