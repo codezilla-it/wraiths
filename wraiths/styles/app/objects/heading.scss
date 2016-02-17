@@ -12,6 +12,7 @@ $root: #{$prefix}#{$name};
       text-transform: uppercase;
       letter-spacing: 2px;
       line-height: 1.3;
+      font-weight: 500;
       @include margin(15px null 0 null);
       @include padding(0);
       @include font(map-get($fonts, 'third'), 32px, null, 400);
