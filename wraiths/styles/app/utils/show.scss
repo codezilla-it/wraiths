@@ -4,6 +4,6 @@
 
 $name: 'show';
 $prefix: map-get($class-prefix, 'utils');
-$class: #{$prefix}#{$name};
+$root: #{$prefix}#{$name};
 
-@include generate-display($name, $class);
+@include generate-display($name, $root);

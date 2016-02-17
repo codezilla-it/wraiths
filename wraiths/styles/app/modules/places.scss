@@ -4,9 +4,9 @@
 
 $name: 'places';
 $prefix: map-get($class-prefix, 'module');
-$class: #{$prefix}#{$name};
+$root: #{$prefix}#{$name};
 
-.#{$class} {
+.#{$root} {
 
   // Elements
   // ----------

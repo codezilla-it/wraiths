@@ -4,9 +4,9 @@
 
 $name: 'reset';
 $prefix: map-get($class-prefix, 'utils');
-$class: #{$prefix}#{$name};
+$root: #{$prefix}#{$name};
 
-.#{$class} {
+.#{$root} {
   &:before {
     content: "";
     display: table;

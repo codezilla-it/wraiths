@@ -4,9 +4,9 @@
 
 $name: 'overlay';
 $prefix: map-get($class-prefix, 'object');
-$class: #{$prefix}#{$name};
+$root: #{$prefix}#{$name};
 
-.#{$class} {
+.#{$root} {
   @include position(relative, 0);
 
   @at-root {

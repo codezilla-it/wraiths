@@ -4,9 +4,9 @@
 
 $name: 'font';
 $prefix: map-get($class-prefix, 'utils');
-$class: #{$prefix}#{$name};
+$root: #{$prefix}#{$name};
 
-.#{$class} {
+.#{$root} {
   @at-root {
     #{&}--smoothing--on {
       @include font-smoothing(on);

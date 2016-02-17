@@ -22,10 +22,10 @@
 
 // @generate-padding
 //------------------------------------
-@mixin generate-padding($name, $class) {
+@mixin generate-padding($name, $root) {
   @each $dk, $dv in $directions {
     @each $sk, $sv in $sizes {
-      .#{$class}--#{$dv}--#{$sk} {
+      .#{$root}--#{$dv}--#{$sk} {
         @if $dk == all {
           @include set-padding($sv, $sv, $sv, $sv);
         } @else if $dk == vertical {

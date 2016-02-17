@@ -4,10 +4,10 @@
 
 $name: 'col';
 $prefix: map-get($class-prefix, 'object');
-$class: #{$prefix}#{$name};
+$root: #{$prefix}#{$name};
 $gutter: map-get($layout, 'gutter');
 
-.#{$class} {
+.#{$root} {
   float: left;
   width: 100%;
   min-height: 1px;

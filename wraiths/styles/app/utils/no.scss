@@ -4,9 +4,9 @@
 
 $name: 'no';
 $prefix: map-get($class-prefix, 'utils');
-$class: #{$prefix}#{$name};
+$root: #{$prefix}#{$name};
 
-.#{$class} {
+.#{$root} {
   @at-root {
     #{&}--fill {
       background: transparent !important;

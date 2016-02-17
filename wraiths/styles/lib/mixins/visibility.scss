@@ -1,6 +1,6 @@
 // @generate-visibility
 //------------------------------------
-@mixin generate-visibility($name, $class) {
+@mixin generate-visibility($name, $root) {
 
   $display: null;
 
@@ -12,8 +12,8 @@
 
   @each $mk, $mv in $mq {
     @include min-screen(map-get($mq, $mk)) {
-      .#{$class}\@#{$mk},
-      [class*='#{$class}'].#{$class}\@#{$mk} {
+      .#{$root}\@#{$mk},
+      [class*='#{$root}'].#{$root}\@#{$mk} {
         visibility: $visibility;
       }
     }

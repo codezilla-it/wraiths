@@ -4,9 +4,9 @@
 
 $name: 'position';
 $prefix: map-get($class-prefix, 'object');
-$class: #{$prefix}#{$name};
+$root: #{$prefix}#{$name};
 
-.#{$class} {
+.#{$root} {
   @at-root {
     #{&}--l {
       float: left !important;

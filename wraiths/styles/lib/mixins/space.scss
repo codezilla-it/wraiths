@@ -1,8 +1,8 @@
 // @generate-space
 //------------------------------------
-@mixin generate-space($name, $class) {
+@mixin generate-space($name, $root) {
   @each $sk, $sv in $sizes {
-    .#{$class}--#{$sk} {
+    .#{$root}--#{$sk} {
       height: $sv;
       @include clearfix();
     }

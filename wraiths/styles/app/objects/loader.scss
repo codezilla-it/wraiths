@@ -4,9 +4,9 @@
 
 $name: 'loader';
 $prefix: map-get($class-prefix, 'object');
-$class: #{$prefix}#{$name};
+$root: #{$prefix}#{$name};
 
-.#{$class} {
+.#{$root} {
   display: none;
   @include padding(20px null);
 }

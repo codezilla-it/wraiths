@@ -4,9 +4,9 @@
 
 $name: 'container';
 $prefix: map-get($class-prefix, 'object');
-$class: #{$prefix}#{$name};
+$root: #{$prefix}#{$name};
 
-.#{$class} {
+.#{$root} {
   max-width: map-get($layout, 'max-width');
   @include margin(0 auto);
   @include padding(0 15px);

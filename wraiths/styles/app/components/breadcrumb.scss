@@ -4,9 +4,9 @@
 
 $name: 'breadcrumb';
 $prefix: map-get($class-prefix, 'component');
-$class: #{$prefix}#{$name};
+$root: #{$prefix}#{$name};
 
-.#{$class} {
+.#{$root} {
   @include padding(15px 0);
 
   ul {
@@ -37,7 +37,7 @@ $class: #{$prefix}#{$name};
         }
 
         #{&}.s--active {
-          .#{$class}__decorator {
+          .#{$root}__decorator {
             color: #f5930f;
             border-color: #f5930f;
             @include margin(0 5px 0 0);

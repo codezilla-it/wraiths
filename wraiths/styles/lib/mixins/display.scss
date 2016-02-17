@@ -26,7 +26,7 @@
 
 // @generate-display
 //------------------------------------
-@mixin generate-display($name, $class) {
+@mixin generate-display($name, $root) {
 
   $display: null;
 
@@ -36,14 +36,14 @@
     $display: block !important;
   }
 
-  .#{$class} {
+  .#{$root} {
     display: $display;
   }
 
   @each $mk, $mv in $mq {
     @include min-screen(map-get($mq, $mk)) {
-      .#{$class}\@#{$mk},
-      [class*='#{$class}'].#{$class}\@#{$mk} {
+      .#{$root}\@#{$mk},
+      [class*='#{$root}'].#{$root}\@#{$mk} {
         display: $display;
       }
     }

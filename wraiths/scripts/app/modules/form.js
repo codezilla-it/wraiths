@@ -100,11 +100,12 @@ var wraith_form = (function () {
             file_upload.find('.o--form__fake-input .o--text').text(file_path_array[last_path_element]);
         });
 
-        $('.o--form__icon-select, .o--form__field .o--icon').each(function (idx, el) {
-            $(el).on('click', function () {
-                open_select($(el).siblings("select"));
-            });
-        });
+        //$('.o--form__field:not(.o--form__field--datepicker) .o--form__icon-select, .o--form__field:not(.o--form__field--datepicker) .o--icon')
+        //    .each(function (idx, el) {
+        //        $(el).on('click', function () {
+        //            open_select($(el).siblings("select"));
+        //        });
+        //});
     }
 
     // Module API

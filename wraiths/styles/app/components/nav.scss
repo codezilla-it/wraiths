@@ -4,9 +4,9 @@
 
 $name: 'nav';
 $prefix: map-get($class-prefix, 'component');
-$class: #{$prefix}#{$name};
+$root: #{$prefix}#{$name};
 
-.#{$class} {
+.#{$root} {
   @include clearfix();
   @include margin(0 auto);
   @include padding(0);
@@ -40,7 +40,7 @@ $class: #{$prefix}#{$name};
     #{&}--tabs {
       text-align: center;
 
-      .#{$class}__item {
+      .#{$root}__item {
         a {
           @include position(relative, 0);
           @include padding(null 20px);

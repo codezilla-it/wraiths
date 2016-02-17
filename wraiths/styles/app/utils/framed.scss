@@ -4,9 +4,9 @@
 
 $name: 'framed';
 $prefix: map-get($class-prefix, 'utils');
-$class: #{$prefix}#{$name};
+$root: #{$prefix}#{$name};
 
-.#{$class} {
+.#{$root} {
   display: block;
   border: 3px solid white;
   transition: box-shadow 200ms ease;

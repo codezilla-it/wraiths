@@ -4,9 +4,9 @@
 
 $name: 'footer';
 $prefix: map-get($class-prefix, 'module');
-$class: #{$prefix}#{$name};
+$root: #{$prefix}#{$name};
 
-.#{$class} {
+.#{$root} {
   width: 100%;
   font-size: 14px;
   @include position(relative);

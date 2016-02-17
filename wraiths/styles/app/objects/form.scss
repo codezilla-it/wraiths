@@ -4,9 +4,9 @@
 
 $name: 'form';
 $prefix: map-get($class-prefix, 'object');
-$class: #{$prefix}#{$name};
+$root: #{$prefix}#{$name};
 
-.#{$class} {
+.#{$root} {
   @include margin(0);
   @include padding(15px 0 0 0);
   @include border-radius(4px);
@@ -113,7 +113,7 @@ $class: #{$prefix}#{$name};
       @include margin(null null 0 null);
 
       &--checkbox {
-        .#{$class} {
+        .#{$root} {
           &__field {
             width: 5%;
           }
@@ -167,7 +167,7 @@ $class: #{$prefix}#{$name};
         }
       }
 
-      .#{$class}__fake-input {
+      .#{$root}__fake-input {
         float: left;
         width: 70%;
         height: 45px;
@@ -196,7 +196,7 @@ $class: #{$prefix}#{$name};
         }
       }
 
-      .#{$class}__field {
+      .#{$root}__field {
         opacity: 0;
         float: left;
         width: 70%;
@@ -209,7 +209,7 @@ $class: #{$prefix}#{$name};
         }
       }
 
-      .#{$class}__input {
+      .#{$root}__input {
         height: 40px;
         background-color: transparent !important;
         border-color: transparent !important;
@@ -227,7 +227,7 @@ $class: #{$prefix}#{$name};
         }
       }
 
-      .#{$class}__btn {
+      .#{$root}__btn {
         float: right;
         width: 30%;
         @include position(absolute, -1px -1px null null);
@@ -283,7 +283,7 @@ $class: #{$prefix}#{$name};
           line-height: 1em;
         }
 
-        .#{$class}__helper {
+        .#{$root}__helper {
           opacity: .65;
           line-height: 1em;
           font-size: 12px;
@@ -324,11 +324,11 @@ $class: #{$prefix}#{$name};
         #{&}--error,
         #{&}--warning,
         #{&}--success {
-          .#{$class}__input {
+          .#{$root}__input {
             @include padding(null 36px null null);
           }
 
-          select.#{$class}__input {
+          select.#{$root}__input {
             @include padding(null 60px null null);
           }
 
@@ -414,7 +414,7 @@ $class: #{$prefix}#{$name};
       }
 
       &.o--col {
-        .#{$class}__icon-select {
+        .#{$root}__icon-select {
           right: 16px;
         }
 

@@ -4,9 +4,9 @@
 
 $name: 'wrap';
 $prefix: map-get($class-prefix, 'module');
-$class: #{$prefix}#{$name};
+$root: #{$prefix}#{$name};
 
-.#{$class} {
+.#{$root} {
   display: block;
   width: map-get($layout, 'width');
   min-width: map-get($layout, 'min-width');

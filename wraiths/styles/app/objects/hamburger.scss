@@ -4,9 +4,9 @@
 
 $name: 'hamburger';
 $prefix: map-get($class-prefix, 'object');
-$class: #{$prefix}#{$name};
+$root: #{$prefix}#{$name};
 
-.#{$class} {
+.#{$root} {
   float: left;
   width: 35px;
   height: 30px;
@@ -48,7 +48,7 @@ $class: #{$prefix}#{$name};
     }
 
     #{&}.s--active {
-      .#{$class}__line {
+      .#{$root}__line {
         &:nth-child(1) {
           top: 18px;
           width: 0%;

@@ -4,9 +4,9 @@
 
 $name: 'feature';
 $prefix: map-get($class-prefix, 'component');
-$class: #{$prefix}#{$name};
+$root: #{$prefix}#{$name};
 
-.#{$class} {
+.#{$root} {
   @include padding(32px);
   @include margin(0);
   @include border-radius(4px);

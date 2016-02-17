@@ -4,9 +4,9 @@
 
 $name: 'wizard';
 $prefix: map-get($class-prefix, 'module');
-$class: #{$prefix}#{$name};
+$root: #{$prefix}#{$name};
 
-.#{$class} {
+.#{$root} {
   display: block;
   width: 100%;
   overflow: hidden;

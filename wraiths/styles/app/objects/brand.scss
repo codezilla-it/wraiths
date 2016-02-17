@@ -4,9 +4,9 @@
 
 $name: 'brand';
 $prefix: map-get($class-prefix, 'object');
-$class: #{$prefix}#{$name};
+$root: #{$prefix}#{$name};
 
-.#{$class} {
+.#{$root} {
   display: block;
   background-size: 100%;
   background-repeat: no-repeat;

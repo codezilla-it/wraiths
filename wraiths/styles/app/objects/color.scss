@@ -6,9 +6,9 @@
 
 $name: 'color';
 $prefix: map-get($class-prefix, 'object');
-$class: #{$prefix}#{$name};
+$root: #{$prefix}#{$name};
 
-.#{$class} {
+.#{$root} {
   border: 1px solid;
 
   &:not(.u--no--text) {
@@ -44,7 +44,7 @@ $class: #{$prefix}#{$name};
         }
       }
 
-      &.#{$class}--gradient {
+      &.#{$root}--gradient {
         @include linear-gradient(to bottom, #38C53E 0%, #069C06 100%);
 
         &:not(.u--no--shadow) {
@@ -85,7 +85,7 @@ $class: #{$prefix}#{$name};
         }
       }
 
-      &.#{$class}--gradient {
+      &.#{$root}--gradient {
         @include linear-gradient(135deg, #0071D3, #0084d2, #0DA4DE);
 
         &:not(.u--no--shadow) {
@@ -99,7 +99,7 @@ $class: #{$prefix}#{$name};
     }
 
     #{&}--blue--lighter {
-      &.#{$class}--gradient {
+      &.#{$root}--gradient {
         @include linear-gradient(145deg, #187CD8, #0F97D8, #09ADEC);
       }
     }
@@ -132,7 +132,7 @@ $class: #{$prefix}#{$name};
         }
       }
 
-      &.#{$class}--gradient {
+      &.#{$root}--gradient {
         @include linear-gradient(to bottom, #ff365e 0%, #c12848 100%);
 
         &:not(.u--no--shadow) {

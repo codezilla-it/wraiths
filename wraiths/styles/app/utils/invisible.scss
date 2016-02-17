@@ -4,6 +4,6 @@
 
 $name: 'invisible';
 $prefix: map-get($class-prefix, 'utils');
-$class: #{$prefix}#{$name};
+$root: #{$prefix}#{$name};
 
-@include generate-visibility($name, $class);
+@include generate-visibility($name, $root);

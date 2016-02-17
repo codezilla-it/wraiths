@@ -4,9 +4,9 @@
 
 $name: 'icon';
 $prefix: map-get($class-prefix, 'object');
-$class: #{$prefix}#{$name};
+$root: #{$prefix}#{$name};
 
-.#{$class} {
+.#{$root} {
   display: inline-block;
   font-size: 64px;
 

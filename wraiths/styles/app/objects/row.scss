@@ -4,15 +4,15 @@
 
 $name: 'row';
 $prefix: map-get($class-prefix, 'object');
-$class: #{$prefix}#{$name};
+$root: #{$prefix}#{$name};
 $gutter: map-get($layout, 'gutter');
 
-.#{$class} {
+.#{$root} {
   width: map-get($layout, 'width');
   @include margin(0 auto);
   @include clearfix();
 
-  .#{$class} {
+  .#{$root} {
     width: auto;
     max-width: none;
     @include margin(null #{-$gutter});
@@ -24,7 +24,7 @@ $gutter: map-get($layout, 'gutter');
   }
 
   &--collapse {
-    .#{$class} {
+    .#{$root} {
       @include margin(null 0);
     }
 

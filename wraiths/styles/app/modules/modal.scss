@@ -4,9 +4,9 @@
 
 $name: 'modal';
 $prefix: map-get($class-prefix, 'module');
-$class: #{$prefix}#{$name};
+$root: #{$prefix}#{$name};
 
-.#{$class} {
+.#{$root} {
   width: auto;
   max-width: 800px;
   border: none;

@@ -4,10 +4,9 @@
 
 $name: 'content';
 $prefix: map-get($class-prefix, 'module');
-$class: #{$prefix}#{$name};
+$root: #{$prefix}#{$name};
 
-.#{$class} {
-
+.#{$root} {
   @at-root {
     #{&}__inner {
       @include padding(0 20px);

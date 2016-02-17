@@ -22,10 +22,10 @@
 
 // @generate-margin
 //------------------------------------
-@mixin generate-margin($name, $class) {
+@mixin generate-margin($name, $root) {
   @each $dk, $dv in $directions {
     @each $sk, $sv in $sizes {
-      .#{$class}--#{$dv}--#{$sk} {
+      .#{$root}--#{$dv}--#{$sk} {
         @if $dk == all {
           @include set-margin($sv, $sv, $sv, $sv);
         } @else if $dk == vertical {

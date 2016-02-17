@@ -4,6 +4,6 @@
 
 $name: 'margin';
 $prefix: map-get($class-prefix, 'utils');
-$class: #{$prefix}#{$name};
+$root: #{$prefix}#{$name};
 
-@include generate-margin($name, $class);
+@include generate-margin($name, $root);

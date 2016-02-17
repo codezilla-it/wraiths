@@ -4,9 +4,9 @@
 
 $name: 'carousel';
 $prefix: map-get($class-prefix, 'component');
-$class: #{$prefix}#{$name};
+$root: #{$prefix}#{$name};
 
-#{$class}{
+#{$root}{
 
 }
 

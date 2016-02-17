@@ -4,6 +4,6 @@
 
 $name: 'padding';
 $prefix: map-get($class-prefix, 'utils');
-$class: #{$prefix}#{$name};
+$root: #{$prefix}#{$name};
 
-@include generate-padding($name, $class);
+@include generate-padding($name, $root);

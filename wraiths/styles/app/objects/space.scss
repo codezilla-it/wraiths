@@ -4,12 +4,12 @@
 
 $name: 'space';
 $prefix: map-get($class-prefix, 'object');
-$class: #{$prefix}#{$name};
+$root: #{$prefix}#{$name};
 
-.#{$class} {
+.#{$root} {
   display: block;
   width: 100%;
   @include clearfix();
 }
 
-@include generate-space($name, $class);
+@include generate-space($name, $root);

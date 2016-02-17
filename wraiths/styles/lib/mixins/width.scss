@@ -32,14 +32,14 @@
 
 // @generate-width
 //------------------------------------
-@mixin generate-width($name, $class) {
+@mixin generate-width($name, $root) {
   @each $mk, $mv in $mq {
     @include min-screen(map-get($mq, $mk)) {
       @for $i from 1 through $cols {
         $cols_width: 100 / $cols * $i * 1% !important;
 
-        .#{$class}\@#{$mk}--#{$i},
-        [class*='#{$class}'].#{$class}\@#{$mk}--#{$i} {
+        .#{$root}\@#{$mk}--#{$i},
+        [class*='#{$root}'].#{$root}\@#{$mk}--#{$i} {
           width: $cols_width;
         }
       }
