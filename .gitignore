@@ -1,5 +1,6 @@
 .*
 !.gitignore
+!.editorconfig
 nbproject
 .idea
 *.py[cod]
