@@ -1,60 +1,60 @@
 {
-  "name": "wraiths",
-  "version": "1.0.0",
-  "authors": [
-    "Fabio Cencetti"
-  ],
-  "description": "BEMIT framework",
-  "main": [
-    "./wraiths/styles/app.scss",
-    "./wraiths/scripts/app.js"
-  ],
-  "moduleType": [
-    "amd"
-  ],
-  "keywords": [
-    "wraiths"
-  ],
-  "license": "MIT",
-  "homepage": "",
-  "private": false,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "*.map",
-    "*.json",
-    "*.md",
-    "*.editorconfig",
-    "*.yml",
-    "media",
-    "test",
-    "tests",
-    "data",
-    "bin",
-    "temp_img",
-    "vendor",
-    "examples"
-  ],
-  "dependencies": {
-    "bourbon": "~4.2.5",
-    "sass-mediaqueries": "~1.6.1",
-    "neat": "~1.7.2"
-  },
-  "devDependencies": {},
-  "overrides": {},
-  "install": {
-    "base": "wraiths",
-    "path": "vendor",
-    "sources": {},
-    "ignore": [
-      "requirejs",
-      "gsap",
-      "emitter-es6",
-      "bourbon",
-      "neat",
-      "sass-mediaqueries",
-      "sassy-gridlover"
-    ]
-  }
+	"name": "wraiths",
+	"version": "1.0.0",
+	"authors": [
+		"Fabio Cencetti"
+	],
+	"description": "BEMIT framework",
+	"main": [
+		"./wraiths/styles/app.scss",
+		"./wraiths/scripts/app.js"
+	],
+	"moduleType": [
+		"amd"
+	],
+	"keywords": [
+		"wraiths"
+	],
+	"license": "MIT",
+	"homepage": "",
+	"private": false,
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"*.map",
+		"*.json",
+		"*.md",
+		"*.editorconfig",
+		"*.yml",
+		"media",
+		"test",
+		"tests",
+		"data",
+		"bin",
+		"temp_img",
+		"vendor",
+		"examples"
+	],
+	"dependencies": {
+		"bourbon": "~4.2.5",
+		"sass-mediaqueries": "~1.6.1",
+		"neat": "~1.7.2"
+	},
+	"devDependencies": {},
+	"overrides": {},
+	"install": {
+		"base": "wraiths",
+		"path": "vendor",
+		"sources": {},
+		"ignore": [
+			"requirejs",
+			"gsap",
+			"emitter-es6",
+			"bourbon",
+			"neat",
+			"sass-mediaqueries",
+			"sassy-gridlover"
+		]
+	}
 }

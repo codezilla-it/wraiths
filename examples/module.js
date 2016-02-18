@@ -11,7 +11,7 @@ var Module = (function () {
 	// Public Methods
 	// ---------------------------------------------
 
-	var init = function (){
+	var init = function () {
 
 	};
 

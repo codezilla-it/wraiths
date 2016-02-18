@@ -1,52 +1,52 @@
 {
-  "name": "wraiths",
-  "version": "1.0.6",
-  "description": "BEMIT framework",
-  "author": "Fabio Cencetti <hey@kreo.me>",
-  "contributors": [
-    {
-      "name": "Andrea Rabbaglietti",
-      "email": "rabbagliettiandrea@gmail.com"
-    },
-    {
-      "name": "Sergio Pellicani",
-      "email": "sergio.pellicani@rhubbit.com"
-    }
-  ],
-  "bin": {},
-  "files": [
-    "LICENSE",
-    "Readme.md",
-    "package.json",
-    "bower.json",
-    "wraiths",
-    "index.js",
-    "main/*",
-    "wraiths/scripts/app/modules/*"
-  ],
-  "scripts": {},
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/codezilla-it/wraiths.git"
-  },
-  "bugs": {
-    "url": "https://github.com/codezilla-it/wraiths/issues"
-  },
-  "keywords": [
-    "BEMIT",
-    "modular",
-    "framework",
-    "common",
-    "global",
-    "project",
-    "wraiths"
-  ],
-  "dependencies": {},
-  "devDependencies": {},
-  "preferGlobal": false,
-  "private": false,
-  "publishConfig": {},
-  "analyze": true,
-  "license": "MIT"
+	"name": "wraiths",
+	"version": "1.0.6",
+	"description": "BEMIT framework",
+	"author": "Fabio Cencetti <hey@kreo.me>",
+	"contributors": [
+		{
+			"name": "Andrea Rabbaglietti",
+			"email": "rabbagliettiandrea@gmail.com"
+		},
+		{
+			"name": "Sergio Pellicani",
+			"email": "sergio.pellicani@rhubbit.com"
+		}
+	],
+	"bin": {},
+	"files": [
+		"LICENSE",
+		"Readme.md",
+		"package.json",
+		"bower.json",
+		"wraiths",
+		"index.js",
+		"main/*",
+		"wraiths/scripts/app/modules/*"
+	],
+	"scripts": {},
+	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/codezilla-it/wraiths.git"
+	},
+	"bugs": {
+		"url": "https://github.com/codezilla-it/wraiths/issues"
+	},
+	"keywords": [
+		"BEMIT",
+		"modular",
+		"framework",
+		"common",
+		"global",
+		"project",
+		"wraiths"
+	],
+	"dependencies": {},
+	"devDependencies": {},
+	"preferGlobal": false,
+	"private": false,
+	"publishConfig": {},
+	"analyze": true,
+	"license": "MIT"
 }
