@@ -8,28 +8,28 @@ $root: #{$prefix}#{$name};
 $gutter: map-get($layout, 'gutter');
 
 .#{$root} {
-  width: map-get($layout, 'width');
-  @include margin(0 auto);
-  @include clearfix();
+	width: map-get($layout, 'width');
+	@include margin(0 auto);
+	@include clearfix();
 
-  .#{$root} {
-    width: auto;
-    max-width: none;
-    @include margin(null #{-$gutter});
-    @include clearfix();
+	.#{$root} {
+		width: auto;
+		max-width: none;
+		@include margin(null #{-$gutter});
+		@include clearfix();
 
-    &--collapse {
-      @include clearfix();
-    }
-  }
+		&--collapse {
+			@include clearfix();
+		}
+	}
 
-  &--collapse {
-    .#{$root} {
-      @include margin(null 0);
-    }
+	&--collapse {
+		.#{$root} {
+			@include margin(null 0);
+		}
 
-    > .o--col {
-      @include margin(null 0);
-    }
-  }
+		> .o--col {
+			@include margin(null 0);
+		}
+	}
 }

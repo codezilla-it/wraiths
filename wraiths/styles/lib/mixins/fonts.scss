@@ -2,63 +2,63 @@
 //------------------------------------
 
 @mixin font($font-family, $font-size, $font-style: normal, $font-weight: normal) {
-  font-family: $font-family, map-get($fonts, 'default');
-  font-style: $font-style;
-  font-weight: $font-weight;
-  font-size: $font-size;
+	font-family: $font-family, map-get($fonts, 'default');
+	font-style: $font-style;
+	font-weight: $font-weight;
+	font-size: $font-size;
 }
 
 // @font-family
 //------------------------------------
 @mixin font-family($font-family) {
-  font-family: $font-family, map-get($fonts, 'default');
+	font-family: $font-family, map-get($fonts, 'default');
 }
 
 // @font-smoothing
 //------------------------------------
 @mixin font-smoothing($value: on) {
-  @if ($value == on) {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  } @else {
-    -webkit-font-smoothing: subpixel-antialiased;
-    -moz-osx-font-smoothing: auto;
-  }
+	@if ($value == on) {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	} @else {
+		-webkit-font-smoothing: subpixel-antialiased;
+		-moz-osx-font-smoothing: auto;
+	}
 }
 
 // @rem
 //------------------------------------
 @mixin rem($property, $values) {
 
-  $px: ();
-  $rem: ();
+	$px: ();
+	$rem: ();
 
-  @each $value in $values {
+	@each $value in $values {
 
-    @if $value == 0 or $value == auto {
-      $px: append($px, $value);
-      $rem: append($rem, $value);
-    } @else {
+		@if $value == 0 or $value == auto {
+			$px: append($px, $value);
+			$rem: append($rem, $value);
+		} @else {
 
-      $unit: unit($value);
-      $val: parse-int($value);
+			$unit: unit($value);
+			$val: parse-int($value);
 
-      @if $unit == "px" {
-        $px: append($px, $value);
-        $rem: append($rem, $val / 10 + rem);
-      }
+			@if $unit == "px" {
+				$px: append($px, $value);
+				$rem: append($rem, $val / 10 + rem);
+			}
 
-      @if $unit == "rem" {
-        $px: append($px, $val * 10 + px);
-        $rem: append($rem, $value);
-      }
-    }
-  }
+			@if $unit == "rem" {
+				$px: append($px, $val * 10 + px);
+				$rem: append($rem, $value);
+			}
+		}
+	}
 
-  @if $px == $rem {
-    #{$property}: $px;
-  } @else {
-    #{$property}: $px;
-    #{$property}: $rem;
-  }
+	@if $px == $rem {
+		#{$property}: $px;
+	} @else {
+		#{$property}: $px;
+		#{$property}: $rem;
+	}
 }

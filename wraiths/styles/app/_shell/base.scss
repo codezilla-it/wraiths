@@ -1,5 +1,5 @@
 //------------------------------------
-//    $Config
+//	Base
 //------------------------------------
 
 html, body {
@@ -52,12 +52,9 @@ a {
 }
 
 img {
-	// Grid defaults to get images and embeds to work properly
 	max-width: 100%;
 	height: auto;
 	-ms-interpolation-mode: bicubic;
-
-	// Get rid of gap under images by making them display: inline-block; by default
 	display: inline-block;
 	vertical-align: middle;
 }
@@ -74,6 +71,6 @@ nav {
 	@include margin(null null 0 null);
 }
 
-form{
+form {
 	width: 100%;
 }

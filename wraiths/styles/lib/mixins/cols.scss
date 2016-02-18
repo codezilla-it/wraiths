@@ -1,35 +1,35 @@
 // @cols
 //------------------------------------
 @mixin cols($cols, $mq_level...) {
-  @include min-screen(map-get($mq, $mq_level)) {
-    @if $cols != map-get($layout, 'cols') {
-      float: left !important;
-    }
-    width: $cols * 1% !important;
-    min-height: 1px;
-    @include position(relative, 0);
-    @include padding(null #{$gutter});
-  }
+	@include min-screen(map-get($mq, $mq_level)) {
+		@if $cols != map-get($layout, 'cols') {
+			float: left !important;
+		}
+		width: $cols * 1% !important;
+		min-height: 1px;
+		@include position(relative, 0);
+		@include padding(null #{$gutter});
+	}
 }
 
 // @last-item
 //------------------------------------
 @mixin last-item($nth) {
-  &:nth-child(#{$nth}) {
-    clear: left;
-  }
+	&:nth-child(#{$nth}) {
+		clear: left;
+	}
 }
 
 // @equal-height
 //------------------------------------
 @mixin equal-height() {
-  & {
-    overflow-y: hidden !important;
-  }
+	& {
+		overflow-y: hidden !important;
+	}
 
-  &__child {
-    height: 100% !important;
-    @include margin(null null (-9999px !important) null);
-    @include padding(null null (9999px !important) null);
-  }
+	&__child {
+		height: 100% !important;
+		@include margin(null null (-9999px !important) null);
+		@include padding(null null (9999px !important) null);
+	}
 }

@@ -7,10 +7,10 @@ $prefix: map-get($class-prefix, 'module');
 $root: #{$prefix}#{$name};
 
 .#{$root} {
-  display: block;
-  width: map-get($layout, 'width');
-  min-width: map-get($layout, 'min-width');
-  height: auto;
-  border: none !important;
-  overflow-x: hidden;
+	display: block;
+	width: map-get($layout, 'width');
+	min-width: map-get($layout, 'min-width');
+	height: auto;
+	border: none !important;
+	overflow-x: hidden;
 }

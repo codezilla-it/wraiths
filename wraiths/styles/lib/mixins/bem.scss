@@ -1,15 +1,15 @@
 // @element
 //------------------------------------
 @mixin element($name) {
-  #{&}__#{$name} {
-    @content;
-  }
+	#{&}__#{$name} {
+		@content;
+	}
 }
 
 // @modifier
 //------------------------------------
 @mixin modifier($name) {
-  #{&}--#{$name} {
-    @content;
-  }
+	#{&}--#{$name} {
+		@content;
+	}
 }

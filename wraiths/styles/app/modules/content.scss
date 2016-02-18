@@ -7,9 +7,9 @@ $prefix: map-get($class-prefix, 'module');
 $root: #{$prefix}#{$name};
 
 .#{$root} {
-  @at-root {
-    #{&}__inner {
-      @include padding(0 20px);
-    }
-  }
+	@at-root {
+		#{&}__inner {
+			@include padding(0 20px);
+		}
+	}
 }

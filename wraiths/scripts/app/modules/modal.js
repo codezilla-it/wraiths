@@ -4,31 +4,31 @@
 
 var wraith_modal = (function () {
 
-    // Private Methods
-    // ---------------------------------------------
+	// Private Methods
+	// ---------------------------------------------
 
-    // Public Methods
-    // ---------------------------------------------
+	// Public Methods
+	// ---------------------------------------------
 
-    function init () {
+	function init() {
 
-        // Handle dynamic content height
-        // -----------------------------
+		// Handle dynamic content height
+		// -----------------------------
 
-        if ($('.m--modal').exists()) {
-            $(window).on('resize', function () {
-                $('body').handle_content_height();
-            }).resize();
-        }
+		if ($('.m--modal').exists()) {
+			$(window).on('resize', function () {
+				$('body').handle_content_height();
+			}).resize();
+		}
 
-    }
+	}
 
-    // Module API
-    // ---------------------------------------------
+	// Module API
+	// ---------------------------------------------
 
-    return {
-        init: init
-    };
+	return {
+		init: init
+	};
 
 })();
 

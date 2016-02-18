@@ -7,70 +7,70 @@ $prefix: map-get($class-prefix, 'object');
 $root: #{$prefix}#{$name};
 
 .#{$root} {
-  float: left;
-  width: 35px;
-  height: 30px;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  transform: rotate(0deg);
-  transition: .2s ease-in-out;
-  cursor: pointer;
-  @include position(absolute, 0 null null 0);
-  @include margin(18px 0 0 10px);
-  @include padding(10px);
-  @include z('top', 'top');
+	float: left;
+	width: 35px;
+	height: 30px;
+	background-color: transparent;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	transform: rotate(0deg);
+	transition: .2s ease-in-out;
+	cursor: pointer;
+	@include position(absolute, 0 null null 0);
+	@include margin(18px 0 0 10px);
+	@include padding(10px);
+	@include z('top', 'top');
 
-  @at-root {
-    #{&}__line {
-      display: block;
-      height: 2px;
-      width: 100%;
-      background-color: #2f8ed8;
-      border-radius: 2px;
-      opacity: 1;
-      transform: rotate(0deg);
-      transition: .5s ease-in-out;
-      @include position(absolute, null null null 0);
+	@at-root {
+		#{&}__line {
+			display: block;
+			height: 2px;
+			width: 100%;
+			background-color: #2f8ed8;
+			border-radius: 2px;
+			opacity: 1;
+			transform: rotate(0deg);
+			transition: .5s ease-in-out;
+			@include position(absolute, null null null 0);
 
-      &:nth-child(1) {
-        top: 0px;
-      }
+			&:nth-child(1) {
+				top: 0px;
+			}
 
-      &:nth-child(2),
-      &:nth-child(3) {
-        top: 10px;
-      }
+			&:nth-child(2),
+			&:nth-child(3) {
+				top: 10px;
+			}
 
-      &:nth-child(4) {
-        top: 20px;
-      }
-    }
+			&:nth-child(4) {
+				top: 20px;
+			}
+		}
 
-    #{&}.s--active {
-      .#{$root}__line {
-        &:nth-child(1) {
-          top: 18px;
-          width: 0%;
-          left: 50%;
-        }
+		#{&}.s--active {
+			.#{$root}__line {
+				&:nth-child(1) {
+					top: 18px;
+					width: 0%;
+					left: 50%;
+				}
 
-        &:nth-child(2) {
-          transform: rotate(45deg);
-        }
+				&:nth-child(2) {
+					transform: rotate(45deg);
+				}
 
-        &:nth-child(3) {
-          transform: rotate(-45deg);
-        }
+				&:nth-child(3) {
+					transform: rotate(-45deg);
+				}
 
-        &:nth-child(4) {
-          top: 18px;
-          width: 0%;
-          left: 50%;
-        }
-      }
-    }
-  }
+				&:nth-child(4) {
+					top: 18px;
+					width: 0%;
+					left: 50%;
+				}
+			}
+		}
+	}
 }
 
 

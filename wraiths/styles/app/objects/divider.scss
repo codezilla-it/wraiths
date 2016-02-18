@@ -7,59 +7,59 @@ $prefix: map-get($class-prefix, 'object');
 $root: #{$prefix}#{$name};
 
 .#{$root} {
-  clear: both;
-  width: 100%;
-  line-height: 1em;
-  @include margin(15px 0);
+	clear: both;
+	width: 100%;
+	line-height: 1em;
+	@include margin(15px 0);
 
-  @at-root {
-    #{&}__child {
-      display: inline-block;
-      width: 20%;
-      line-height: 1em;
-      @include margin(0 auto);
-    }
+	@at-root {
+		#{&}__child {
+			display: inline-block;
+			width: 20%;
+			line-height: 1em;
+			@include margin(0 auto);
+		}
 
-    #{&}--center {
-      text-align: center;
-    }
+		#{&}--center {
+			text-align: center;
+		}
 
-    #{&}--solid {
-      border-style: solid;
-    }
+		#{&}--solid {
+			border-style: solid;
+		}
 
-    #{&}--dashed {
-      border-style: dashed;
-    }
+		#{&}--dashed {
+			border-style: dashed;
+		}
 
-    #{&}--dotted {
-      border-style: dotted;
-    }
+		#{&}--dotted {
+			border-style: dotted;
+		}
 
-    #{&}--double {
-      border-top-width: 2px;
-      border-bottom-width: 2px;
-      height: 6px;
-    }
+		#{&}--double {
+			border-top-width: 2px;
+			border-bottom-width: 2px;
+			height: 6px;
+		}
 
-    #{&}--thick {
-      border-bottom-width: 6px;
+		#{&}--thick {
+			border-bottom-width: 6px;
 
-      &__child {
-        height: 4px;
-      }
-    }
+			&__child {
+				height: 4px;
+			}
+		}
 
-    #{&}--thin {
-      border-bottom-width: 1px;
+		#{&}--thin {
+			border-bottom-width: 1px;
 
-      &__child {
-        height: 1px;
-      }
-    }
+			&__child {
+				height: 1px;
+			}
+		}
 
-    ul > &:last-child {
-      display: none;
-    }
-  }
+		ul > &:last-child {
+			display: none;
+		}
+	}
 }

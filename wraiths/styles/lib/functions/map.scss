@@ -3,11 +3,11 @@
 /// @param {Arglist} $keys - Keys to fetch
 /// @return {*}
 @function map-deep-get($map, $keys...) {
-  @each $key in $keys {
-    $map: map-get($map, $key);
-  }
+	@each $key in $keys {
+		$map: map-get($map, $key);
+	}
 
-  @return $map;
+	@return $map;
 }
 
 /// Update a key deeply nested
@@ -17,22 +17,22 @@
 /// @param {*} $value - New value (last member of `$keys`)
 /// @return {Map} - Updated map
 @function map-deep-set($map, $keys...) {
-  $map-list: ($map,);
-  $result: null;
+	$map-list: ($map,);
+	$result: null;
 
-  @if length($keys) == 2 {
-    @return map-merge($map, (nth($keys, 1): nth($keys, -1)));
-  }
+	@if length($keys) == 2 {
+		@return map-merge($map, (nth($keys, 1): nth($keys, -1)));
+	}
 
-  @for $i from 1 through length($keys) - 2 {
-    $map-list: append($map-list, map-get(nth($map-list, -1), nth($keys, $i)));
-  }
+	@for $i from 1 through length($keys) - 2 {
+		$map-list: append($map-list, map-get(nth($map-list, -1), nth($keys, $i)));
+	}
 
-  @for $i from length($map-list) through 1 {
-    $result: map-merge(nth($map-list, $i), (nth($keys, $i): if($i == length($map-list), nth($keys, -1), $result)));
-  }
+	@for $i from length($map-list) through 1 {
+		$result: map-merge(nth($map-list, $i), (nth($keys, $i): if($i == length($map-list), nth($keys, -1), $result)));
+	}
 
-  @return $result;
+	@return $result;
 }
 
 /// Update a key deeply nested
@@ -42,22 +42,22 @@
 /// @param {*} $value - New value (last member of `$keys`)
 /// @return {Map} - Updated map
 @function map-deep-set($map, $keys...) {
-  $map-list: ($map,);
-  $result: null;
+	$map-list: ($map,);
+	$result: null;
 
-  @if length($keys) == 2 {
-    @return map-merge($map, (nth($keys, 1): nth($keys, -1)));
-  }
+	@if length($keys) == 2 {
+		@return map-merge($map, (nth($keys, 1): nth($keys, -1)));
+	}
 
-  @for $i from 1 through length($keys) - 2 {
-    $map-list: append($map-list, map-get(nth($map-list, -1), nth($keys, $i)));
-  }
+	@for $i from 1 through length($keys) - 2 {
+		$map-list: append($map-list, map-get(nth($map-list, -1), nth($keys, $i)));
+	}
 
-  @for $i from length($map-list) through 1 {
-    $result: map-merge(nth($map-list, $i), (nth($keys, $i): if($i == length($map-list), nth($keys, -1), $result)));
-  }
+	@for $i from length($map-list) through 1 {
+		$result: map-merge(nth($map-list, $i), (nth($keys, $i): if($i == length($map-list), nth($keys, -1), $result)));
+	}
 
-  @return $result;
+	@return $result;
 }
 
 /// Update a key deeply nested
@@ -67,22 +67,22 @@
 /// @param {*} $value - New value (last member of `$keys`)
 /// @return {Map} - Updated map
 @function map-deep-set($map, $keys...) {
-  $map-list: ($map,);
-  $result: null;
+	$map-list: ($map,);
+	$result: null;
 
-  @if length($keys) == 2 {
-    @return map-merge($map, (nth($keys, 1): nth($keys, -1)));
-  }
+	@if length($keys) == 2 {
+		@return map-merge($map, (nth($keys, 1): nth($keys, -1)));
+	}
 
-  @for $i from 1 through length($keys) - 2 {
-    $map-list: append($map-list, map-get(nth($map-list, -1), nth($keys, $i)));
-  }
+	@for $i from 1 through length($keys) - 2 {
+		$map-list: append($map-list, map-get(nth($map-list, -1), nth($keys, $i)));
+	}
 
-  @for $i from length($map-list) through 1 {
-    $result: map-merge(nth($map-list, $i), (nth($keys, $i): if($i == length($map-list), nth($keys, -1), $result)));
-  }
+	@for $i from length($map-list) through 1 {
+		$result: map-merge(nth($map-list, $i), (nth($keys, $i): if($i == length($map-list), nth($keys, -1), $result)));
+	}
 
-  @return $result;
+	@return $result;
 }
 
 /// Update a key deeply nested
@@ -92,22 +92,22 @@
 /// @param {*} $value - New value (last member of `$keys`)
 /// @return {Map} - Updated map
 @function map-deep-set($map, $keys...) {
-  $map-list: ($map,);
-  $result: null;
+	$map-list: ($map,);
+	$result: null;
 
-  @if length($keys) == 2 {
-    @return map-merge($map, (nth($keys, 1): nth($keys, -1)));
-  }
+	@if length($keys) == 2 {
+		@return map-merge($map, (nth($keys, 1): nth($keys, -1)));
+	}
 
-  @for $i from 1 through length($keys) - 2 {
-    $map-list: append($map-list, map-get(nth($map-list, -1), nth($keys, $i)));
-  }
+	@for $i from 1 through length($keys) - 2 {
+		$map-list: append($map-list, map-get(nth($map-list, -1), nth($keys, $i)));
+	}
 
-  @for $i from length($map-list) through 1 {
-    $result: map-merge(nth($map-list, $i), (nth($keys, $i): if($i == length($map-list), nth($keys, -1), $result)));
-  }
+	@for $i from length($map-list) through 1 {
+		$result: map-merge(nth($map-list, $i), (nth($keys, $i): if($i == length($map-list), nth($keys, -1), $result)));
+	}
 
-  @return $result;
+	@return $result;
 }
 
 /// An equivalent of `zip` function but for maps.
@@ -117,25 +117,25 @@
 /// @return {Map} Freshly created map
 /// @see http://sass-lang.com/documentation/Sass/Script/Functions.html#zip-instance_method
 @function map-zip($keys, $values) {
-  $l-keys: length($keys);
-  $l-values: length($values);
-  $min: min($l-keys, $l-values);
-  $map: ();
+	$l-keys: length($keys);
+	$l-values: length($values);
+	$min: min($l-keys, $l-values);
+	$map: ();
 
-  @if $l-keys != $l-values {
-    @warn "There are #{$l-keys} key(s) for #{$l-values} value(s) in the map for `map-zip`. "
+	@if $l-keys != $l-values {
+		@warn "There are #{$l-keys} key(s) for #{$l-values} value(s) in the map for `map-zip`. "
         + "Resulting map will only have #{$min} pairs.";
-  }
+	}
 
-  @if $min == 0 {
-    @return $map;
-  }
+	@if $min == 0 {
+		@return $map;
+	}
 
-  @for $i from 1 through $min {
-    $map: map-merge($map, (nth($keys, $i): nth($values, $i)));
-  }
+	@for $i from 1 through $min {
+		$map: map-merge($map, (nth($keys, $i): nth($values, $i)));
+	}
 
-  @return $map;
+	@return $map;
 }
 
 /// jQuery-style extend function
@@ -147,40 +147,39 @@
 /// @param {Bool} $deep - recursive mode
 /// @return {Map}
 @function map-extend($map, $maps...) {
-  $last: nth($maps, -1);
-  $deep: $last == true;
-  $max: if($deep, length($maps) - 1, length($maps));
+	$last: nth($maps, -1);
+	$deep: $last == true;
+	$max: if($deep, length($maps) - 1, length($maps));
 
-  // Loop through all maps in $maps...
-  @for $i from 1 through $max {
-    // Store current map
-    $current: nth($maps, $i);
+	// Loop through all maps in $maps...
+	@for $i from 1 through $max {
+		// Store current map
+		$current: nth($maps, $i);
 
-    // If not in deep mode, simply merge current map with map
-    @if not $deep {
-      $map: map-merge($map, $current);
-    } @else {
-      // If in deep mode, loop through all tuples in current map
-      @each $key, $value in $current {
+		// If not in deep mode, simply merge current map with map
+		@if not $deep {
+			$map: map-merge($map, $current);
+		} @else {
+			// If in deep mode, loop through all tuples in current map
+			@each $key, $value in $current {
 
-        // If value is a nested map and same key from map is a nested map as well
-        @if type-of($value) == "map" and type-of(map-get($map, $key)) == "map" {
-          // Recursive extend
-          $value: map-extend(map-get($map, $key), $value, true);
-        }
+				// If value is a nested map and same key from map is a nested map as well
+				@if type-of($value) == "map" and type-of(map-get($map, $key)) == "map" {
+					// Recursive extend
+					$value: map-extend(map-get($map, $key), $value, true);
+				}
 
-        // Merge current tuple with map
-        $map: map-merge($map, ($key: $value));
-      }
-    }
-  }
+				// Merge current tuple with map
+				$map: map-merge($map, ($key: $value));
+			}
+		}
+	}
 
-  @return $map;
+	@return $map;
 }
-
 
 // a map-set function (not included with Sass)
 @function map-set($map, $key, $value) {
-  $new: ($key: $value);
-  @return map-merge($map, $new);
+	$new: ($key: $value);
+	@return map-merge($map, $new);
 }

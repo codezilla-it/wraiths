@@ -7,14 +7,14 @@ $prefix: map-get($class-prefix, 'utils');
 $root: #{$prefix}#{$name};
 
 .#{$root} {
-  &:before {
-    content: "";
-    display: table;
-  }
+	&:before {
+		content: "";
+		display: table;
+	}
 
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
 }

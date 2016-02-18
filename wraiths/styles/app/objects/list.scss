@@ -8,19 +8,19 @@ $root: #{$prefix}#{$name};
 
 .#{$root} {
 
-  #{&}--group {
-    &__item {
-      position: relative;
-      display: inline-block;
-      @include position(relative, 0);
-      @include padding(10px 15px);
-      @include margin(0 auto -1px auto);
-    }
-  }
+	#{&}--group {
+		&__item {
+			position: relative;
+			display: inline-block;
+			@include position(relative, 0);
+			@include padding(10px 15px);
+			@include margin(0 auto -1px auto);
+		}
+	}
 
-  #{&}--horizontal{
-    li {
-      display: inline-block;
-    }
-  }
+	#{&}--horizontal {
+		li {
+			display: inline-block;
+		}
+	}
 }

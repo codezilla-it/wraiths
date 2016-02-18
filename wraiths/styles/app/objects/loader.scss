@@ -7,6 +7,6 @@ $prefix: map-get($class-prefix, 'object');
 $root: #{$prefix}#{$name};
 
 .#{$root} {
-  display: none;
-  @include padding(20px null);
+	display: none;
+	@include padding(20px null);
 }

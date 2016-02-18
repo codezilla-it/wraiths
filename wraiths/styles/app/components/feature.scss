@@ -7,34 +7,34 @@ $prefix: map-get($class-prefix, 'component');
 $root: #{$prefix}#{$name};
 
 .#{$root} {
-  @include padding(32px);
-  @include margin(0);
-  @include border-radius(4px);
+	@include padding(32px);
+	@include margin(0);
+	@include border-radius(4px);
 
-  @at-root {
-    #{&}__header {
-      h1, h2, h3, h4, h5, h6 {
-        font-size: 21px;
-        line-height: 30px;
-      }
+	@at-root {
+		#{&}__header {
+			h1, h2, h3, h4, h5, h6 {
+				font-size: 21px;
+				line-height: 30px;
+			}
 
-      [class*='icon'] {
-        display: inline-block;
-        margin-bottom: 16px;
-      }
-    }
+			[class*='icon'] {
+				display: inline-block;
+				margin-bottom: 16px;
+			}
+		}
 
-    #{&}__content {
-      p {
-        font-size: 15px;
-        font-weight: 400;
-        line-height: 1.5;
-        @include margin(null null 0 null);
-      }
-    }
+		#{&}__content {
+			p {
+				font-size: 15px;
+				font-weight: 400;
+				line-height: 1.5;
+				@include margin(null null 0 null);
+			}
+		}
 
-    #{&}--boxed {
-      border: 10px solid;
-    }
-  }
+		#{&}--boxed {
+			border: 10px solid;
+		}
+	}
 }

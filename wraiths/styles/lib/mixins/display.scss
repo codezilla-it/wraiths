@@ -1,51 +1,51 @@
 // @display-table
 //------------------------------------
 @mixin display-table($target) {
-  #{$target} {
-    display: table;
-    @include padding(null 0);
-  }
+	#{$target} {
+		display: table;
+		@include padding(null 0);
+	}
 }
 
 // @display-table-row
 //------------------------------------
 @mixin display-table-row($target) {
-  #{$target} {
-    display: table-row;
-  }
+	#{$target} {
+		display: table-row;
+	}
 }
 
 // @display-table-cell
 //------------------------------------
 @mixin display-table-cell($target) {
-  #{$target} {
-    display: table-cell;
-    float: none;
-  }
+	#{$target} {
+		display: table-cell;
+		float: none;
+	}
 }
 
 // @generate-display
 //------------------------------------
 @mixin generate-display($name, $root) {
 
-  $display: null;
+	$display: null;
 
-  @if ($name == hide) {
-    $display: none !important;
-  } @else if ($name == show) {
-    $display: block !important;
-  }
+	@if ($name == hide) {
+		$display: none !important;
+	} @else if ($name == show) {
+		$display: block !important;
+	}
 
-  .#{$root} {
-    display: $display;
-  }
+	.#{$root} {
+		display: $display;
+	}
 
-  @each $mk, $mv in $mq {
-    @include min-screen(map-get($mq, $mk)) {
-      .#{$root}\@#{$mk},
-      [class*='#{$root}'].#{$root}\@#{$mk} {
-        display: $display;
-      }
-    }
-  }
+	@each $mk, $mv in $mq {
+		@include min-screen(map-get($mq, $mk)) {
+			.#{$root}\@#{$mk},
+			[class*='#{$root}'].#{$root}\@#{$mk} {
+				display: $display;
+			}
+		}
+	}
 }

@@ -7,15 +7,15 @@ $prefix: map-get($class-prefix, 'component');
 $root: #{$prefix}#{$name};
 
 .#{$root} {
-  .map {
-    @include max-screen(map-get($mq, sm)) {
-      height: 200px;
-    }
-    @include max-screen(map-get($mq, md)) {
-      height: 260px;
-    }
-    @include min-screen(map-get($mq, md)) {
-      height: 550px;
-    }
-  }
+	.map {
+		@include max-screen(map-get($mq, sm)) {
+			height: 200px;
+		}
+		@include max-screen(map-get($mq, md)) {
+			height: 260px;
+		}
+		@include min-screen(map-get($mq, md)) {
+			height: 550px;
+		}
+	}
 }

@@ -1,17 +1,17 @@
 // Sizing stuff
 @mixin size($width, $height: $width) {
-  width: $width;
-  height: $height;
+	width: $width;
+	height: $height;
 }
 
 // Absolutely positioning stuff
 @mixin absolute($args) {
-  @include position(absolute, $args);
+	@include position(absolute, $args);
 }
 
 // @vertical-center element
 //------------------------------------
 @mixin vertical-center() {
-  transform: translateY(-50%);
-  @include position(relative, 50% null null null);
+	transform: translateY(-50%);
+	@include position(relative, 50% null null null);
 }

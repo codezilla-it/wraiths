@@ -1,23 +1,23 @@
 // @z-items
 //------------------------------------
 @each $group-name, $group-list in $z-items {
-  $counter: 1;
-  $group-map: ();
-  @each $item in $group-list {
-    $group-map: map-merge($group-map, ($item: $counter));
-    $counter: $counter + 1;
-  }
-  $z-map: map-merge($z-map, ($group-name: $group-map));
+	$counter: 1;
+	$group-map: ();
+	@each $item in $group-list {
+		$group-map: map-merge($group-map, ($item: $counter));
+		$counter: $counter + 1;
+	}
+	$z-map: map-merge($z-map, ($group-name: $group-map));
 }
 
 // @z
 //------------------------------------
 @mixin z($group, $key) {
-  z-index: map-get(map-get($z-map, $group), $key);
+	z-index: map-get(map-get($z-map, $group), $key);
 }
 
 // @z-index
 //------------------------------------
 @mixin z-index($group, $key) {
-  z-index: map-get($z-index, $key);
+	z-index: map-get($z-index, $key);
 }

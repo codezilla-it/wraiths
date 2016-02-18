@@ -3,21 +3,20 @@
 //------------------------------------
 
 @function grid-width($n) {
-  @return $n * $grid-width + ($n - 1) * $gutter-width;
+	@return $n * $grid-width + ($n - 1) * $gutter-width;
 }
 
 @function parse-int($n) {
-  @return $n / ($n * 0 + 1);
+	@return $n / ($n * 0 + 1);
 }
 
 @function palette($palette, $tone:'base') {
-  @return map-get(map-get($palettes, $palette), $tone);
+	@return map-get(map-get($palettes, $palette), $tone);
 }
 
 @function get-path($path) {
-  @return $path;
+	@return $path;
 }
-
 
 /// Convert angle
 /// @author Chris Eppstein
@@ -25,25 +24,25 @@
 /// @param {String} $unit - Unit to convert to
 /// @return {Number} Converted angle
 @function convert-angle($value, $unit) {
-  $convertable-units: deg grad turn rad;
-  $conversion-factors: 1 (10grad/9deg) (1turn/360deg) (3.1415926rad/180deg);
-  @if index($convertable-units, unit($value)) and index($convertable-units, $unit) {
-    @return $value
+	$convertable-units: deg grad turn rad;
+	$conversion-factors: 1 (10grad/9deg) (1turn/360deg) (3.1415926rad/180deg);
+	@if index($convertable-units, unit($value)) and index($convertable-units, $unit) {
+		@return $value
              / nth($conversion-factors, index($convertable-units, unit($value)))
              * nth($conversion-factors, index($convertable-units, $unit));
-  }
+	}
 
-  @warn "Cannot convert `#{unit($value)}` to `#{$unit}`.";
+	@warn "Cannot convert `#{unit($value)}` to `#{$unit}`.";
 }
 
 /// Test if `$value` is an angle
 /// @param {*} $value - Value to test
 /// @return {Bool}
 @function is-direction($value) {
-  $is-direction: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $value);
-  $is-angle: type-of($value) == 'number' and index('deg' 'grad' 'turn' 'rad', unit($value));
+	$is-direction: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $value);
+	$is-angle: type-of($value) == 'number' and index('deg' 'grad' 'turn' 'rad', unit($value));
 
-  @return $is-direction or $is-angle;
+	@return $is-direction or $is-angle;
 }
 
 /// Convert a direction to legacy syntax
@@ -51,30 +50,30 @@
 /// @require {function} is-direction
 /// @require {function} convert-angle
 @function legacy-direction($value) {
-  @if is-direction($value) == false {
-    @warn "Cannot convert `#{$value}` to legacy syntax because it doesn't seem to be an angle or a direction";
-  }
+	@if is-direction($value) == false {
+		@warn "Cannot convert `#{$value}` to legacy syntax because it doesn't seem to be an angle or a direction";
+	}
 
-  $conversion-map: (
-          to top : bottom,
-          to top right : bottom left,
-          to right top : left bottom,
-          to right : left,
-          to bottom right : top left,
-          to right bottom : left top,
-          to bottom : top,
-          to bottom left : top right,
-          to left bottom : right top,
-          to left : right,
-          to left top : right bottom,
-          to top left : bottom right
-  );
+	$conversion-map: (
+		to top : bottom,
+		to top right : bottom left,
+		to right top : left bottom,
+		to right : left,
+		to bottom right : top left,
+		to right bottom : left top,
+		to bottom : top,
+		to bottom left : top right,
+		to left bottom : right top,
+		to left : right,
+		to left top : right bottom,
+		to top left : bottom right
+	);
 
-  @if map-has-key($conversion-map, $value) {
-    @return map-get($conversion-map, $value);
-  }
+	@if map-has-key($conversion-map, $value) {
+		@return map-get($conversion-map, $value);
+	}
 
-  @return 90deg - convert-angle($value, 'deg');
+	@return 90deg - convert-angle($value, 'deg');
 }
 
 /// Type scale set text rythm
@@ -82,108 +81,108 @@
 // @see https://github.com/Team-Sass/Sassy-math.
 
 @function exponent($base, $exponent) {
-  @if pow(2, 2) == 4 {
-    @return pow($base, $exponent);
-  }
+	@if pow(2, 2) == 4 {
+		@return pow($base, $exponent);
+	}
 
-  $value: $base;
+	$value: $base;
 
-  @if $exponent > 1 {
-    @for $i from 2 through $exponent {
-      $value: $value * $base;
-    }
-  }
+	@if $exponent > 1 {
+		@for $i from 2 through $exponent {
+			$value: $value * $base;
+		}
+	}
 
-  @if $exponent < 1 {
-    @for $i from 0 through -$exponent {
-      $value: $value / $base;
-    }
-  }
+	@if $exponent < 1 {
+		@for $i from 0 through -$exponent {
+			$value: $value / $base;
+		}
+	}
 
-  @return $value;
+	@return $value;
 }
 
 // CASTING A STRING TO A NUMBER
 // @see http://hugogiraudel.com/2014/01/15/sass-string-to-number/
 
 @function _length($number, $unit) {
-  $strings: 'px' 'cm' 'mm' '%' 'ch' 'pica' 'in' 'em' 'rem' 'pt' 'pc' 'ex' 'vw' 'vh' 'vmin' 'vmax';
-  $units: 1px 1cm 1mm 1% 1ch 1 pica 1in 1em 1rem 1pt 1pc 1ex 1vw 1vh 1vmin 1vmax;
-  $index: index($strings, $unit);
+	$strings: 'px' 'cm' 'mm' '%' 'ch' 'pica' 'in' 'em' 'rem' 'pt' 'pc' 'ex' 'vw' 'vh' 'vmin' 'vmax';
+	$units: 1px 1cm 1mm 1% 1ch 1 pica 1in 1em 1rem 1pt 1pc 1ex 1vw 1vh 1vmin 1vmax;
+	$index: index($strings, $unit);
 
-  @if not $index {
-    @warn "Invalid unit `#{$unit}`.";
-    @return false;
-  }
+	@if not $index {
+		@warn "Invalid unit `#{$unit}`.";
+		@return false;
+	}
 
-  @return $number * nth($units, $index);
+	@return $number * nth($units, $index);
 }
 
 @function number($string) {
-  // Matrices
-  $strings: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9';
-  $numbers: 0 1 2 3 4 5 6 7 8 9;
+	// Matrices
+	$strings: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9';
+	$numbers: 0 1 2 3 4 5 6 7 8 9;
 
-  // Result
-  $result: 0;
-  $divider: 0;
-  $minus: false;
+	// Result
+	$result: 0;
+	$divider: 0;
+	$minus: false;
 
-  // Looping through all characters
-  @for $i from 1 through str-length($string) {
-    $character: str-slice($string, $i, $i);
-    $index: index($strings, $character);
+	// Looping through all characters
+	@for $i from 1 through str-length($string) {
+		$character: str-slice($string, $i, $i);
+		$index: index($strings, $character);
 
-    @if $character == '-' {
-      $minus: true;
-    } @else if $character == '.' {
-      $divider: 1;
-    } @else {
-      @if not $index {
-        $result: if($minus, $result * -1, $result);
-        @return _length($result, str-slice($string, $i));
-      }
+		@if $character == '-' {
+			$minus: true;
+		} @else if $character == '.' {
+			$divider: 1;
+		} @else {
+			@if not $index {
+				$result: if($minus, $result * -1, $result);
+				@return _length($result, str-slice($string, $i));
+			}
 
-      $number: nth($numbers, $index);
+			$number: nth($numbers, $index);
 
-      @if $divider == 0 {
-        $result: $result * 10;
-      } @else {
-        // Move the decimal dot to the left
-        $divider: $divider * 10;
-        $number: $number / $divider;
-      }
+			@if $divider == 0 {
+				$result: $result * 10;
+			} @else {
+				// Move the decimal dot to the left
+				$divider: $divider * 10;
+				$number: $number / $divider;
+			}
 
-      $result: $result + $number;
-    }
-  }
+			$result: $result + $number;
+		}
+	}
 
-  @return if($minus, $result * -1, $result);
+	@return if($minus, $result * -1, $result);
 }
 
 // UNIT MANAGER
 // @see https://github.com/zurb/foundation/blob/master/scss/foundation/_functions.scss
 
 @function _strip-unit($num) {
-  @return $num / ($num * 0 + 1);
+	@return $num / ($num * 0 + 1);
 }
 
 @function _convert($unit, $value, $base-value: $SGL_DEFAULT_FONT_SIZE) {
-  $value: _strip-unit($value) / _strip-unit($base-value) * number(1 + $unit);
+	$value: _strip-unit($value) / _strip-unit($base-value) * number(1 + $unit);
 
-  @if ($value == (0 + $unit)) {
-    $value: 0;
-  }
+	@if ($value == (0 + $unit)) {
+		$value: 0;
+	}
 
-  @return $value;
+	@return $value;
 }
 
 @function em-calc($value, $base-value: $SGL_DEFAULT_FONT_SIZE) {
-  @return _convert("em", $value, $base-value);
+	@return _convert("em", $value, $base-value);
 }
 
 @function rem-calc($value, $base-value: $SGL_DEFAULT_FONT_SIZE) {
-  @return _convert("rem", $value, $base-value);
+	@return _convert("rem", $value, $base-value);
 }
 
 /// Returns the opposite direction of each direction in a list
@@ -191,26 +190,26 @@
 /// @param {List} $directions - List of initial directions
 /// @return {List} - List of opposite directions
 @function opposite-direction($directions) {
-  $opposite-directions: ();
-  $direction-map: (
-          'top': 'bottom',
-          'right': 'left',
-          'bottom': 'top',
-          'left': 'right',
-          'center': 'center',
-          'ltr': 'rtl',
-          'rtl': 'ltr'
-  );
+	$opposite-directions: ();
+	$direction-map: (
+		'top': 'bottom',
+		'right': 'left',
+		'bottom': 'top',
+		'left': 'right',
+		'center': 'center',
+		'ltr': 'rtl',
+		'rtl': 'ltr'
+	);
 
-  @each $direction in $directions {
-    $direction: to-lower-case($direction);
+	@each $direction in $directions {
+		$direction: to-lower-case($direction);
 
-    @if map-has-key($direction-map, $direction) {
-      $opposite-directions: append($opposite-directions, unquote(map-get($direction-map, $direction)));
-    } @else {
-      @warn "No opposite direction can be found for `#{$direction}`. Direction omitted.";
-    }
-  }
+		@if map-has-key($direction-map, $direction) {
+			$opposite-directions: append($opposite-directions, unquote(map-get($direction-map, $direction)));
+		} @else {
+			@warn "No opposite direction can be found for `#{$direction}`. Direction omitted.";
+		}
+	}
 
-  @return $opposite-directions;
+	@return $opposite-directions;
 }

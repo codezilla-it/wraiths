@@ -7,34 +7,34 @@ $prefix: map-get($class-prefix, 'component');
 $root: #{$prefix}#{$name};
 
 .#{$root} {
-  @include margin(15px 0);
-  @include padding(0);
-  @include border-radius(4px);
-  @include border(1px, solid, #e0e0e0);
+	@include margin(15px 0);
+	@include padding(0);
+	@include border-radius(4px);
+	@include border(1px, solid, #e0e0e0);
 
-  @at-root {
-    #{&}__header {
-      background: #F3F6F9;
-      text-align: center;
-      border-bottom: 1px solid #E0E0E0;
-      @include border-radius(4px 4px 0 0);
-      @include padding(6px);
+	@at-root {
+		#{&}__header {
+			background: #F3F6F9;
+			text-align: center;
+			border-bottom: 1px solid #E0E0E0;
+			@include border-radius(4px 4px 0 0);
+			@include padding(6px);
 
-      > * {
-        font-size: 23px;
-        @include margin(0);
-        @include padding(0);
-        @include max-screen(map-get($mq, 'md')) {
-          font-size: 19px;
-          line-height: 1.4;
-          letter-spacing: 0;
-          text-transform: none;
-        }
-      }
-    }
+			> * {
+				font-size: 23px;
+				@include margin(0);
+				@include padding(0);
+				@include max-screen(map-get($mq, 'md')) {
+					font-size: 19px;
+					line-height: 1.4;
+					letter-spacing: 0;
+					text-transform: none;
+				}
+			}
+		}
 
-    #{&}__content {
-      @include padding(15px 20px);
-    }
-  }
+		#{&}__content {
+			@include padding(15px 20px);
+		}
+	}
 }

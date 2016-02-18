@@ -7,13 +7,13 @@ $prefix: map-get($class-prefix, 'utils');
 $root: #{$prefix}#{$name};
 
 .#{$root} {
-  @at-root {
-    #{&}--smoothing--on {
-      @include font-smoothing(on);
-    }
+	@at-root {
+		#{&}--smoothing--on {
+			@include font-smoothing(on);
+		}
 
-    #{&}--smoothing--off {
-      @include font-smoothing(off);
-    }
-  }
+		#{&}--smoothing--off {
+			@include font-smoothing(off);
+		}
+	}
 }

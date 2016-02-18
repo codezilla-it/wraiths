@@ -7,9 +7,9 @@ $prefix: map-get($class-prefix, 'object');
 $root: #{$prefix}#{$name};
 
 .#{$root} {
-  display: block;
-  width: 100%;
-  @include clearfix();
+	display: block;
+	width: 100%;
+	@include clearfix();
 }
 
 @include generate-space($name, $root);

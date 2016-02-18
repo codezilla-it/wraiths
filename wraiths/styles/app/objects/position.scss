@@ -7,15 +7,15 @@ $prefix: map-get($class-prefix, 'object');
 $root: #{$prefix}#{$name};
 
 .#{$root} {
-  @at-root {
-    #{&}--l {
-      float: left !important;
-      left: 0 !important;
-    }
+	@at-root {
+		#{&}--l {
+			float: left !important;
+			left: 0 !important;
+		}
 
-    #{&}--r {
-      float: right !important;
-      right: 0 !important;
-    }
-  }
+		#{&}--r {
+			float: right !important;
+			right: 0 !important;
+		}
+	}
 }
