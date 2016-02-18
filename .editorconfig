@@ -10,11 +10,17 @@ insert_final_newline = true
 
 # Matches multiple files with brace expansion notation
 # Set default charset
-[*.{css,scss,sass,styl,js,coffee,json,html,phtml,jade,tpl,php,py}]
+
+[*.*]
 charset = utf-8
 end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
-tab_width = 2
 indent_style = tab
 indent_size = tab
+
+[*.{css,scss,sass,styl}]
+tab_width = 2
+
+[*.{js,coffee,json,html,phtml,jade,tpl,php,py}]
+tab_width = 3
