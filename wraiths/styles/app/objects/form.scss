@@ -121,6 +121,34 @@ textarea.#{$root}__input {
 			@include margin(null 0);
 		}
 	}
+
+	.s--highlight {
+		color: #0081D4 !important;
+		background: #F9FCFF !important;
+		@include border-color(#A9C2D2 !important);
+	}
+
+	.s--feedback {
+		font-size: 15px;
+		@include position(relative, 0 (15px !important) null null);
+
+		&--error,
+		&--warning {
+			.o--icon {
+				&:before {
+					content: '\e6c5';
+				}
+			}
+		}
+
+		&--success {
+			.o--icon {
+				&:before {
+					content: '\e64c';
+				}
+			}
+		}
+	}
 }
 
 // .__fake-errors
@@ -240,7 +268,7 @@ textarea.#{$root}__input {
 
 		.o--icon {
 			width: 25px;
-			@include position(absolute, null 30px null null);
+			@include position(absolute, null 31px null null);
 
 			&:after {
 				content: '';
@@ -297,35 +325,25 @@ textarea.#{$root}__input {
 
 	&.o--col {
 		.o--icon {
-			right: 31px;
-
-			&.#{$root}__field--select {
-				&:before {
-					right: 45px;
-				}
-
-				&:after {
-					right: 25px;
-				}
-
-				#{$root}__input {
-					@include padding(null 80px null null);
-				}
-
-				.o--icon {
-					width: 40px;
-
-					&:after {
-						right: -15px;
-					}
-				}
-			}
+			right: 45px;
 		}
 
-		.s--highlight {
-			color: #0081D4 !important;
-			background: #F9FCFF !important;
-			@include border-color(#A9C2D2 !important);
+		&.#{$root}__field--select {
+			&:before {
+				right: 45px;
+			}
+
+			&:after {
+				right: 25px;
+			}
+
+			#{$root}__input {
+				@include padding(null 80px null null);
+			}
+
+			.o--icon {
+				width: 30px;
+			}
 		}
 	}
 }
@@ -521,30 +539,6 @@ textarea.#{$root}__input {
 			}
 			@include max-screen(map-get($mq, 'xs')) {
 				@include border-radius(4px);
-			}
-		}
-	}
-}
-
-// .s--feedback
-// ---------------------------
-.s--feedback {
-	font-size: 15px;
-	@include position(relative, 0 (15px !important) null null);
-
-	&--error,
-	&--warning {
-		.o--icon {
-			&:before {
-				content: '\e6c5';
-			}
-		}
-	}
-
-	&--success {
-		.o--icon {
-			&:before {
-				content: '\e64c';
 			}
 		}
 	}
