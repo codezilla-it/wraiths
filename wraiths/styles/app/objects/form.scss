@@ -128,7 +128,7 @@ textarea.#{$root}__input {
 		@include border-color(#A9C2D2 !important);
 	}
 
-	.s--feedback {
+	&.s--feedback {
 		font-size: 15px;
 		@include position(relative, 0 (15px !important) null null);
 
@@ -325,7 +325,7 @@ textarea.#{$root}__input {
 
 	&.o--col {
 		.o--icon {
-			right: 45px;
+			right: 25px;
 		}
 
 		&.#{$root}__field--select {
@@ -342,7 +342,11 @@ textarea.#{$root}__input {
 			}
 
 			.o--icon {
-				width: 30px;
+				width: 45px;
+
+				&:after{
+					right: -9px;
+				}
 			}
 		}
 	}
