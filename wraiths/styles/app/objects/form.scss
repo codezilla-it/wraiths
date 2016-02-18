@@ -1,0 +1,551 @@
+//------------------------------------
+//  $Form
+//------------------------------------
+
+$name: 'form';
+$prefix: map-get($class-prefix, 'object');
+$root: #{$prefix}#{$name};
+
+.#{$root} {
+	@include margin(0);
+	@include padding(15px 0 0 0);
+	@include border-radius(4px);
+
+	::-webkit-input-placeholder {
+		opacity: 1;
+		@include rem(font-size, 1rem);
+	}
+
+	:-moz-placeholder {
+		opacity: 1;
+		@include rem(font-size, 1rem);
+	}
+
+	:-ms-input-placeholder {
+		opacity: 1;
+		@include rem(font-size, 1rem);
+	}
+
+	:focus {
+		outline: none;
+	}
+
+	p {
+		@include margin(0 null null null);
+	}
+
+	.input-group {
+		&.date {
+			width: 100%;
+
+			.input-group-addon {
+				color: #898D90;
+				border-left: none;
+				@include padding(6px 8px);
+				@include border-radius(0 4px 4px 0);
+
+				& ~ .o--icon {
+					right: 41px;
+				}
+			}
+		}
+	}
+}
+
+// .__input
+// ---------------------------
+.#{$root}__input {
+	&:not(.o--btn) {
+		display: block;
+		width: 100%;
+		height: 36px;
+		line-height: 1.42857143;
+		border: 1px solid;
+		transition: all 0.2s linear;
+		@include rem(font-size, 0.95rem);
+		@include padding(null 36px null null);
+		@include border-radius(3px);
+
+		&:not(select) {
+			@include padding(6px 12px);
+		}
+	}
+
+	&:focus {
+		outline: none;
+		border-width: 1px;
+		border-style: solid;
+	}
+
+	& ~ *:not(.help-block) {
+		cursor: pointer;
+	}
+}
+
+// select.__input
+// ---------------------------
+select.#{$root}__input {
+	width: 100%;
+	user-select: none;
+	appearance: none;
+	border: 1px solid #C4CED8;
+	@include padding(0 60px 0 15px);
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+// textarea.__input
+// ---------------------------
+textarea.#{$root}__input {
+	height: auto;
+	min-height: 120px;
+	@include max-screen(map-get($mq, 'md')) {
+		@include margin(null null 15px null);
+	}
+}
+
+// .__item
+// ---------------------------
+.#{$root}__item {
+	@include margin(null null 0 null);
+
+	&--checkbox {
+		.#{$root}__field {
+			width: 5%;
+		}
+
+		.#{$root}__label {
+			width: 88%;
+			@include margin(null 0);
+		}
+	}
+}
+
+// .__fake-errors
+// ---------------------------
+.#{$root}__fake-errors {
+	@include margin(5px 0);
+}
+
+// .__label
+// ---------------------------
+.#{$root}__label {
+	line-height: 1.5em;
+	vertical-align: middle;
+	font-size: 16px;
+	@include margin(0 0 5px 0);
+	@include max-screen(map-get($mq, 'md')) {
+		@include margin(null null 5px null);
+	}
+
+	label {
+		font-size: 14px;
+	}
+
+	&--helper {
+		line-height: 1.2em;
+		@include margin(null null 10px null);
+
+		label {
+			line-height: 1em;
+		}
+
+		.#{$root}__helper {
+			opacity: .65;
+			line-height: 1em;
+			font-size: 12px;
+			@include max-screen(map-get($mq, 'md')) {
+				@include margin(null null 10px null);
+			}
+		}
+	}
+}
+
+// .__title
+
+.#{$root}__title {
+	text-shadow: none;
+	line-height: 1.8em;
+	@include margin(null null 10px null);
+	@include rem(font-size, 2.1rem);
+}
+
+// .__group
+// ---------------------------
+.#{$root}__group {
+	@include position(relative, 0);
+}
+
+// .__helper
+// ---------------------------
+.#{$root}__helper {
+	display: block;
+	font-weight: 600;
+	@include margin(0);
+}
+
+// .__field
+// ---------------------------
+.#{$root}__field {
+	@include position(relative);
+	@include margin(0 0 15px 0);
+
+	.o--icon {
+		display: inline-block;
+		pointer-events: none;
+		font-size: 16px;
+		@include position(absolute, 6px 12px null null);
+		@include z(top, top);
+
+		&:before {
+			font-family: 'themify';
+			font-style: normal;
+			font-weight: normal;
+			font-variant: normal;
+			text-transform: none;
+			line-height: 1;
+			@include font-smoothing();
+		}
+	}
+
+	&--select {
+		&:hover {
+			cursor: pointer;
+
+			&:before {
+				display: none;
+			}
+		}
+
+		&:before {
+			content: '';
+			pointer-events: none;
+			width: 45px;
+			height: 34px;
+			@include position(absolute, 1px 20px null null);
+			@include linear-gradient(to right, rgba(white, 0), white);
+		}
+
+		&:after {
+			content: '';
+			pointer-events: none;
+			@include position(absolute, 16px 11px auto auto);
+			@include z(bottom, top);
+			@include border-color(#9BA4AD transparent transparent transparent);
+			@include border-style(solid);
+			@include border-width(5px 5px 0 5px);
+		}
+
+		.o--icon {
+			width: 25px;
+			@include position(absolute, null 30px null null);
+
+			&:after {
+				content: '';
+				pointer-events: none;
+				width: 30px;
+				height: 34px;
+				background: #F9FBFD;
+				border-left: 1px solid #C4CED8;
+				@include position(absolute, -5px -29px null null);
+				@include z(bottom, bottom);
+				@include border-radius(0 4px 4px 0);
+			}
+		}
+	}
+
+	&--datepicker {
+		.date {
+			display: block;
+
+			input {
+				width: calc(100% - 32px);
+				float: left;
+			}
+
+			.input-group-addon {
+				max-width: 30px;
+				border-left: none;
+				@include padding(9px);
+				@include border-radius(0 4px 4px 0);
+			}
+
+			.o--icon {
+				right: 40px;
+			}
+		}
+	}
+
+	.input-group-addon {
+		color: #9BA4AD;
+		background-color: #F9FBFD;
+		@include border-color(#C4CED8);
+	}
+
+	.errors {
+		display: block;
+		list-style: none;
+		@include margin(7px 0 0 0);
+		@include padding(0);
+	}
+
+	.help-block {
+		line-height: 1.4em;
+	}
+
+	&.o--col {
+		.o--icon {
+			right: 31px;
+
+			&.#{$root}__field--select {
+				&:before {
+					right: 45px;
+				}
+
+				&:after {
+					right: 25px;
+				}
+
+				#{$root}__input {
+					@include padding(null 80px null null);
+				}
+
+				.o--icon {
+					width: 40px;
+
+					&:after {
+						right: -15px;
+					}
+				}
+			}
+		}
+
+		.s--highlight {
+			color: #0081D4 !important;
+			background: #F9FCFF !important;
+			@include border-color(#A9C2D2 !important);
+		}
+	}
+}
+
+// .__errors
+// ---------------------------
+.#{$root}__errors {
+	text-align: center;
+	border: 1px solid;
+	@include margin(null null 20px null);
+	@include padding(8px);
+	@include border-radius(4px);
+	@include rem(font-size, 1.6rem);
+
+	&:empty {
+		display: none;
+	}
+
+	ul {
+		list-style: none;
+		@include margin(0);
+		@include padding(0);
+
+		li {
+			@include margin(3px 0);
+		}
+	}
+}
+
+// .__btn
+// ---------------------------
+.#{$root}__btn {
+	@include margin(null null 5px null);
+
+	.o--btn {
+		display: block;
+		width: 100%;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		text-align: center;
+		@include font(map-get($fonts, 'secondary'), 0.95rem);
+		@include max-screen(map-get($mq, 'sm')) {
+			width: 100% !important;
+			@include margin(0);
+		}
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	& + & {
+		@include margin(15px null null null);
+	}
+}
+
+// .__header
+// ---------------------------
+.#{$root}__header {
+	background: #fafbfc;
+	@include padding(15px);
+
+	h1, h2, h3, h4, h5, h6 {
+		@include margin(0 null null null);
+	}
+}
+
+// .__upload
+// ---------------------------
+.#{$root}__upload {
+	display: block;
+	width: 100%;
+	line-height: 1.42857143;
+	line-height: 20px;
+	height: 45px;
+	@include clearfix();
+	@include position(relative, 0);
+	@include border-radius(3px);
+	@include padding(10px 15px);
+	@include max-screen(map-get($mq, 'md')) {
+		@include margin(null null 8px null);
+	}
+	@include max-screen(map-get($mq, 'xs')) {
+		height: auto;
+		@include padding(0);
+	}
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	&--label {
+		display: block;
+		float: left;
+		width: 20%;
+		height: 45px;
+		line-height: 25px;
+		background: #596B84;
+		color: #fff;
+		text-shadow: none;
+		text-align: center;
+		@include position(absolute, -1px null null -1px);
+		@include z('global', 'middle');
+		@include padding(10px 30px);
+		@include border-radius(4px 0 0 4px);
+		@include max-screen(map-get($mq, 'sm')) {
+			display: none;
+		}
+	}
+
+	.#{$root}__fake-input {
+		float: left;
+		width: 70%;
+		height: 45px;
+		background-color: transparent !important;
+		border: 1px solid;
+		@include position(absolute, -1px null null 0);
+		@include padding(null null null 21%);
+		@include border-radius(3px);
+		@include max-screen(map-get($mq, 'sm')) {
+			width: 60%;
+			@include padding(0);
+		}
+		@include max-screen(map-get($mq, 'xs')) {
+			float: none;
+			width: 100%;
+			@include position(static, 0);
+			@include margin(null null 15px null);
+		}
+
+		.o--text {
+			display: block;
+			height: 100%;
+			font-size: 16px;
+			line-height: 40px;
+			@include padding(0 15px);
+		}
+	}
+
+	.#{$root}__field {
+		opacity: 0;
+		float: left;
+		width: 70%;
+		height: 40px;
+		background-color: transparent !important;
+		@include position(absolute, 1px null null 1px);
+		@include z('global', 'top');
+		@include max-screen(map-get($mq, 'sm')) {
+			width: 60%;
+		}
+	}
+
+	.#{$root}__input {
+		height: 40px;
+		background-color: transparent !important;
+		border-color: transparent !important;
+		box-shadow: none !important;
+		line-height: 1;
+		opacity: 0;
+		cursor: pointer;
+		@include padding(10px);
+
+		&:focus, &:active, &:hover {
+			outline: none !important;
+			box-shadow: none !important;
+			border-color: transparent !important;
+			cursor: pointer;
+		}
+	}
+
+	.#{$root}__btn {
+		float: right;
+		width: 30%;
+		@include position(absolute, -1px -1px null null);
+		@include max-screen(map-get($mq, 'sm')) {
+			width: 40%;
+		}
+		@include max-screen(map-get($mq, 'xs')) {
+			float: none;
+			width: 100%;
+			@include position(static, 0);
+		}
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		.o--btn {
+			height: 45px;
+			@include border-radius(0 4px 4px 0);
+			@include max-screen(map-get($mq, 'sm')) {
+				@include margin(0);
+			}
+			@include max-screen(map-get($mq, 'xs')) {
+				@include border-radius(4px);
+			}
+		}
+	}
+}
+
+// .s--feedback
+// ---------------------------
+.s--feedback {
+	font-size: 15px;
+	@include position(relative, 0 (15px !important) null null);
+
+	&--error,
+	&--warning {
+		.o--icon {
+			&:before {
+				content: '\e6c5';
+			}
+		}
+	}
+
+	&--success {
+		.o--icon {
+			&:before {
+				content: '\e64c';
+			}
+		}
+	}
+}

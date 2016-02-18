@@ -7,16 +7,6 @@ var wraith_form = (function () {
     // Private Methods
     // ---------------------------------------------
 
-    function open_select(elem) {
-        if (document.createEvent) {
-            var e = document.createEvent("MouseEvents");
-            e.initMouseEvent("mousedown", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-            elem[0].dispatchEvent(e);
-        } else if (elem.fireEvent) {
-            elem[0].fireEvent("onmousedown");
-        }
-    }
-
     function addInputSuccessClass(objectError, elemId, feedback) {
         $("#error-" + elemId).hide();
         $(objectError).removeClass(feedback + '--error').addClass(feedback + '--success');

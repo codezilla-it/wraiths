@@ -1,20 +1,10 @@
-// config
+// lib
 //------------------------------------
 @import 'lib';
-// shell
+// app
 //------------------------------------
 @import 'app/_shell/all';
-
-// utils
-//------------------------------------
 @import 'app/utils/all';
-
-// objects
-//------------------------------------
 @import 'app/objects/all';
-// components
-//------------------------------------
 @import 'app/components/all';
-// modules
-//------------------------------------
 @import 'app/modules/all';
