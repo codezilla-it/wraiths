@@ -84,7 +84,7 @@ var wraith_form = (function () {
 			$(this).blur().focus();
 		});
 
-		$('.o--form__upload .o--form__input').on('change', function () {
+		$('.o--form__upload').on('change', 'input', function () {
 			var $that = $(this);
 			var file_upload = $that.closest('.o--form__upload');
 			var file_path = $that.val();

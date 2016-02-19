@@ -1,5 +1,5 @@
 //------------------------------------
-//  $Form
+//  Form
 //------------------------------------
 
 $name: 'form';
@@ -34,25 +34,23 @@ $root: #{$prefix}#{$name};
 		@include margin(0 null null null);
 	}
 
-	.input-group {
-		&.date {
-			width: 100%;
+	.date {
+		width: 100%;
 
-			.input-group-addon {
-				color: #898D90;
-				border-left: none;
-				@include padding(6px 8px);
-				@include border-radius(0 4px 4px 0);
+		.input-group-addon {
+			color: #898D90;
+			border-left: none;
+			@include padding(6px 8px);
+			@include border-radius(0 4px 4px 0);
 
-				& ~ .o--icon {
-					right: 41px;
-				}
+			& ~ .o--icon {
+				right: 41px;
 			}
 		}
 	}
 }
 
-// .__input
+// input
 // ---------------------------
 .#{$root}__input {
 	&:not(.o--btn) {
@@ -82,7 +80,7 @@ $root: #{$prefix}#{$name};
 	}
 }
 
-// select.__input
+// select
 // ---------------------------
 select.#{$root}__input {
 	width: 100%;
@@ -96,7 +94,7 @@ select.#{$root}__input {
 	}
 }
 
-// textarea.__input
+// textarea
 // ---------------------------
 textarea.#{$root}__input {
 	height: auto;
@@ -106,7 +104,7 @@ textarea.#{$root}__input {
 	}
 }
 
-// .__item
+// item
 // ---------------------------
 .#{$root}__item {
 	@include margin(null null 0 null);
@@ -151,13 +149,14 @@ textarea.#{$root}__input {
 	}
 }
 
-// .__fake-errors
+
+// fake-errors
 // ---------------------------
 .#{$root}__fake-errors {
 	@include margin(5px 0);
 }
 
-// .__label
+// label
 // ---------------------------
 .#{$root}__label {
 	line-height: 1.5em;
@@ -191,7 +190,7 @@ textarea.#{$root}__input {
 	}
 }
 
-// .__title
+// title
 
 .#{$root}__title {
 	text-shadow: none;
@@ -200,13 +199,13 @@ textarea.#{$root}__input {
 	@include rem(font-size, 2.1rem);
 }
 
-// .__group
+// group
 // ---------------------------
 .#{$root}__group {
 	@include position(relative, 0);
 }
 
-// .__helper
+// helper
 // ---------------------------
 .#{$root}__helper {
 	display: block;
@@ -214,7 +213,7 @@ textarea.#{$root}__input {
 	@include margin(0);
 }
 
-// .__field
+// field
 // ---------------------------
 .#{$root}__field {
 	@include position(relative);
@@ -238,70 +237,72 @@ textarea.#{$root}__input {
 		}
 	}
 
-	&--select {
-		&:hover {
-			cursor: pointer;
+	@at-root {
+		&--select {
+			&:hover {
+				cursor: pointer;
+
+				&:before {
+					display: none;
+				}
+			}
 
 			&:before {
-				display: none;
+				content: '';
+				pointer-events: none;
+				width: 45px;
+				height: 34px;
+				@include position(absolute, 1px 20px null null);
+				@include linear-gradient(to right, rgba(white, 0), white);
 			}
-		}
-
-		&:before {
-			content: '';
-			pointer-events: none;
-			width: 45px;
-			height: 34px;
-			@include position(absolute, 1px 20px null null);
-			@include linear-gradient(to right, rgba(white, 0), white);
-		}
-
-		&:after {
-			content: '';
-			pointer-events: none;
-			@include position(absolute, 16px 11px auto auto);
-			@include z(bottom, top);
-			@include border-color(#9BA4AD transparent transparent transparent);
-			@include border-style(solid);
-			@include border-width(5px 5px 0 5px);
-		}
-
-		.o--icon {
-			width: 25px;
-			@include position(absolute, null 31px null null);
 
 			&:after {
 				content: '';
 				pointer-events: none;
-				width: 30px;
-				height: 34px;
-				background: #F9FBFD;
-				border-left: 1px solid #C4CED8;
-				@include position(absolute, -5px -29px null null);
-				@include z(bottom, bottom);
-				@include border-radius(0 4px 4px 0);
-			}
-		}
-	}
-
-	&--datepicker {
-		.date {
-			display: block;
-
-			input {
-				width: calc(100% - 32px);
-				float: left;
-			}
-
-			.input-group-addon {
-				max-width: 30px;
-				border-left: none;
-				@include padding(9px);
-				@include border-radius(0 4px 4px 0);
+				@include position(absolute, 16px 11px auto auto);
+				@include z(bottom, top);
+				@include border-color(#9BA4AD transparent transparent transparent);
+				@include border-style(solid);
+				@include border-width(5px 5px 0 5px);
 			}
 
 			.o--icon {
-				right: 40px;
+				width: 25px;
+				@include position(absolute, null 31px null null);
+
+				&:after {
+					content: '';
+					pointer-events: none;
+					width: 30px;
+					height: 34px;
+					background: #F9FBFD;
+					border-left: 1px solid #C4CED8;
+					@include position(absolute, -5px -29px null null);
+					@include z(bottom, bottom);
+					@include border-radius(0 4px 4px 0);
+				}
+			}
+		}
+
+		&--datepicker {
+			.date {
+				display: block;
+
+				input {
+					width: calc(100% - 32px);
+					float: left;
+				}
+
+				.input-group-addon {
+					max-width: 30px;
+					border-left: none;
+					@include padding(9px);
+					@include border-radius(0 4px 4px 0);
+				}
+
+				.o--icon {
+					right: 40px;
+				}
 			}
 		}
 	}
@@ -344,7 +345,7 @@ textarea.#{$root}__input {
 			.o--icon {
 				width: 45px;
 
-				&:after{
+				&:after {
 					right: -9px;
 				}
 			}
@@ -352,7 +353,7 @@ textarea.#{$root}__input {
 	}
 }
 
-// .__errors
+// errors
 // ---------------------------
 .#{$root}__errors {
 	text-align: center;
@@ -377,7 +378,7 @@ textarea.#{$root}__input {
 	}
 }
 
-// .__btn
+// btn
 // ---------------------------
 .#{$root}__btn {
 	@include margin(null null 5px null);
@@ -404,7 +405,7 @@ textarea.#{$root}__input {
 	}
 }
 
-// .__header
+// header
 // ---------------------------
 .#{$root}__header {
 	background: #fafbfc;
@@ -415,7 +416,7 @@ textarea.#{$root}__input {
 	}
 }
 
-// .__upload
+// upload
 // ---------------------------
 .#{$root}__upload {
 	display: block;
