@@ -47,6 +47,7 @@ var wraith_form = (function () {
 					var elemId = $(this).attr("id");
 					removeInputClass(objectError, elemId, feedback);
 				}
+
 			}).on('validation', function (evt, valid) {
 				//				console.log('Input "'+this.name+'" is ' + (valid ? 'VALID' : 'NOT VALID'));
 			});
@@ -88,6 +89,10 @@ var wraith_form = (function () {
 			}
 
 			file_upload.find('.o--form__fake-input .o--text').text(file_path_array[last_path_element]);
+		});
+
+		$('.o--form__input').on('change', function(){
+			$(this).blur();
 		});
 	}
 
