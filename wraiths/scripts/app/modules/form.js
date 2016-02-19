@@ -76,6 +76,14 @@ var wraith_form = (function () {
 
 	function init() {
 
+		$('.o--form__field').on('change', 'select', function () {
+			$(this).blur().focus();
+		});
+
+		$('.o--form__field').on('keyup', 'input', function () {
+			$(this).blur().focus();
+		});
+
 		$('.o--form__upload .o--form__input').on('change', function () {
 			var $that = $(this);
 			var file_upload = $that.closest('.o--form__upload');
@@ -89,10 +97,6 @@ var wraith_form = (function () {
 			}
 
 			file_upload.find('.o--form__fake-input .o--text').text(file_path_array[last_path_element]);
-		});
-
-		$('.o--form__input').on('change keyup', function(){
-			$(this).blur().focus();
 		});
 	}
 
