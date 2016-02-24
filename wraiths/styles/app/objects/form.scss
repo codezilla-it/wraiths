@@ -149,7 +149,6 @@ textarea.#{$root}__input {
 	}
 }
 
-
 // fake-errors
 // ---------------------------
 .#{$root}__fake-errors {
@@ -239,6 +238,9 @@ textarea.#{$root}__input {
 
 	@at-root {
 		&--select {
+			display: block;
+			vertical-align: middle;
+
 			&:hover {
 				cursor: pointer;
 
