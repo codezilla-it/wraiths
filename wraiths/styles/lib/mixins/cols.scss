@@ -7,7 +7,7 @@
 		}
 		width: $cols * 1% !important;
 		min-height: 1px;
-		@include position(relative, 0);
+		@include position(relative, 0 null null 0);
 		@include padding(null #{$gutter});
 	}
 }

@@ -36,8 +36,6 @@ $root: #{$prefix}#{$name};
 
 	@at-root {
 		#{&}__brand {
-			//@include margin(0);
-			//@include padding(0);
 			@include clearfix();
 			@include max-screen(map-get($mq, 'md')) {
 				@include padding(null null null 50px);

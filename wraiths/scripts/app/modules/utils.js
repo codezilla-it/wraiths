@@ -97,7 +97,7 @@ var wraith_utils = (function () {
 				this.classList.toggle('active');
 			});
 
-		APP.globals.load_scripts = function (array, callback) {
+		app.globals.load_scripts = function (array, callback) {
 			var loader = function (src, handler) {
 				var script = document.createElement("script");
 				script.src = src;
@@ -117,11 +117,11 @@ var wraith_utils = (function () {
 			})();
 		};
 
-		APP.globals.get_filename = function (path) {
+		app.globals.get_filename = function (path) {
 			return path.split('/').reverse()[0].replace(/\.[^/.]+$/, '');
 		};
 
-		APP.globals.object_chain = function (chains) {
+		app.globals.object_chain = function (chains) {
 			var c = Object.prototype;
 
 			while (chains.length) {
