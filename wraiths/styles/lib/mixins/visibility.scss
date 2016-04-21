@@ -3,6 +3,7 @@
 @mixin generate-visibility($name, $root) {
 
 	$display: null;
+	$visibility: "";
 
 	@if ($name == invisible) {
 		$visibility: hidden !important;
