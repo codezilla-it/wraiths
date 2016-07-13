@@ -357,7 +357,8 @@ textarea.#{$root}__input {
 
 // errors
 // ---------------------------
-.#{$root}__errors {
+.#{$root}__errors,
+.#{$root}__messages {
 	text-align: center;
 	border: 1px solid;
 	@include margin(null null 20px null);
