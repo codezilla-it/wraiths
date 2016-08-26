@@ -158,9 +158,9 @@ var wraith_map = (function () {
 						geodesic: false
 					});
 
-					pathCoords = shape.getPath();
+					var pathCoords = shape.getPath();
 
-					for (j = 0; j < pathCoords.length; j++) {
+					for (var j = 0; j < pathCoords.length; j++) {
 						bounds.extend(pathCoords.getAt(j));
 					}
 				}
