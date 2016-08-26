@@ -10,7 +10,7 @@ var wraith_utils = (function () {
 	// Public Methods
 	// ---------------------------------------------
 
-	function init() {
+	function init(projectName) {
 
 		$.fn.ajax_submit_form = function (url, options) {
 
@@ -97,7 +97,7 @@ var wraith_utils = (function () {
 				this.classList.toggle('active');
 			});
 
-		app.globals.load_scripts = function (array, callback) {
+		projectName.globals.load_scripts = function (array, callback) {
 			var loader = function (src, handler) {
 				var script = document.createElement("script");
 				script.src = src;
@@ -117,11 +117,11 @@ var wraith_utils = (function () {
 			})();
 		};
 
-		app.globals.get_filename = function (path) {
+		projectName.globals.get_filename = function (path) {
 			return path.split('/').reverse()[0].replace(/\.[^/.]+$/, '');
 		};
 
-		app.globals.object_chain = function (chains) {
+		projectName.globals.object_chain = function (chains) {
 			var c = Object.prototype;
 
 			while (chains.length) {

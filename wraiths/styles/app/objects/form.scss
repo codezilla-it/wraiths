@@ -92,6 +92,11 @@ select.#{$root}__input {
 	&:hover {
 		cursor: pointer;
 	}
+
+	&:-moz-focusring {
+		color: transparent;
+		text-shadow: 0 0 0 #000;
+	}
 }
 
 // textarea
