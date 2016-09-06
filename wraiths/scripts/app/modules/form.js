@@ -53,7 +53,7 @@ var wraith_form = (function () {
             });
 
             $.validate({
-                modules: 'file',
+                modules: 'file, logic',
                 onElementValidate: function (valid, $el, $form, errorMess) {
                     //					console.log('Input ' +$el.attr('name')+ ' is ' + ( valid ? 'VALID':'NOT VALID') );
                     var objectError = $el.closest('.' + feedback);
