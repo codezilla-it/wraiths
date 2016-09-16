@@ -2,7 +2,7 @@
 // @wizard
 // ---------------------------------------------
 
-var wraith_wizard = (function () {
+module.exports = (function () {
 
 	function init(form_id, option) {
 
@@ -21,8 +21,3 @@ var wraith_wizard = (function () {
 	};
 
 })();
-
-// Module Export
-// ---------------------------------------------
-
-module.exports = wraith_wizard;

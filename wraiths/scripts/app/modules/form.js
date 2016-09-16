@@ -2,7 +2,7 @@
 // @form
 // ---------------------------------------------
 
-var wraith_form = (function () {
+module.exports = (function () {
 
     // Private Methods
     // ---------------------------------------------
@@ -109,8 +109,3 @@ var wraith_form = (function () {
     };
 
 })();
-
-// Module Export
-// ---------------------------------------------
-
-module.exports = wraith_form;

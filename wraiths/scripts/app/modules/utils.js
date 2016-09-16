@@ -2,7 +2,7 @@
 // @utils
 // ---------------------------------------------
 
-var wraith_utils = (function () {
+module.exports = (function () {
 
 	// Private Methods
 	// ---------------------------------------------
@@ -121,8 +121,3 @@ var wraith_utils = (function () {
 	};
 
 })();
-
-// Module Export
-// ---------------------------------------------
-
-module.exports = wraith_utils;

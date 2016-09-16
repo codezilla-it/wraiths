@@ -2,7 +2,7 @@
 // @popup
 // ---------------------------------------------
 
-var wraith_popup = (function () {
+module.exports = (function () {
 
 	// Private Methods
 	// ---------------------------------------------
@@ -400,8 +400,3 @@ var wraith_popup = (function () {
 	};
 
 })();
-
-// Module Export
-// ---------------------------------------------
-
-module.exports = wraith_popup;
