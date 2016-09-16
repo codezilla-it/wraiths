@@ -1,6 +1,6 @@
 {
 	"name": "wraiths",
-	"version": "1.0.8",
+	"version": "1.0.9",
 	"description": "BEMIT libs",
 	"author": "Fabio Cencetti <hey@kreo.me>",
 	"contributors": [
@@ -19,8 +19,8 @@
 		"Readme.md",
 		"package.json",
 		"index.js",
-		"wraiths/sources/scripts/**/*",
-		"wraiths/sources/styles/**/*"
+		"wraiths/dist/**/*",
+		"wraiths/sources/**/*"
 	],
 	"scripts": {},
 	"main": "index.js",
