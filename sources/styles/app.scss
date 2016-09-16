@@ -1,10 +1,7 @@
-// lib
-//------------------------------------
-@import 'lib';
 // app
 //------------------------------------
-@import 'app/_shell/all';
-@import 'app/utils/all';
-@import 'app/objects/all';
-@import 'app/components/all';
-@import 'app/modules/all';
+@import 'app/_structure/index';
+@import 'app/utils/index';
+@import 'app/objects/index';
+@import 'app/components/index';
+@import 'app/modules/index';
