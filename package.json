@@ -1,7 +1,7 @@
 {
 	"name": "wraiths",
-	"version": "1.0.6",
-	"description": "BEMIT framework",
+	"version": "1.0.7",
+	"description": "BEMIT libs",
 	"author": "Fabio Cencetti <hey@kreo.me>",
 	"contributors": [
 		{
@@ -18,14 +18,12 @@
 		"LICENSE",
 		"Readme.md",
 		"package.json",
-		"bower.json",
-		"wraiths",
-		"index.js",
-		"main/*",
-		"wraiths/scripts/app/modules/*"
+		"wraiths/sources/scripts/**/*"
 	],
 	"scripts": {},
-	"main": "index.js",
+	"style": "dist/css/bootstrap.css",
+	"sass": "scss/bootstrap.scss",
+	"main": "sources/scripts/bootstrap/**/*",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/codezilla-it/wraiths.git"
