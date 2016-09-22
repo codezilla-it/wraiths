@@ -1,12 +1,12 @@
 //------------------------------------
-//  $Brand
+//  objects.brand
 //------------------------------------
 
-$name: 'brand';
-$prefix: map-get($class-prefix, 'object');
-$root: #{$prefix}#{$name};
 
-.#{$root} {
+$name: 'brand';
+//------------------------------------
+
+.#{$name} {
 	display: block;
 	background-size: 100%;
 	background-repeat: no-repeat;

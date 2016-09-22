@@ -1,18 +1,24 @@
 //------------------------------------
-//  $Slideout
+//  components.slideout
 //------------------------------------
 
-.slideout-menu {
+
+$name: 'slideout';
+//------------------------------------
+
+.#{$name}-menu {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 	z-index: 0;
 	width: 256px;
 	overflow-y: auto;
 	-webkit-overflow-scrolling: touch;
 	display: none;
-
 	background-color: #1D1F20;
 	background-image: linear-gradient(145deg, #1D1F20, #404348);
-
-	@include position(fixed, 0);
 
 	a {
 		color: #FFF;
@@ -23,7 +29,7 @@
 	}
 
 	.menu-section {
-		@include margin(25px 0);
+		margin: 25px 0;
 
 		.menu-section-title {
 			text-transform: uppercase;
@@ -61,17 +67,17 @@
 	}
 }
 
-.slideout-panel {
+.#{$name}-panel {
 	position: relative;
 	z-index: 1;
 }
 
-.slideout-open {
-	body, .slideout-panel {
+.#{$name}-open {
+	body, .#{$name}-panel {
 		overflow: hidden;
 	}
 
-	.slideout-menu {
+	.#{$name}-menu {
 		display: block;
 	}
 }

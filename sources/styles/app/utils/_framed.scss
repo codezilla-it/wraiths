@@ -1,18 +1,17 @@
 //------------------------------------
-//  $Framed
+//  utils.framed
 //------------------------------------
 
 $name: 'framed';
-$prefix: map-get($class-prefix, 'utils');
-$root: #{$prefix}#{$name};
+//------------------------------------
 
-.#{$root} {
+.#{$name} {
 	display: block;
 	border: 3px solid white;
 	transition: box-shadow 200ms ease;
 
 	&.circle {
-		@include padding(0);
+		padding: 0;
 	}
 
 	&.shadow {

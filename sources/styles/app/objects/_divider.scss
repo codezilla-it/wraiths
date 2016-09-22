@@ -1,65 +1,63 @@
 //------------------------------------
-//  $Divider
+//  objects.divider
 //------------------------------------
 
 $name: 'divider';
-$prefix: map-get($class-prefix, 'object');
-$root: #{$prefix}#{$name};
+//------------------------------------
 
-.#{$root} {
+
+.#{$name} {
 	clear: both;
 	width: 100%;
+	margin: 15px 0;
 	line-height: 1em;
-	@include margin(15px 0);
 
-	@at-root {
-		#{&}__child {
-			display: inline-block;
-			width: 20%;
-			line-height: 1em;
-			@include margin(0 auto);
-		}
+	ul > &:last-child {
+		display: none;
+	}
+}
 
-		#{&}--center {
-			text-align: center;
-		}
+.#{$name}__child {
+	display: inline-block;
+	width: 20%;
+	line-height: 1em;
+	@include margin(0 auto);
+}
 
-		#{&}--solid {
-			border-style: solid;
-		}
+.#{$name}--center {
+	text-align: center;
+}
 
-		#{&}--dashed {
-			border-style: dashed;
-		}
+.#{$name}--solid {
+	border-style: solid;
+}
 
-		#{&}--dotted {
-			border-style: dotted;
-		}
+.#{$name}--dashed {
+	border-style: dashed;
+}
 
-		#{&}--double {
-			border-top-width: 2px;
-			border-bottom-width: 2px;
-			height: 6px;
-		}
+.#{$name}--dotted {
+	border-style: dotted;
+}
 
-		#{&}--thick {
-			border-bottom-width: 6px;
+.#{$name}--double {
+	border-top-width: 2px;
+	border-bottom-width: 2px;
+	height: 6px;
+}
 
-			&__child {
-				height: 4px;
-			}
-		}
+.#{$name}--thick {
+	border-bottom-width: 6px;
 
-		#{&}--thin {
-			border-bottom-width: 1px;
+	&__child {
+		height: 4px;
+	}
+}
 
-			&__child {
-				height: 1px;
-			}
-		}
+.#{$name}--thin {
+	border-bottom-width: 1px;
 
-		ul > &:last-child {
-			display: none;
-		}
+	&__child {
+		height: 1px;
 	}
 }

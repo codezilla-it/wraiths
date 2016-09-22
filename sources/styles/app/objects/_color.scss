@@ -1,148 +1,144 @@
 //------------------------------------
-//  $Color
+//  objects.color
 //------------------------------------
 
-// @TODO refactor colors n create palette mixin
 
 $name: 'color';
-$prefix: map-get($class-prefix, 'object');
-$root: #{$prefix}#{$name};
+//------------------------------------
 
-.#{$root} {
+.#{$name} {
   border: 1px solid;
 
-  &:not(.u--no--text) {
+  &:not(.no--text) {
     color: #FFF;
   }
+}
 
-  @at-root {
-    #{&}--green {
-      background: #32bf37;
-      border-color: #219B23;
+.#{$name}--green {
+	background: #32bf37;
+	border-color: #219B23;
 
-      &:not(.u--no--hover):hover {
-        background: #1ba31b;
-      }
+	&:not(.no--hover):hover {
+		background: #1ba31b;
+	}
 
-      &.u--no--fill {
-        border-color: #38B93D !important;
-        color: #38B93D !important;
+	&.no--fill {
+		border-color: #38B93D !important;
+		color: #38B93D !important;
 
-        > * {
-          border-color: #38B93D !important;
-          color: #38B93D !important;
-        }
+		> * {
+			border-color: #38B93D !important;
+			color: #38B93D !important;
+		}
 
-        &:hover {
-          background: #38B93D !important;
-          color: #fff !important;
+		&:hover {
+			background: #38B93D !important;
+			color: #fff !important;
 
-          > * {
-            background: #38B93D !important;
-            color: #fff !important;
-          }
-        }
-      }
+			> * {
+				background: #38B93D !important;
+				color: #fff !important;
+			}
+		}
+	}
 
-      &.#{$root}--gradient {
-        @include linear-gradient(to bottom, #38C53E 0%, #069C06 100%);
+	&.#{$name}--gradient {
+		@include linear-gradient(to bottom, #38C53E 0%, #069C06 100%);
 
-        &:not(.u--no--shadow) {
-          text-shadow: 1px 1px 4px #158215;
-        }
+		&:not(.no--shadow) {
+			text-shadow: 1px 1px 4px #158215;
+		}
 
-        &:not(.u--no--hover):hover {
-          @include linear-gradient(to bottom, #069C06 0%, #1ba31b 0%, #38C53E 99%);
-        }
-      }
-    }
+		&:not(.no--hover):hover {
+			@include linear-gradient(to bottom, #069C06 0%, #1ba31b 0%, #38C53E 99%);
+		}
+	}
+}
 
-    #{&}--blue {
-      background: #0071D3;
-      border-color: #1B75BB;
+.#{$name}--blue {
+	background: #0071D3;
+	border-color: #1B75BB;
 
-      &:not(.u--no--hover):hover {
-        background: #2895F1;
-      }
+	&:not(.no--hover):hover {
+		background: #2895F1;
+	}
 
-      &.u--no--fill {
-        border-color: #0071d3 !important;
-        color: #0071d3 !important;
+	&.no--fill {
+		border-color: #0071d3 !important;
+		color: #0071d3 !important;
 
-        > * {
-          border-color: #0071d3 !important;
-          color: #0071d3 !important;
-        }
+		> * {
+			border-color: #0071d3 !important;
+			color: #0071d3 !important;
+		}
 
-        &:hover {
-          background: #0071d3 !important;
-          color: #fff !important;
+		&:hover {
+			background: #0071d3 !important;
+			color: #fff !important;
 
-          > * {
-            background: #0071d3 !important;
-            color: #fff !important;
-          }
-        }
-      }
+			> * {
+				background: #0071d3 !important;
+				color: #fff !important;
+			}
+		}
+	}
 
-      &.#{$root}--gradient {
-        @include linear-gradient(135deg, #0071D3, #0084d2, #0DA4DE);
+	&.#{$name}--gradient {
+		@include linear-gradient(135deg, #0071D3, #0084d2, #0DA4DE);
 
-        &:not(.u--no--shadow) {
-          text-shadow: 1px 1px 0 #1B75BB;
-        }
+		&:not(.no--shadow) {
+			text-shadow: 1px 1px 0 #1B75BB;
+		}
 
-        &:not(.u--no--hover):hover {
-          @include linear-gradient(to bottom, #0DA4DE, #0084d2, #0071D3);
-        }
-      }
-    }
+		&:not(.no--hover):hover {
+			@include linear-gradient(to bottom, #0DA4DE, #0084d2, #0071D3);
+		}
+	}
+}
 
-    #{&}--blue--lighter {
-      &.#{$root}--gradient {
-        @include linear-gradient(145deg, #187CD8, #0F97D8, #09ADEC);
-      }
-    }
+.#{$name}--blue--lighter {
+	&.#{$name}--gradient {
+		@include linear-gradient(145deg, #187CD8, #0F97D8, #09ADEC);
+	}
+}
 
-    #{&}--red {
-      background: #EA3157;
-      border-color: #EA3157;
+.#{$name}--red {
+	background: #EA3157;
+	border-color: #EA3157;
 
-      &:not(.u--no--hover):hover {
-        background: #EA3157;
-      }
+	&:not(.no--hover):hover {
+		background: #EA3157;
+	}
 
-      &.u--no--fill {
-        border-color: #EA3157 !important;
-        color: #EA3157 !important;
+	&.no--fill {
+		border-color: #EA3157 !important;
+		color: #EA3157 !important;
 
-        > * {
-          border-color: #EA3157 !important;
-          color: #EA3157 !important;
-        }
+		> * {
+			border-color: #EA3157 !important;
+			color: #EA3157 !important;
+		}
 
-        &:hover {
-          background: #EA3157 !important;
-          color: #fff !important;
+		&:hover {
+			background: #EA3157 !important;
+			color: #fff !important;
 
-          > * {
-            background: #EA3157 !important;
-            color: #fff !important;
-          }
-        }
-      }
+			> * {
+				background: #EA3157 !important;
+				color: #fff !important;
+			}
+		}
+	}
 
-      &.#{$root}--gradient {
-        @include linear-gradient(to bottom, #ff365e 0%, #c12848 100%);
+	&.#{$name}--gradient {
+		@include linear-gradient(to bottom, #ff365e 0%, #c12848 100%);
 
-        &:not(.u--no--shadow) {
-          text-shadow: 1px 1px 0 #c12848;
-        }
+		&:not(.no--shadow) {
+			text-shadow: 1px 1px 0 #c12848;
+		}
 
-        &:not(.u--no--hover):hover {
-          @include linear-gradient(to bottom, #c12848 0%, #ff365e 100%);
-        }
-      }
-    }
-  }
+		&:not(.no--hover):hover {
+			@include linear-gradient(to bottom, #c12848 0%, #ff365e 100%);
+		}
+	}
 }

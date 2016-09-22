@@ -1,19 +1,15 @@
 //------------------------------------
-//  $Font
+//  utils.font
 //------------------------------------
 
 $name: 'font';
-$prefix: map-get($class-prefix, 'utils');
-$root: #{$prefix}#{$name};
+//------------------------------------
 
-.#{$root} {
-	@at-root {
-		#{&}--smoothing--on {
-			@include font-smoothing(on);
-		}
-
-		#{&}--smoothing--off {
-			@include font-smoothing(off);
-		}
-	}
+.#{$name}--smoothing--on {
+	@include font-smoothing(on);
 }
+
+.#{$name}--smoothing--off {
+	@include font-smoothing(off);
+}
+

@@ -1,59 +1,36 @@
 //------------------------------------
-//  $Places
+//  modules.places
 //------------------------------------
 
+
 $name: 'places';
-$prefix: map-get($class-prefix, 'module');
-$root: #{$prefix}#{$name};
+//------------------------------------
 
-.#{$root} {
-
-	// Elements
-	// ----------
-
-	#{&}__item {
-
-	}
-
-	#{&}__content {
-
-	}
-
-	#{&}__title {
-		text-transform: initial;
-		margin-bottom: 10px;
-	}
-
-	#{&}__city {
-		text-transform: capitalize;
-		margin-top: 0;
-		margin-bottom: 10px;
-		color: #1B75BB;
-		font-weight: 500;
-	}
-
-	#{&}__desc {
-		@include margin(null null 15px null);
-	}
-
-	// Modifiers
-	// ----------
-
-	#{&}--cards {
-
-	}
-
-	#{&}--list {
-
-	}
-
-	.c--weather {
+.#{$name} {
+	.weather {
 		padding: 10px;
 	}
 
-	.o--flex--center {
+	.flex--center {
 		@include max-screen(map-get($mq, md)) {
 			display: block;
 		}
 	}
+}
+
+.#{$name}__title {
+	text-transform: initial;
+	margin-bottom: 10px;
+}
+
+.#{$name}__city {
+	text-transform: capitalize;
+	margin-top: 0;
+	margin-bottom: 10px;
+	color: #1B75BB;
+	font-weight: 500;
+}
+
+.#{$name}__desc {
+	margin-bottom: 15px;
 }

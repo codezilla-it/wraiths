@@ -1,151 +1,152 @@
 //------------------------------------
-//  $Weather
+//  components.weather
 //------------------------------------
 
-$name: 'weather';
-$prefix: map-get($class-prefix, 'component');
-$root: #{$prefix}#{$name};
 
-.#{$root} {
-	@include padding(31px 20px);
-	@include border-radius(0);
+$name: 'weather';
+//------------------------------------
+
+.#{$name} {
+	padding: 31px 20px;
+	border-radius: 0;
+
 	@include max-screen(map-get($mq, lg)) {
-		@include padding(18px null);
+		padding-top: 18px;
+		padding-bottom: 18px;
+	}
+}
+
+.#{$name}__item {
+	background-repeat: no-repeat;
+
+	.inner {
+		text-align: center;
+	}
+}
+
+.#{$name}__icon {
+	display: inline-block;
+	overflow: hidden;
+	zoom: 0.6;
+	-moz-transform: scale(0.5);
+	-moz-transform-origin: 0 0;
+	margin-top: 0;
+	margin-left: -8px;
+	@include max-screen(map-get($mq, sm)) {
+		margin: 0 auto;
 	}
 
-	@at-root {
-		#{&}__item {
-			background-repeat: no-repeat;
+	&--huge {
+		zoom: 1;
+		-moz-transform: scale(1);
+		-moz-transform-origin: 0 0;
+	}
 
-			.inner {
-				text-align: center;
-			}
+	&--big {
+		zoom: 0.75;
+		-moz-transform: scale(0.60);
+		-moz-transform-origin: 0 0;
+	}
+
+	&--small {
+		zoom: 0.25;
+		-moz-transform: scale(0.29);
+		-moz-transform-origin: 0 0;
+	}
+}
+
+.#{$name}__city {
+	color: #1E85D6;
+	display: none;
+	margin: 0 10px 0 0;
+}
+
+.#{$name}__temp {
+	font-size: 2.8em;
+	font-weight: bold;
+	color: #76C3EA;
+	margin: 18px 0 20px -4px;
+}
+
+.#{$name}__desc {
+	display: inline-block;
+	color: #3FABE2;
+	margin-bottom: 0.4em;
+}
+
+.#{$name}__desc,
+.#{$name}__city,
+.#{$name}__day {
+	display: block;
+	text-align: center;
+	font-weight: bold;
+	text-transform: capitalize;
+}
+
+.#{$name}__range,
+.#{$name}__wind,
+.#{$name}__link {
+	font-size: 12px;
+	display: inline-block;
+	margin-right: 10px;
+	color: #5F90A9;
+}
+
+.#{$name}__link {
+	margin-bottom: 0.5em;
+	text-align: left;
+
+	a {
+		display: block;
+		clear: both;
+		padding-top: 10px;
+	}
+}
+
+.#{$name}__forecast {
+	float: right;
+	width: 48%;
+
+	&--item {
+		padding: 10px 10px 10px 80px;
+		background-position: left center;
+		width: 100%;
+		font-size: 12px;
+		display: inline-block;
+		text-align: left;
+		margin-right: 10px;
+		margin-bottom: 0.5em;
+		border: 1px solid #ededed;
+		background-color: #fff;
+
+		@include max-screen(map-get($mq, md)) {
+			padding: 10px 10px 10px 72px;
 		}
+	}
 
-		#{&}__icon {
-			display: inline-block;
-			overflow: hidden;
-			zoom: 0.6;
-			-moz-transform: scale(0.5);
-			-moz-transform-origin: 0 0;
-			@include margin(0 null null -8px);
-			@include max-screen(map-get($mq, sm)) {
-				@include margin(0 auto);
-			}
+	&--day {
+		font-size: 14px;
+		display: inline;
+		margin-right: 5px;
+	}
 
-			&--huge {
-				zoom: 1;
-				-moz-transform: scale(1);
-				-moz-transform-origin: 0 0;
-			}
+	&__date,
+	&__text,
+	&__range {
+		display: inline;
+		margin-right: 15px;
+	}
 
-			&--big {
-				zoom: 0.75;
-				-moz-transform: scale(0.60);
-				-moz-transform-origin: 0 0;
-			}
-
-			&--small {
-				zoom: 0.25;
-				-moz-transform: scale(0.29);
-				-moz-transform-origin: 0 0;
-			}
-		}
-
-		#{&}__city {
-			color: #1E85D6;
-			display: none;
-			@include margin(0 10px 0 0);
-		}
-
-		#{&}__temp {
-			font-size: 2.8em;
-			font-weight: bold;
-			color: #76C3EA;
-			@include margin(18px 0 20px -4px);
-		}
-
-		#{&}__desc {
-			display: inline-block;
-			color: #3FABE2;
-			@include margin(null null 0.4em null);
-		}
-
-		#{&}__desc,
-		#{&}__city,
-		#{&}__day {
+	&__range {
+		@include max-screen(map-get($mq, sm)) {
 			display: block;
-			text-align: center;
-			font-weight: bold;
-			text-transform: capitalize;
 		}
+	}
 
-		#{&}__range,
-		#{&}__wind,
-		#{&}__link {
-			font-size: 12px;
-			display: inline-block;
-			margin-right: 10px;
-			color: #5F90A9;
-		}
-
-		#{&}__link {
-			margin-bottom: 0.5em;
-			text-align: left;
-
-			a {
-				display: block;
-				clear: both;
-				padding-top: 10px;
-			}
-		}
-
-		#{&}__forecast {
-			float: right;
-			width: 48%;
-
-			&--item {
-				padding: 10px 10px 10px 80px;
-				background-position: left center;
-				width: 100%;
-				font-size: 12px;
-				display: inline-block;
-				text-align: left;
-				margin-right: 10px;
-				margin-bottom: 0.5em;
-				border: 1px solid #ededed;
-				background-color: #fff;
-
-				@include max-screen(map-get($mq, md)) {
-					padding: 10px 10px 10px 72px;
-				}
-			}
-
-			&--day {
-				font-size: 14px;
-				display: inline;
-				margin-right: 5px;
-			}
-
-			&__date,
-			&__text,
-			&__range {
-				display: inline;
-				margin-right: 15px;
-			}
-
-			&__range {
-				@include max-screen(map-get($mq, sm)) {
-					display: block;
-				}
-			}
-
-			@include max-screen(map-get($mq, sm)) {
-				#{&}__forecast {
-					float: none;
-					width: 100%;
-				}
-			}
+	@include max-screen(map-get($mq, sm)) {
+		.#{$name}__forecast {
+			float: none;
+			width: 100%;
 		}
 	}
 }

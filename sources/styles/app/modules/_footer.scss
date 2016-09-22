@@ -1,65 +1,66 @@
 //------------------------------------
-//  $Footer
+//  modules.footer
 //------------------------------------
 
-$name: 'footer';
-$prefix: map-get($class-prefix, 'module');
-$root: #{$prefix}#{$name};
 
-.#{$root} {
+$name: 'footer';
+//------------------------------------
+
+.#{$name} {
+	position: relative;
 	width: 100%;
+	padding: 0;
 	font-size: 14px;
-	@include position(relative);
-	@include padding(0);
 
 	a {
 		text-decoration: none;
 		border-bottom: 1px solid transparent;
-		@include padding(null null 5px null);
+		padding-bottom: 5px;
 	}
 
-	@at-root {
-		#{&}__nav {
-			text-align: center;
-			@include padding(40px 0);
-
-			ul {
-				list-style: none;
-				vertical-align: top;
-			}
-
-			li {
-				width: 100%;
-				@include padding(8px 0);
-			}
-
-			@include min-screen(map-get($mq, 'sm')) {
-				text-align: left;
-			}
+	.brand {
+		margin: 40px auto;
+		@include min-screen(map-get($mq, 'sm')) {
+			margin-left: 0;
+			margin-right: 0;
+		}
+		@include min-screen(map-get($mq, 'md')) {
+			margin: 0;
 		}
 
-		#{&}__copy {
-			display: block;
-			width: 100%;
-			text-align: center;
-			@include padding(15px 0);
-			@include min-screen(map-get($mq, 'md')) {
-				@include position(relative);
-			}
-		}
-
-		.o--brand {
-			@include margin(40px auto);
-			@include min-screen(map-get($mq, 'sm')) {
-				@include margin(null 0);
-			}
-			@include min-screen(map-get($mq, 'md')) {
-				@include margin(0);
-			}
-
-			&:hover {
-				border-width: 0;
-			}
+		&:hover {
+			border-width: 0;
 		}
 	}
 }
+
+
+.#{$name}__nav {
+	text-align: center;
+	@include padding(40px 0);
+
+	ul {
+		list-style: none;
+		vertical-align: top;
+	}
+
+	li {
+		width: 100%;
+		padding: 8px 0;
+	}
+
+	@include min-screen(map-get($mq, 'sm')) {
+		text-align: left;
+	}
+}
+
+.#{$name}__copy {
+	display: block;
+	width: 100%;
+	text-align: center;
+	padding: 15px 0;
+	@include min-screen(map-get($mq, 'md')) {
+		position: relative;
+	}
+}
+

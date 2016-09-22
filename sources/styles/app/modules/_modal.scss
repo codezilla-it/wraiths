@@ -1,70 +1,72 @@
 //------------------------------------
-//  $Modal
+//  modules.modal
 //------------------------------------
 
 $name: 'modal';
-$prefix: map-get($class-prefix, 'module');
-$root: #{$prefix}#{$name};
+//------------------------------------
 
-.#{$root} {
+.#{$name} {
+	display: block;
+	position: relative;
+	top: 0;
+	left: 0;
 	width: auto;
 	max-width: 800px;
+	margin: 30px auto;
+	padding: 0;
 	border: none;
-	@include position(relative, 0);
-	@include margin(30px auto);
-	@include padding(0);
-	@include border-radius(.25em);
+	border-radius: .25em;
 
-	@at-root {
-		#{&}__header {
-			border-bottom: 1px solid;
-			@include padding(10px 20px);
-			@include margin(0);
-			@include border-radius(4px 4px 0 0);
+	.form {
+		border: none;
+		padding: 0;
+	}
 
-			> * {
-				line-height: 1.2;
-				@include padding(0);
-				@include margin(0);
-				@include font(map-get($fonts, 'primary'), 24px, null, bold);
-				@include max-screen(map-get($mq, 'md')) {
-					font-size: 17px;
-				}
-			}
+	.heading__subtitle {
+		margin-bottom: 30px;
+		font-size: 18px;
+		line-height: 1.3;
+		text-align: center;
+		@include max-screen(map-get($mq, 'md')) {
+			margin-bottom: 10px;
 		}
+	}
 
-		#{&}__content {
-			@include padding(4% 2.5%);
-			@include border-radius(.25em);
+	.form__btn + .form__btn {
+		margin-top: 0;
+	}
+}
 
-			.o--form__item:last-child {
-				@include margin(null null (0 !important) null);
-			}
 
-			@include max-screen(map-get($mq, 'sm')) {
-				.o--divider {
-					@include margin(0);
-				}
-			}
-		}
+.#{$name}__header {
+	margin: 0;
+	padding: 10px 20px;
+	border-bottom: 1px solid;
+	border-radius: 4px 4px 0 0;
 
-		.o--form {
-			border: none;
-			@include padding(0);
-		}
-
-		.o--heading__subtitle {
-			font-size: 18px;
-			line-height: 1.3;
-			text-align: center;
-			@include margin(null null 30px null);
-			@include max-screen(map-get($mq, 'md')) {
-				@include margin(null null 10px null);
-			}
-		}
-
-		.o--form__btn + .o--form__btn {
-			@include margin(0 null null null);
+	> * {
+		margin: 0;
+		padding: 0;
+		line-height: 1.2;
+		@include font(map-get($fonts, 'primary'), 24px, null, bold);
+		@include max-screen(map-get($mq, 'md')) {
+			font-size: 17px;
 		}
 	}
 }
+
+.#{$name}__content {
+	padding: 4% 2.5%;
+	border-radius: .25em;
+
+	.form__item:last-child {
+		margin-bottom: 0 !important;
+	}
+
+	@include max-screen(map-get($mq, 'sm')) {
+		.divider {
+			margin: 0;
+		}
+	}
+}
+

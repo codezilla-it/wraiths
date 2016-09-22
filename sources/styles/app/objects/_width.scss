@@ -1,10 +1,8 @@
 //------------------------------------
-//  $Width
+//  objects.width
 //------------------------------------
 
 $name: 'width';
-$prefix: map-get($class-prefix, 'object');
-$root: #{$prefix}#{$name};
 $cols: map-get($layout, 'cols');
 
-@include generate-width($name, $root);
+@include generate-width($name, $name);

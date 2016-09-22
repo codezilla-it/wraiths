@@ -1,10 +1,9 @@
 //------------------------------------
-//  $Hide
+//  utils.hide
 //------------------------------------
 
 $name: 'hide';
-$prefix: map-get($class-prefix, 'utils');
-$root: #{$prefix}#{$name};
+//------------------------------------
 
-@include generate-display($name, $root);
+@include generate-display($name, $name);
 

@@ -1,9 +1,7 @@
 //------------------------------------
-//  $Invisible
+//  utils.invisible
 //------------------------------------
 
 $name: 'invisible';
-$prefix: map-get($class-prefix, 'utils');
-$root: #{$prefix}#{$name};
 
-@include generate-visibility($name, $root);
+@include generate-visibility($name, $name);

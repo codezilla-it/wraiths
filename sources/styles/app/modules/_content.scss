@@ -1,15 +1,11 @@
 //------------------------------------
-//  $Content
+//  modules.content
 //------------------------------------
 
-$name: 'content';
-$prefix: map-get($class-prefix, 'module');
-$root: #{$prefix}#{$name};
 
-.#{$root} {
-	@at-root {
-		#{&}__inner {
-			@include padding(0 20px);
-		}
-	}
+$name: 'content';
+//------------------------------------
+
+.#{$name}__inner {
+	padding: 0 20px;
 }

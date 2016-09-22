@@ -65,7 +65,7 @@ module.exports = (function () {
                         addInputErrorClass(objectError, feedback);
 
                         // Aggiungo un Fake Error per gli input di tipo File
-                        $el.closest('.o--form__upload').siblings('.o--form__fake-errors').text(errorMess);
+                        $el.closest('.form__upload').siblings('.form__fake-errors').text(errorMess);
                     }
                 },
                 borderColorOnError: '',
@@ -76,17 +76,17 @@ module.exports = (function () {
 
     function init() {
 
-        $('.o--form__field').on('change', 'select', function () {
+        $('.form__field').on('change', 'select', function () {
             $(this).blur().focus();
         });
 
-        $('.o--form__field').on('keyup', 'input', function () {
+        $('.form__field').on('keyup', 'input', function () {
             $(this).blur().focus();
         });
 
-        $('.o--form__upload').on('change', 'input', function () {
+        $('.form__upload').on('change', 'input', function () {
             var $that = $(this);
-            var file_upload = $that.closest('.o--form__upload');
+            var file_upload = $that.closest('.form__upload');
             var file_path = $that.val();
             var file_path_array = file_path.split('\\');
             var last_path_element = file_path_array.length - 1;
@@ -96,7 +96,7 @@ module.exports = (function () {
                 last_path_element = file_path_array.length - 1;
             }
 
-            file_upload.find('.o--form__fake-input .o--text').text(file_path_array[last_path_element]);
+            file_upload.find('.form__fake-input .text').text(file_path_array[last_path_element]);
         });
     }
 

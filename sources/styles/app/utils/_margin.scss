@@ -1,9 +1,7 @@
 //------------------------------------
-//  $Margin
+//  utils.margin
 //------------------------------------
 
 $name: 'margin';
-$prefix: map-get($class-prefix, 'utils');
-$root: #{$prefix}#{$name};
 
-@include generate-margin($name, $root);
+@include generate-margin($name, $name);

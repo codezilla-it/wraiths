@@ -1,26 +1,21 @@
 //------------------------------------
-//  $List
+//  objects.list
 //------------------------------------
 
 $name: 'list';
-$prefix: map-get($class-prefix, 'object');
-$root: #{$prefix}#{$name};
+//------------------------------------
 
-.#{$root} {
-
-	#{&}--group {
-		&__item {
-			position: relative;
-			display: inline-block;
-			@include position(relative, 0);
-			@include padding(10px 15px);
-			@include margin(0 auto -1px auto);
-		}
+.#{$name}--group {
+	&__item {
+		position: relative;
+		display: inline-block;
+		margin: 0 auto -1px auto;
+		padding: 10px 15px;
 	}
+}
 
-	#{&}--horizontal {
-		li {
-			display: inline-block;
-		}
+.#{$name}--horizontal {
+	li {
+		display: inline-block;
 	}
 }

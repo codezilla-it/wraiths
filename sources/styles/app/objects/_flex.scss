@@ -1,18 +1,15 @@
 //------------------------------------
-// Flex
+// objects.flex
 //------------------------------------
 
 $name: 'flex';
-$prefix: map-get($class-prefix, 'object');
-$root: #{$prefix}#{$name};
+//------------------------------------
 
-.#{$root} {
-	@at-root {
-		#{&}--center {
-			@include align-items(center);
-			@include display(flex);
-			@include flex-direction(row);
-			@include justify-content(center);
-		}
-	}
+.#{$name}--center {
+	@include align-items(center);
+	@include display(flex);
+	@include flex-direction(row);
+	@include justify-content(center);
 }
+
+

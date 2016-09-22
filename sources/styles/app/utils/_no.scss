@@ -1,29 +1,25 @@
 //------------------------------------
-//    $No
+//  utils.no
 //------------------------------------
 
 $name: 'no';
-$prefix: map-get($class-prefix, 'utils');
-$root: #{$prefix}#{$name};
+//------------------------------------
 
-.#{$root} {
-	@at-root {
-		#{&}--fill {
-			background: transparent !important;
-			text-shadow: none !important;
 
-			> * {
-				background: transparent !important;
-				text-shadow: none !important;
-			}
-		}
+.#{$name}--fill {
+	background: transparent !important;
+	text-shadow: none !important;
 
-		#{&}--border {
-			border: none !important;
+	> * {
+		background: transparent !important;
+		text-shadow: none !important;
+	}
+}
 
-			&:hover {
-				border: none !important;
-			}
-		}
+.#{$name}--border {
+	border: none !important;
+
+	&:hover {
+		border: none !important;
 	}
 }

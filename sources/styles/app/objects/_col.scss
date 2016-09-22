@@ -1,46 +1,50 @@
 //------------------------------------
-//  $Col
+//  objects.col
 //------------------------------------
 
-$name: 'col';
-$prefix: map-get($class-prefix, 'object');
-$root: #{$prefix}#{$name};
-$gutter: map-get($layout, 'gutter');
 
-.#{$root} {
+$name: 'col';
+$gutter: map-get($layout, 'gutter');
+//------------------------------------
+
+.#{$name} {
+	position: relative;
+	top: 0;
+	left: 0;
   float: left;
   width: 100%;
   min-height: 1px;
-	@include position(relative, 0 null null 0);
-  @include padding(null #{$gutter});
-  @include margin(null (0));
+	padding-left: #{$gutter};
+	padding-right: #{$gutter};
+  margin-left: 0;
+	margin-right: 0;
+}
 
-  @at-root {
-    #{&} + #{&} {
-      &--end {
-        float: left;
-      }
-    }
+.#{$name} + .#{$name} {
+	&--end {
+		float: left;
+	}
+}
 
-    #{&}--equal {
-      @include equal-height();
-    }
+.#{$name}--equal {
+	@include equal-height();
+}
 
-    #{&}--centered {
-      float: none !important;
-      @include margin(null auto);
+.#{$name}--centered {
+	float: none !important;
+	margin-left: auto;
+	margin-right: auto;
 
-      > * {
-        @include margin(null auto);
-      }
-    }
+	> * {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
 
-    #{&}--right {
-      float: right !important;
-      right: 0 !important;
-      @include margin(0);
-    }
-  }
+.#{$name}--right {
+	float: right !important;
+	right: 0 !important;
+	margin: 0;
 }
 
 

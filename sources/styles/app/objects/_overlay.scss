@@ -1,36 +1,35 @@
 //------------------------------------
-//  $overlay
+//  objects.overlay
 //------------------------------------
 
 $name: 'overlay';
-$prefix: map-get($class-prefix, 'object');
-$root: #{$prefix}#{$name};
+//------------------------------------
 
-.#{$root} {
-	@include position(relative, 0);
+.#{$name} {
+	position: relative;
+}
 
-	@at-root {
-		#{&}__child {
-			display: none;
-			width: 100%;
-			height: 100%;
-			background: rgba(black, .5);
-			@include z('top', 'bottom');
-			@include position(absolute, 0);
+.#{$name}__child {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: none;
+	width: 100%;
+	height: 100%;
+	background: rgba(black, .5);
+	@include z('top', 'bottom');
+}
 
-			@at-root {
-				#{&}--white {
-					background: rgba(white, .5);
-				}
+.#{$name}--white {
+	background: rgba(white, .5);
+}
 
-				#{&}--transparent {
-					background: transparent;
-				}
+.#{$name}--transparent {
+	background: transparent;
+}
 
-				#{&}.s--active {
-					display: block;
-				}
-			}
-		}
-	}
+.#{$name}.s--active {
+	display: block;
 }

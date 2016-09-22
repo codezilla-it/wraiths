@@ -1,45 +1,41 @@
 //------------------------------------
-//  $Icon
+//  objects.icon
 //------------------------------------
 
 $name: 'icon';
-$prefix: map-get($class-prefix, 'object');
-$root: #{$prefix}#{$name};
+//------------------------------------
 
-.#{$root} {
+.#{$name} {
 	display: inline-block;
 	font-size: 64px;
+}
 
-	@at-root {
+.#{$name}--xxs {
+	font-size: map-get($text, xxs);
+}
 
-		#{&}--xxs {
-			font-size: map-get($text, xxs);
-		}
+.#{$name}--xs {
+	font-size: map-get($text, xs);
+}
 
-		#{&}--xs {
-			font-size: map-get($text, xs);
-		}
+.#{$name}--sm {
+	font-size: map-get($text, sm);
+}
 
-		#{&}--sm {
-			font-size: map-get($text, sm);
-		}
+.#{$name}--md {
+	font-size: map-get($text, md);
+}
 
-		#{&}--md {
-			font-size: map-get($text, md);
-		}
+.#{$name}--lg {
+	font-size: map-get($text, lg);
+}
 
-		#{&}--lg {
-			font-size: map-get($text, lg);
-		}
+.#{$name}--xl {
+	font-size: map-get($text, xl);
+}
 
-		#{&}--xl {
-			font-size: map-get($text, xl);
-		}
-
-		#{&}--circle {
-			border: 1px solid rgba(white, .5);
-			@include border-radius(50%);
-			@include padding(12%);
-		}
-	}
+.#{$name}--circle {
+	padding: 12%;
+	border: 1px solid rgba(white, .5);
+	border-radius: 50%;
 }

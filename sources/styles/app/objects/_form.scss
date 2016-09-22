@@ -1,15 +1,14 @@
 //------------------------------------
-//  Form
+//  objects.form
 //------------------------------------
 
 $name: 'form';
-$prefix: map-get($class-prefix, 'object');
-$root: #{$prefix}#{$name};
+//------------------------------------
 
-.#{$root} {
-	@include margin(0);
-	@include padding(15px 0 0 0);
-	@include border-radius(4px);
+.#{$name} {
+	margin: 0;
+	padding: 15px 0 0 0;
+	border-radius: 4px;
 
 	::-webkit-input-placeholder {
 		opacity: 1;
@@ -31,7 +30,7 @@ $root: #{$prefix}#{$name};
 	}
 
 	p {
-		@include margin(0 null null null);
+		margin-top: 0;
 	}
 
 	.date {
@@ -40,10 +39,10 @@ $root: #{$prefix}#{$name};
 		.input-group-addon {
 			color: #898D90;
 			border-left: none;
-			@include padding(6px 8px);
-			@include border-radius(0 4px 4px 0);
+			padding: 6px 8px;
+			border-radius: 0 4px 4px 0;
 
-			& ~ .o--icon {
+			& ~ .icon {
 				right: 41px;
 			}
 		}
@@ -52,20 +51,20 @@ $root: #{$prefix}#{$name};
 
 // input
 // ---------------------------
-.#{$root}__input {
-	&:not(.o--btn) {
+.#{$name}__input {
+	&:not(.btn) {
 		display: block;
 		width: 100%;
 		height: 36px;
+		padding-right: 36px;
 		line-height: 1.42857143;
 		border: 1px solid;
+		border-radius: 3px;
 		transition: all 0.2s linear;
 		@include rem(font-size, 0.95rem);
-		@include padding(null 36px null null);
-		@include border-radius(3px);
 
 		&:not(select) {
-			@include padding(6px 12px);
+			padding: 6px 12px;
 		}
 	}
 
@@ -82,12 +81,12 @@ $root: #{$prefix}#{$name};
 
 // select
 // ---------------------------
-select.#{$root}__input {
+select.#{$name}__input {
 	width: 100%;
 	user-select: none;
 	appearance: none;
 	border: 1px solid #C4CED8;
-	@include padding(0 60px 0 15px);
+	padding: 0 60px 0 15px;
 
 	&:hover {
 		cursor: pointer;
@@ -101,43 +100,46 @@ select.#{$root}__input {
 
 // textarea
 // ---------------------------
-textarea.#{$root}__input {
+textarea.#{$name}__input {
 	height: auto;
 	min-height: 120px;
 	@include max-screen(map-get($mq, 'md')) {
-		@include margin(null null 15px null);
+		margin-bottom: 15px;
 	}
 }
 
 // item
 // ---------------------------
-.#{$root}__item {
-	@include margin(null null 0 null);
+.#{$name}__item {
+	margin-bottom: 0;
 
 	&--checkbox {
-		.#{$root}__field {
+		.#{$name}__field {
 			width: 5%;
 		}
 
-		.#{$root}__label {
+		.#{$name}__label {
 			width: 88%;
-			@include margin(null 0);
+			margin-left: 0;
+			margin-right: 0;
 		}
 	}
 
 	.s--highlight {
 		color: #0081D4 !important;
 		background: #F9FCFF !important;
-		@include border-color(#A9C2D2 !important);
+		border-color: #A9C2D2 !important;
 	}
 
 	&.s--feedback {
+		position: relative;
+		top: 0;
+		//right: 15px !important;
 		font-size: 15px;
-		@include position(relative, 0 (15px !important) null null);
 
 		&--error,
 		&--warning {
-			.o--icon {
+			.icon {
 				&:before {
 					content: '\e6c5';
 				}
@@ -145,7 +147,7 @@ textarea.#{$root}__input {
 		}
 
 		&--success {
-			.o--icon {
+			.icon {
 				&:before {
 					content: '\e64c';
 				}
@@ -156,19 +158,19 @@ textarea.#{$root}__input {
 
 // fake-errors
 // ---------------------------
-.#{$root}__fake-errors {
-	@include margin(5px 0);
+.#{$name}__fake-errors {
+	margin: 5px 0;
 }
 
 // label
 // ---------------------------
-.#{$root}__label {
+.#{$name}__label {
 	line-height: 1.5em;
 	vertical-align: middle;
 	font-size: 16px;
-	@include margin(0 0 5px 0);
+	margin: 0 0 5px 0;
 	@include max-screen(map-get($mq, 'md')) {
-		@include margin(null null 5px null);
+		margin-bottom: 5px;
 	}
 
 	label {
@@ -176,19 +178,19 @@ textarea.#{$root}__input {
 	}
 
 	&--helper {
+		margin-bottom: 10px;
 		line-height: 1.2em;
-		@include margin(null null 10px null);
 
 		label {
 			line-height: 1em;
 		}
 
-		.#{$root}__helper {
+		.#{$name}__helper {
 			opacity: .65;
 			line-height: 1em;
 			font-size: 12px;
 			@include max-screen(map-get($mq, 'md')) {
-				@include margin(null null 10px null);
+				margin-bottom: 10px;
 			}
 		}
 	}
@@ -196,42 +198,44 @@ textarea.#{$root}__input {
 
 // title
 
-.#{$root}__title {
+.#{$name}__title {
 	text-shadow: none;
 	line-height: 1.8em;
-	@include margin(null null 10px null);
+	margin-bottom: 10px;
 	@include rem(font-size, 2.1rem);
 }
 
 // group
 // ---------------------------
-.#{$root}__group {
-	@include position(relative, 0);
+.#{$name}__group {
+	position: relative;
 }
 
 // helper
 // ---------------------------
-.#{$root}__helper {
+.#{$name}__helper {
 	display: block;
 	font-weight: 600;
-	@include margin(0);
+	margin: 0;
 }
 
 // field
 // ---------------------------
-.#{$root}__field {
-	@include position(relative);
-	@include margin(0 0 15px 0);
+.#{$name}__field {
+	position: relative;
+	margin: 0 0 15px 0;
 
-	.o--icon {
+	.icon {
+		position: absolute;
+		top: 6px;
+		right: 12px;
 		display: inline-block;
 		pointer-events: none;
 		font-size: 16px;
-		@include position(absolute, 6px 12px null null);
 		@include z(top, top);
 
 		&:before {
-			font-family: 'themify';
+			font-family: 'icon--themify';
 			font-style: normal;
 			font-weight: normal;
 			font-variant: normal;
@@ -241,102 +245,29 @@ textarea.#{$root}__input {
 		}
 	}
 
-	@at-root {
-		&--select {
-			display: block;
-			vertical-align: middle;
-
-			&:hover {
-				cursor: pointer;
-
-				&:before {
-					display: none;
-				}
-			}
-
-			&:before {
-				content: '';
-				pointer-events: none;
-				width: 45px;
-				height: 34px;
-				@include position(absolute, 1px 20px null null);
-				@include linear-gradient(to right, rgba(white, 0), white);
-			}
-
-			&:after {
-				content: '';
-				pointer-events: none;
-				@include position(absolute, 16px 11px auto auto);
-				@include z(bottom, top);
-				@include border-color(#9BA4AD transparent transparent transparent);
-				@include border-style(solid);
-				@include border-width(5px 5px 0 5px);
-			}
-
-			.o--icon {
-				width: 25px;
-				@include position(absolute, null 31px null null);
-
-				&:after {
-					content: '';
-					pointer-events: none;
-					width: 30px;
-					height: 34px;
-					background: #F9FBFD;
-					border-left: 1px solid #C4CED8;
-					@include position(absolute, -5px -29px null null);
-					@include z(bottom, bottom);
-					@include border-radius(0 4px 4px 0);
-				}
-			}
-		}
-
-		&--datepicker {
-			.date {
-				display: block;
-
-				input {
-					width: calc(100% - 32px);
-					float: left;
-				}
-
-				.input-group-addon {
-					max-width: 30px;
-					border-left: none;
-					@include padding(9px);
-					@include border-radius(0 4px 4px 0);
-				}
-
-				.o--icon {
-					right: 40px;
-				}
-			}
-		}
-	}
-
 	.input-group-addon {
 		color: #9BA4AD;
 		background-color: #F9FBFD;
-		@include border-color(#C4CED8);
+		border-color: #C4CED8;
 	}
 
 	.errors {
 		display: block;
 		list-style: none;
-		@include margin(7px 0 0 0);
-		@include padding(0);
+		margin: 7px 0 0 0;
+		padding: 0;
 	}
 
 	.help-block {
 		line-height: 1.4em;
 	}
 
-	&.o--col {
-		.o--icon {
+	&.col {
+		.icon {
 			right: 25px;
 		}
 
-		&.#{$root}__field--select {
+		&.#{$name}__field--select {
 			&:before {
 				right: 45px;
 			}
@@ -345,11 +276,11 @@ textarea.#{$root}__input {
 				right: 25px;
 			}
 
-			#{$root}__input {
-				@include padding(null 80px null null);
+			#{$name}__input {
+				padding-right: 80px;
 			}
 
-			.o--icon {
+			.icon {
 				width: 45px;
 
 				&:after {
@@ -360,15 +291,95 @@ textarea.#{$root}__input {
 	}
 }
 
+.#{$name}--select {
+	display: block;
+	vertical-align: middle;
+
+	&:hover {
+		cursor: pointer;
+
+		&:before {
+			display: none;
+		}
+	}
+
+	&:before {
+		position: absolute;
+		top: 1px;
+		right: 20px;
+		content: '';
+		pointer-events: none;
+		width: 45px;
+		height: 34px;
+		@include linear-gradient(to right, rgba(white, 0), white);
+	}
+
+	&:after {
+		position: absolute;
+		top: 16px;
+		right: 11px;
+		bottom: auto;
+		left: auto;
+		content: '';
+		pointer-events: none;
+		border-color: #9BA4AD transparent transparent transparent;
+		border-style: solid;
+		border-width: 5px 5px 0 5px;
+		@include z(bottom, top);
+	}
+
+	.icon {
+		position: absolute;
+		right: 31px;
+		width: 25px;
+
+		&:after {
+			position: absolute;
+			top: -5px;
+			right: -29px;
+			content: '';
+			pointer-events: none;
+			width: 30px;
+			height: 34px;
+			background: #F9FBFD;
+			border-left: 1px solid #C4CED8;
+			border-radius: 0 4px 4px 0;
+			@include z(bottom, bottom);
+		}
+	}
+}
+
+.#{$name}--datepicker {
+	.date {
+		display: block;
+
+		input {
+			width: calc(100% - 32px);
+			float: left;
+		}
+
+		.input-group-addon {
+			max-width: 30px;
+			padding: 9px;
+			border-left: none;
+			border-radius: 0 4px 4px 0;
+		}
+
+		.icon {
+			right: 40px;
+		}
+	}
+}
+
 // errors
 // ---------------------------
-.#{$root}__errors,
-.#{$root}__messages {
+.#{$name}__errors,
+.#{$name}__messages {
+	margin-bottom: 20px;
+	padding: 8px;
 	text-align: center;
 	border: 1px solid;
-	@include margin(null null 20px null);
-	@include padding(8px);
-	@include border-radius(4px);
+	border-radius: 4px;
 	@include rem(font-size, 1.6rem);
 
 	&:empty {
@@ -377,21 +388,21 @@ textarea.#{$root}__input {
 
 	ul {
 		list-style: none;
-		@include margin(0);
-		@include padding(0);
+		margin: 0;
+		padding: 0;
 
 		li {
-			@include margin(3px 0);
+			margin: 3px 0;
 		}
 	}
 }
 
 // btn
 // ---------------------------
-.#{$root}__btn {
-	@include margin(null null 5px null);
+.#{$name}__btn {
+	margin-bottom: 5px;
 
-	.o--btn {
+	.btn {
 		display: block;
 		width: 100%;
 		text-transform: uppercase;
@@ -400,7 +411,7 @@ textarea.#{$root}__input {
 		@include font(map-get($fonts, 'secondary'), 0.95rem);
 		@include max-screen(map-get($mq, 'sm')) {
 			width: 100% !important;
-			@include margin(0);
+			margin: 0;
 		}
 
 		&:hover {
@@ -409,39 +420,38 @@ textarea.#{$root}__input {
 	}
 
 	& + & {
-		@include margin(15px null null null);
+		margin-top: 15px;
 	}
 }
 
 // header
 // ---------------------------
-.#{$root}__header {
+.#{$name}__header {
 	background: #fafbfc;
-	@include padding(15px);
+	padding: 15px;
 
 	h1, h2, h3, h4, h5, h6 {
-		@include margin(0 null null null);
+		margin-top: 0;
 	}
 }
 
 // upload
 // ---------------------------
-.#{$root}__upload {
+.#{$name}__upload {
+	position: relative;
 	display: block;
 	width: 100%;
-	line-height: 1.42857143;
 	line-height: 20px;
 	height: 45px;
+	padding: 10px 15px;
+	border-radius: 3px;
 	@include clearfix();
-	@include position(relative, 0);
-	@include border-radius(3px);
-	@include padding(10px 15px);
 	@include max-screen(map-get($mq, 'md')) {
-		@include margin(null null 8px null);
+		margin-bottom: 8px;
 	}
 	@include max-screen(map-get($mq, 'xs')) {
 		height: auto;
-		@include padding(0);
+		padding: 0;
 	}
 
 	&:hover {
@@ -449,67 +459,73 @@ textarea.#{$root}__input {
 	}
 
 	&--label {
+		position: absolute;
+		top: -1px;
+		left: -1px;
 		display: block;
 		float: left;
 		width: 20%;
 		height: 45px;
+		padding: 10px 30px;
 		line-height: 25px;
 		background: #596B84;
 		color: #fff;
 		text-shadow: none;
 		text-align: center;
-		@include position(absolute, -1px null null -1px);
+		border-radius: 4px 0 0 4px;
 		@include z('global', 'middle');
-		@include padding(10px 30px);
-		@include border-radius(4px 0 0 4px);
 		@include max-screen(map-get($mq, 'sm')) {
 			display: none;
 		}
 	}
 
-	.#{$root}__fake-input {
+	.#{$name}__fake-input {
+		position: absolute;
+		top: -1px;
+		left: 0;
 		float: left;
 		width: 70%;
 		height: 45px;
+		padding-left: 21%;
 		background-color: transparent !important;
 		border: 1px solid;
-		@include position(absolute, -1px null null 0);
-		@include padding(null null null 21%);
-		@include border-radius(3px);
+		border-radius: 3px;
 		@include max-screen(map-get($mq, 'sm')) {
 			width: 60%;
-			@include padding(0);
+			padding: 0;
 		}
 		@include max-screen(map-get($mq, 'xs')) {
+			position: static;
 			float: none;
 			width: 100%;
-			@include position(static, 0);
-			@include margin(null null 15px null);
+			margin-bottom: 15px;
 		}
 
-		.o--text {
+		.text {
 			display: block;
 			height: 100%;
 			font-size: 16px;
 			line-height: 40px;
-			@include padding(0 15px);
+			padding: 0 15px;
 		}
 	}
 
-	.#{$root}__field {
+	.#{$name}__field {
+		position: absolute;
+		top: 1px;
+		left: 1px;
 		opacity: 0;
 		float: left;
 		width: 70%;
 		height: 40px;
 		background-color: transparent !important;
-		@include position(absolute, 1px null null 1px);
 		@include z('global', 'top');
 		@include max-screen(map-get($mq, 'sm')) {
 			width: 60%;
 		}
 	}
 
-	.#{$root}__input {
+	.#{$name}__input {
 		height: 40px;
 		background-color: transparent !important;
 		border-color: transparent !important;
@@ -517,7 +533,7 @@ textarea.#{$root}__input {
 		line-height: 1;
 		opacity: 0;
 		cursor: pointer;
-		@include padding(10px);
+		padding: 10px;
 
 		&:focus, &:active, &:hover {
 			outline: none !important;
@@ -527,31 +543,33 @@ textarea.#{$root}__input {
 		}
 	}
 
-	.#{$root}__btn {
+	.#{$name}__btn {
+		position: absolute;
+		top: -1px;
+		right: -1px;
 		float: right;
 		width: 30%;
-		@include position(absolute, -1px -1px null null);
 		@include max-screen(map-get($mq, 'sm')) {
 			width: 40%;
 		}
 		@include max-screen(map-get($mq, 'xs')) {
+			position: static;
 			float: none;
 			width: 100%;
-			@include position(static, 0);
 		}
 
 		&:hover {
 			cursor: pointer;
 		}
 
-		.o--btn {
+		.btn {
 			height: 45px;
-			@include border-radius(0 4px 4px 0);
+			border-radius: 0 4px 4px 0;
 			@include max-screen(map-get($mq, 'sm')) {
-				@include margin(0);
+				margin: 0;
 			}
 			@include max-screen(map-get($mq, 'xs')) {
-				@include border-radius(4px);
+				border-radius: 4px;
 			}
 		}
 	}

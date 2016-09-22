@@ -1,12 +1,12 @@
 //------------------------------------
-//  $Wrap
+//  modules.wrap
 //------------------------------------
 
-$name: 'wrap';
-$prefix: map-get($class-prefix, 'module');
-$root: #{$prefix}#{$name};
 
-.#{$root} {
+$name: 'wrap';
+//------------------------------------
+
+.#{$name} {
 	display: block;
 	width: map-get($layout, 'width');
 	min-width: map-get($layout, 'min-width');

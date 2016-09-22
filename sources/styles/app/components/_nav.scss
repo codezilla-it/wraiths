@@ -1,75 +1,74 @@
 //------------------------------------
-//  $Nav
+//  components.nav
 //------------------------------------
 
 $name: 'nav';
-$prefix: map-get($class-prefix, 'component');
-$root: #{$prefix}#{$name};
 
-.#{$root} {
+.#{$name} {
+	margin: 0 auto;
+	padding: 0;
 	@include clearfix();
-	@include margin(0 auto);
-	@include padding(0);
+}
 
-	@at-root {
-		#{&}__item {
-			display: inline-block;
-			@include margin(0);
+.#{$name}__item {
+	display: inline-block !important;
+	margin: 0;
 
-			a {
+	a {
+		display: block;
+		position: relative;
+		padding: 20px 15px;
+		line-height: 20px;
+		font-size: 12px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		@include font(map-get($fonts, 'secondary'), 12px);
+
+		&:hover {
+			background-color: #f9f9f9;
+			text-decoration: none;
+		}
+
+		&:focus {
+			text-decoration: none;
+		}
+	}
+}
+
+.#{$name}--tabs {
+	text-align: center;
+
+	.#{$name}__item {
+		a {
+			position: relative;
+			padding: 20px 15px;
+
+			&:before {
 				display: block;
-				line-height: 20px;
-				font-size: 12px;
-				text-transform: uppercase;
-				letter-spacing: 1px;
-				@include position(relative, 0);
-				@include padding(20px 15px);
-				@include font(map-get($fonts, 'secondary'), 12px);
+				content: " ";
+				position: absolute;
+				top: 50px;
+				left: 50%;
+				margin-left: -15px;
+			}
 
-				&:hover {
-					background-color: #f9f9f9;
-					text-decoration: none;
-				}
+			@include max-screen(map-get($mq, 'md')) {
+				font-size: 10px;
+				padding-left: 10%;
+				padding-right: 10%;
+			}
+		}
 
-				&:focus {
-					text-decoration: none;
+		&.s--active {
+			a {
+				&:before {
+					@include triangle(15px, white, 'up');
 				}
 			}
 		}
 
-		#{&}--tabs {
-			text-align: center;
-
-			.#{$root}__item {
-				a {
-					@include position(relative, 0);
-					@include padding(null 20px);
-
-					&:before {
-						display: block;
-						content: " ";
-						@include position(absolute, 50px null null 50%);
-						@include margin(null null null -15px);
-					}
-
-					@include max-screen(map-get($mq, 'md')) {
-						font-size: 10px;
-						@include padding(null 10%);
-					}
-				}
-
-				&.s--active {
-					a {
-						&:before {
-							@include triangle(15px, white, 'up');
-						}
-					}
-				}
-
-				&.s--disabled {
-					opacity: 0.2;
-				}
-			}
+		&.s--disabled {
+			opacity: 0.2;
 		}
 	}
 }

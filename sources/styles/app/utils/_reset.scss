@@ -1,12 +1,11 @@
 //------------------------------------
-//    $Reset
+//    utils.reset
 //------------------------------------
 
 $name: 'reset';
-$prefix: map-get($class-prefix, 'utils');
-$root: #{$prefix}#{$name};
+//------------------------------------
 
-.#{$root} {
+.#{$name} {
 	&:before {
 		content: "";
 		display: table;

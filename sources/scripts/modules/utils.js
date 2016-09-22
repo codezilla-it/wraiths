@@ -44,12 +44,12 @@ module.exports = (function () {
 
 		$.fn.display_block = function () {
 
-			this.removeClass('u--hide').addClass('u--show');
+			this.removeClass('hide').addClass('show');
 		};
 
 		$.fn.display_none = function () {
 
-			this.removeClass('u--show').addClass('u--hide');
+			this.removeClass('show').addClass('hide');
 		};
 
 		$.fn.handle_content_height = function (options) {
@@ -58,11 +58,11 @@ module.exports = (function () {
 
 			var window_h = $(window).height();
 			var main_h = $('main').innerHeight();
-			var content_h = $('.m--content').innerHeight();
-			var footer_h = $('.m--footer').innerHeight();
+			var content_h = $('.content').innerHeight();
+			var footer_h = $('.footer').innerHeight();
 
 			if (main_h - footer_h <= (window_h - (main_h - content_h))) {
-				$('.m--content').css({
+				$('.content').css({
 					height: (window_h - (main_h - content_h)) + 'px'
 				});
 			}
@@ -92,7 +92,7 @@ module.exports = (function () {
 			});
 		};
 
-		document.querySelector('.m--navbar__toggle')
+		document.querySelector('.navbar__toggle')
 			.addEventListener('click', function () {
 				this.classList.toggle('active');
 			});

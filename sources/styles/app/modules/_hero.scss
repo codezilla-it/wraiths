@@ -1,34 +1,33 @@
 //------------------------------------
-//    $Hero
+//  modules.hero
 //------------------------------------
 
-$name: 'hero';
-$prefix: map-get($class-prefix, 'module');
-$root: #{$prefix}#{$name};
 
-.#{$root} {
+$name: 'hero';
+//------------------------------------
+
+.#{$name} {
 	text-align: left;
 	font-size: 24px;
 	text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
 	background-repeat: repeat-x;
-	@include padding(50px 15px);
+	padding: 50px 15px;
 	@include max-screen(map-get($mq, 'md')) {
-		@include padding(15px);
+		padding: 15px;
+	}
+}
+
+.#{$name}__title {
+	margin-top: 15px;
+	margin-bottom: 21px;
+	padding: 0 15px;
+	@include max-screen(map-get($mq, 'md')) {
+		font-size: 30px;
+		line-height: 1.3;
 	}
 
-	@at-root {
-		#{&}__title {
-			@include margin(15px null 21px null);
-			@include padding(0 15px);
-			@include max-screen(map-get($mq, 'md')) {
-				font-size: 30px;
-				line-height: 1.3;
-			}
-
-			.o--text--highlight {
-				border-bottom-width: 0;
-				border-bottom-style: solid;
-			}
-		}
+	.text--highlight {
+		border-bottom-width: 0;
+		border-bottom-style: solid;
 	}
 }

@@ -1,15 +1,13 @@
 //------------------------------------
-//  $Space
+//  objects.space
 //------------------------------------
 
 $name: 'space';
-$prefix: map-get($class-prefix, 'object');
-$root: #{$prefix}#{$name};
 
-.#{$root} {
+.#{$name} {
 	display: block;
 	width: 100%;
 	@include clearfix();
 }
 
-@include generate-space($name, $root);
+@include generate-space($name, $name);

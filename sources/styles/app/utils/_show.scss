@@ -1,9 +1,8 @@
 //------------------------------------
-//  $Show
+//  utils.show
 //------------------------------------
 
 $name: 'show';
-$prefix: map-get($class-prefix, 'utils');
-$root: #{$prefix}#{$name};
+//------------------------------------
 
-@include generate-display($name, $root);
+@include generate-display($name, $name);

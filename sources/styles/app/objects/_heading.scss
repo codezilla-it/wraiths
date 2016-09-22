@@ -1,27 +1,24 @@
 //------------------------------------
-//  $Heading
+//  objects.heading
 //------------------------------------
 
 $name: 'heading';
-$prefix: map-get($class-prefix, 'object');
-$root: #{$prefix}#{$name};
+//------------------------------------
 
-.#{$root} {
-	@at-root {
-		#{&}__title {
-			text-transform: uppercase;
-			letter-spacing: 2px;
-			line-height: 1.3;
-			font-weight: 500;
-			@include margin(15px null 0 null);
-			@include padding(0);
-			@include font(map-get($fonts, 'third'), 32px, null, 400);
-		}
 
-		#{&}__subtitle {
-			line-height: 1.3;
-			@include margin(10px null null null);
-			@include font(map-get($fonts, 'third'), 24px, null, 400);
-		}
-	}
+#{$name}__title {
+	margin-top: 15px;
+	margin-bottom: 0;
+	padding: 0;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	line-height: 1.3;
+	font-weight: 500;
+	@include font(map-get($fonts, 'third'), 32px, null, 400);
+}
+
+#{$name}__subtitle {
+	margin-top: 10px;
+	line-height: 1.3;
+	@include font(map-get($fonts, 'third'), 24px, null, 400);
 }

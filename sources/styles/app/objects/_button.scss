@@ -1,54 +1,53 @@
 //------------------------------------
-//  $Button
+//  objects.btn
 //------------------------------------
 
+
 $name: 'btn';
-$prefix: map-get($class-prefix, 'object');
-$root: #{$prefix}#{$name};
+//------------------------------------
 
-.#{$root} {
-  display: inline-block;
-  height: auto;
-  line-height: 100%;
-  border: 1px solid;
-  white-space: normal;
-  @include padding(10px 20px);
-  @include border-radius(4px);
-  @include rem(font-size, 1.2rem);
-  @include max-screen(map-get($mq, 'sm')) {
-    float: none;
-    width: 100%;
-    @include margin(null null 10px null);
-  }
+.#{$name} {
+	display: inline-block;
+	height: auto;
+	padding: 10px 20px;
+	line-height: 100%;
+	border: 1px solid;
+	border-radius: 4px;
+	white-space: normal;
+	@include rem(font-size, 1.2rem);
+	@include max-screen(map-get($mq, 'sm')) {
+		float: none;
+		width: 100%;
+		margin-bottom: 10px;
+	}
 
-  &:hover {
-    cursor: pointer;
-  }
-
-  @at-root {
-    #{&}--xs {
-      @include padding(5px 12px);
-      @include rem(font-size, 0.8rem);
-    }
-
-    #{&}--sm {
-      @include padding(8px 16px);
-      @include rem(font-size, 0.9rem);
-    }
-
-    #{&}--md {
-      @include padding(12px 30px);
-      @include rem(font-size, 1.0rem);
-    }
-
-    #{&}--lg {
-      @include padding(20px 40px);
-      @include rem(font-size, 1.1rem);
-    }
-
-    #{&}--xl {
-      @include padding(25px 60px);
-      @include rem(font-size, 1.3rem);
-    }
-  }
+	&:hover {
+		cursor: pointer;
+	}
 }
+
+.#{$name}--xs {
+	padding: 5px 12px;
+	@include rem(font-size, 0.8rem);
+}
+
+.#{$name}--sm {
+	padding: 8px 16px;
+	@include rem(font-size, 0.9rem);
+}
+
+.#{$name}--md {
+	padding: 12px 30px;
+	@include rem(font-size, 1.0rem);
+}
+
+.#{$name}--lg {
+	padding: 20px 40px;
+	@include rem(font-size, 1.1rem);
+}
+
+.#{$name}--xl {
+	padding: 25px 60px;
+	@include rem(font-size, 1.3rem);
+}
+

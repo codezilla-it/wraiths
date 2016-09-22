@@ -1,81 +1,80 @@
 //------------------------------------
-//  $Text
+//  objects.text
 //------------------------------------
 
 $name: 'text';
-$prefix: map-get($class-prefix, 'object');
-$root: #{$prefix}#{$name};
+//------------------------------------
 
-.#{$root} {
 
-	@at-root {
-		// text--position
-		//------------------------------------
-		#{&}--left {
-			text-align: left !important;
-		}
+.#{$name}--left {
+	text-align: left !important;
+}
 
-		#{&}--right {
-			text-align: right !important;
-		}
+.#{$name}--right {
+	text-align: right !important;
+}
 
-		#{&}--center {
-			text-align: center !important;
-		}
+.#{$name}--center {
+	text-align: center !important;
+}
 
-		#{&}--justify {
-			text-align: justify !important;
-		}
+.#{$name}--justify {
+	text-align: justify !important;
+}
 
-		// text--decoration
-		//------------------------------------
-		#{&}--antialiased {
-			@include font-smoothing();
-		}
+// text--decoration
+//------------------------------------
+.#{$name}--antialiased {
+	@include font-smoothing();
+}
 
-		#{&}--ellipsis {
-			line-height: 1.5;
-			max-height: 3em;
-			overflow: hidden;
-			@include position(relative, 0 null null 0);
+.#{$name}--ellipsis {
+	position: relative;
+	top: 0;
+	left: 0;
+	line-height: 1.5;
+	max-height: 3em;
+	overflow: hidden;
 
-			&__dots {
-				background: #fff;
-				@include position(absolute, null 0 0 null)
-			}
-
-			&__fill {
-				height: 100%;
-				width: 100%;
-				background: #fff;
-				@include position(absolute, 0 null null 0);
-			}
-		}
-
-		// sizes
-		//------------------------------------
-		#{&}--xxs {
-			font-size: map-get($text, 'xxs');
-		}
-
-		#{&}--xs {
-			font-size: map-get($text, 'xs');
-		}
-
-		#{&}--sm {
-			font-size: map-get($text, 'sm');
-		}
-
-		#{&}--md {
-			font-size: map-get($text, 'md');
-		}
-
-		#{&}--lg {
-			font-size: map-get($text, 'lg');
-		}
-
-		#{&}--xl {
-			font-size: map-get($text, 'xl');
-		}
+	&__dots {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		background: #fff;
 	}
+
+	&__fill {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background: #fff;
+	}
+}
+
+// sizes
+//------------------------------------
+.#{$name}--xxs {
+	font-size: map-get($text, 'xxs');
+}
+
+.#{$name}--xs {
+	font-size: map-get($text, 'xs');
+}
+
+.#{$name}--sm {
+	font-size: map-get($text, 'sm');
+}
+
+.#{$name}--md {
+	font-size: map-get($text, 'md');
+}
+
+.#{$name}--lg {
+	font-size: map-get($text, 'lg');
+}
+
+.#{$name}--xl {
+	font-size: map-get($text, 'xl');
 }

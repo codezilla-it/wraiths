@@ -1,9 +1,8 @@
 //------------------------------------
-//    $Padding
+//   utils.padding
 //------------------------------------
 
 $name: 'padding';
-$prefix: map-get($class-prefix, 'utils');
-$root: #{$prefix}#{$name};
+//------------------------------------
 
-@include generate-padding($name, $root);
+@include generate-padding($name, $name);
