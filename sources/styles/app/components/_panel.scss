@@ -34,4 +34,8 @@ $name: 'panel';
 
 .#{$name}__content {
 	padding: 15px 20px;
+
+	.heading__subtitle{
+		margin-top: 0;
+	}
 }

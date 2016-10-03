@@ -1,0 +1,16 @@
+//------------------------------------
+//  objects.inner
+//------------------------------------
+
+$name: 'inner';
+//------------------------------------
+
+.#{$name} {
+	max-width: map-get($layout, 'max-width');
+	margin: 0 auto;
+	padding: 0 15px;
+	@include max-screen(map-get($mq, md)) {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+}

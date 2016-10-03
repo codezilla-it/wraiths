@@ -266,26 +266,45 @@ textarea.#{$name}__input {
 		.icon {
 			right: 25px;
 		}
+	}
 
-		&.#{$name}__field--select {
-			&:before {
-				right: 45px;
-			}
+	&.#{$name}__field--select {
+		&:before {
+			position: absolute;
+			top: 1px;
+			right: 20px;
+			content: '';
+			pointer-events: none;
+			width: 45px;
+			height: 34px;
+			@include linear-gradient(to right, rgba(white, 0), white);
+			//right: 45px;
+		}
+
+		&:after {
+			right: 25px;
+			position: absolute;
+			top: 16px;
+			//right: 11px;
+			bottom: auto;
+			left: auto;
+			content: '';
+			pointer-events: none;
+			border-color: #9BA4AD transparent transparent transparent;
+			border-style: solid;
+			border-width: 5px 5px 0 5px;
+			@include z(bottom, top);
+		}
+
+		#{$name}__input {
+			padding-right: 80px;
+		}
+
+		.icon {
+			width: 45px;
 
 			&:after {
-				right: 25px;
-			}
-
-			#{$name}__input {
-				padding-right: 80px;
-			}
-
-			.icon {
-				width: 45px;
-
-				&:after {
-					right: -9px;
-				}
+				right: -9px;
 			}
 		}
 	}
@@ -301,31 +320,6 @@ textarea.#{$name}__input {
 		&:before {
 			display: none;
 		}
-	}
-
-	&:before {
-		position: absolute;
-		top: 1px;
-		right: 20px;
-		content: '';
-		pointer-events: none;
-		width: 45px;
-		height: 34px;
-		@include linear-gradient(to right, rgba(white, 0), white);
-	}
-
-	&:after {
-		position: absolute;
-		top: 16px;
-		right: 11px;
-		bottom: auto;
-		left: auto;
-		content: '';
-		pointer-events: none;
-		border-color: #9BA4AD transparent transparent transparent;
-		border-style: solid;
-		border-width: 5px 5px 0 5px;
-		@include z(bottom, top);
 	}
 
 	.icon {
