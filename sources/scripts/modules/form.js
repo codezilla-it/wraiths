@@ -80,9 +80,9 @@ module.exports = (function () {
             $(this).blur().focus();
         });
 
-        $('.form__field').on('keyup', 'input', function () {
-            $(this).blur().focus();
-        });
+        // $('.form__field').on('keyup', 'input', function () {
+        //     $(this).blur().focus();
+        // });
 
         $('.form__upload').on('change', 'input', function () {
             var $that = $(this);
