@@ -227,14 +227,17 @@ textarea.#{$name}__input {
 
 	.icon {
 		position: absolute;
-		top: 6px;
+		top: 50%;
 		right: 12px;
 		display: inline-block;
 		pointer-events: none;
 		font-size: 16px;
+		margin-top: -8px;
 		@include z(top, top);
 
 		&:before {
+			display: block;
+			content: "";
 			font-family: 'icon--themify';
 			font-style: normal;
 			font-weight: normal;
@@ -268,7 +271,26 @@ textarea.#{$name}__input {
 		}
 	}
 
-	&.#{$name}__field--select {
+	&--select {
+		display: block;
+		vertical-align: middle;
+
+		&:not(.col){
+			&:after{
+				right: 12px;
+			}
+
+			.icon{
+				&:before{
+					right: 9px;
+				}
+
+				&:after{
+					right: -29px;
+				}
+			}
+		}
+
 		&:before {
 			position: absolute;
 			top: 1px;
@@ -296,50 +318,51 @@ textarea.#{$name}__input {
 			@include z(bottom, top);
 		}
 
+		&:hover {
+			cursor: pointer;
+
+			&:before {
+				display: none;
+			}
+		}
+
+		.icon {
+			position: absolute;
+			right: 31px;
+			width: 25px;
+
+			&:before{
+				position: absolute;
+				right: 30px;
+			}
+
+			&:after {
+				position: absolute;
+				top: -9px;
+				right: -9px;
+				content: '';
+				pointer-events: none;
+				width: 30px;
+				height: 34px;
+				background: #F9FBFD;
+				border-left: 1px solid #C4CED8;
+				border-radius: 0 4px 4px 0;
+				@include z(bottom, bottom);
+			}
+
+		}
+
 		#{$name}__input {
 			padding-right: 80px;
 		}
 
-		.icon {
-			width: 45px;
-
-			&:after {
-				right: -9px;
-			}
-		}
-	}
-}
-
-.#{$name}--select {
-	display: block;
-	vertical-align: middle;
-
-	&:hover {
-		cursor: pointer;
-
-		&:before {
-			display: none;
-		}
-	}
-
-	.icon {
-		position: absolute;
-		right: 31px;
-		width: 25px;
-
-		&:after {
-			position: absolute;
-			top: -5px;
-			right: -29px;
-			content: '';
-			pointer-events: none;
-			width: 30px;
-			height: 34px;
-			background: #F9FBFD;
-			border-left: 1px solid #C4CED8;
-			border-radius: 0 4px 4px 0;
-			@include z(bottom, bottom);
-		}
+		//.icon {
+		//	width: 45px;
+        //
+		//	&:after {
+		//		right: -9px;
+		//	}
+		//}
 	}
 }
 
