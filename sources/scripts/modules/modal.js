@@ -12,14 +12,7 @@ module.exports = (function () {
 
 	function init() {
 
-		// Handle dynamic content height
-		// -----------------------------
 
-		if ($('.modal').exists()) {
-			$(window).on('resize', function () {
-				$('body').handle_content_height();
-			}).resize();
-		}
 
 	}
 
