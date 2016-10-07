@@ -20,16 +20,19 @@ $name: 'overlay';
 	height: 100%;
 	background: rgba(black, .5);
 	@include z('top', 'bottom');
+
+	&.s--active {
+		display: block;
+	}
+
+	&--transparent{
+		background: transparent;
+	}
+
+	&--white {
+		background: rgba(white, .5);
+	}
 }
 
-.#{$name}--white {
-	background: rgba(white, .5);
-}
 
-.#{$name}--transparent {
-	background: transparent;
-}
 
-.#{$name}.s--active {
-	display: block;
-}
