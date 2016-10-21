@@ -1,0 +1,60 @@
+//------------------------------------
+//  modules.sms-resend
+//------------------------------------
+
+$name: 'sms-resend';
+//------------------------------------
+
+.#{$name} {
+
+	.button--resendCode {
+		position: relative;
+		width: 100%;
+		max-width: 300px;
+		text-align: center;
+		font-size: 12px;
+		display: block;
+		padding: 6px 10px;
+		line-height: 1.67;
+		background: #2d69ce;
+		color: white;
+		border-radius: 8px;
+		border: 1px solid #295fbb;
+		-webkit-font-smoothing: subpixel-antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		box-sizing: border-box;
+
+		> * {
+			display: inline-block;
+			vertical-align: middle;
+			color: white;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		.button--resendCode__text {
+			float: right;
+			width: 85%;
+			text-align: left;
+			padding: 0 10px;
+			font-weight: 500;
+			font-size: 13px;
+		}
+	}
+
+	.button--resendCode::after {
+		content: " ";
+		display: table;
+		clear: both;
+	}
+
+	.not-active {
+		pointer-events: none;
+		cursor: default;
+		background: #a8a1b6;
+		border: 1px solid #a8a1b6;
+	}
+
+}

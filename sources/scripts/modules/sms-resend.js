@@ -2,7 +2,7 @@
  * Created by serpe on 19/10/16.
  */
 // ---------------------------------------------
-// @knob-master
+// @sms-resend
 // ---------------------------------------------
 
 module.exports = (function () {
@@ -16,11 +16,12 @@ module.exports = (function () {
         var s = second || 0;
         var $s = $(".sms-timer");
         // console.log(s);
+        var $smsResend = $(".sms-resend .button--resendCode");
         if (s < limitSeconds) {
-            if (!$("#resend-code").hasClass("not-active")) {
-                $("#resend-code").addClass("not-active");
+            if (!$smsResend.hasClass("not-active")) {
+                $smsResend.addClass("not-active");
                 $(".button--resendCode__text").html('Aspetta l\'SMS...<br>Arriverà entro <span class="button--resendCode__text-seconds"></span> secondi.');
-                $("#resend-code div").show();
+                $(".sms-resend .button--resendCode div").show();
             }
             $s.val(s).trigger("change");
             $(".button--resendCode__text-seconds").html(limitSeconds - s);
@@ -30,9 +31,9 @@ module.exports = (function () {
             }, 1000);
         } else {
             $s.val(s).trigger("change");
-            $("#resend-code").removeClass("not-active");
+            $smsResend.removeClass("not-active");
             $(".button--resendCode__text").html("Il codice non è ancora arrivato?<br>Clicca qui per il reinvio.");
-            $("#resend-code div").hide();
+            $(".sms-resend .button--resendCode div").hide();
         }
 
     }
