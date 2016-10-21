@@ -15,9 +15,10 @@ module.exports = (function () {
     function clock(second) {
         var s = second || 0;
         var $s = $(".sms-timer");
-        // console.log(s);
         var $smsResend = $(".sms-resend .button--resendCode");
-        if (s < limitSeconds) {
+
+        // console.log($s.length);
+        if ($s.length > 0 && s < limitSeconds) {
             if (!$smsResend.hasClass("not-active")) {
                 $smsResend.addClass("not-active");
                 $(".button--resendCode__text").html('Aspetta l\'SMS...<br>Arriverà entro <span class="button--resendCode__text-seconds"></span> secondi.');
