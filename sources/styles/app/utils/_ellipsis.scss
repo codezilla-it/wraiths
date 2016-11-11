@@ -1,0 +1,30 @@
+//------------------------------------
+//  utils.ellipsis
+//------------------------------------
+
+$name: 'ellipsis';
+//------------------------------------
+
+.#{$name} {
+	line-height: 1.5;
+	max-height: 12.4em;
+	overflow: hidden;
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+.#{$name}__dots {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	background: transparent;
+	color: #cecece;
+}
+
+.#{$name}__fill {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background: transparent;
+}
