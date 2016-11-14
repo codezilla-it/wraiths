@@ -52,22 +52,6 @@ module.exports = (function () {
             this.removeClass('show').addClass('hide');
         };
 
-        $.fn.handle_content_height = function (options) {
-
-            var params = options || {};
-
-            var window_h = $(window).height();
-            var main_h = $('main').innerHeight();
-            var content_h = $('.content').innerHeight();
-            var footer_h = $('.footer').innerHeight();
-
-            if (main_h - footer_h <= (window_h - (main_h - content_h))) {
-                $('.content').css({
-                    height: (window_h - (main_h - content_h)) + 'px'
-                });
-            }
-        };
-
         $.fn.remove_class_except = function (val) {
             return this.each(function (index, el) {
                 var keep = val.split(" "), // list we'd like to keep
