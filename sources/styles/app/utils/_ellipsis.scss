@@ -18,13 +18,12 @@ $name: 'ellipsis';
 	position: absolute;
 	right: 0;
 	bottom: 0;
-	background: transparent;
-	color: #cecece;
+	background: #FFFFFF;
 }
 
 .#{$name}__fill {
 	position: absolute;
 	height: 100%;
 	width: 100%;
-	background: transparent;
+	background: #FFFFFF;
 }
