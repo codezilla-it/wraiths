@@ -76,10 +76,12 @@ module.exports = (function () {
             });
         };
 
-        document.querySelector('.navbar__toggle')
-            .addEventListener('click', function () {
+        var navbar = document.querySelector('.navbar__toggle');
+        if (navbar !== null) {
+            navbar.addEventListener('click', function () {
                 this.classList.toggle('active');
             });
+        }
 
         projectName.globals.get_filename = function (path) {
             return path.split('/').reverse()[0].replace(/\.[^/.]+$/, '');
